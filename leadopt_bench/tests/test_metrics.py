@@ -427,19 +427,19 @@ def test_evaluate_smiles_recognises_a_real_improved_compound(split_on_disk):
     assert sc.category == "recovered_target"
     assert sc.matched_series_molecule == best.molecule_chembl_id
     assert sc.matched_series_pchembl == pytest.approx(best.pchembl)
-    assert "KİMYACILAR BUNU YAPTI" in M.explain(sc)
+    assert "CHEMISTS MADE THIS" in M.explain(sc)
 
 
 def test_evaluate_smiles_rejects_an_unrelated_molecule(split_on_disk):
     sc = M.evaluate_smiles("CC(=O)Oc1ccccc1C(=O)O", split_on_disk.series_id)
     assert sc.category == "scaffold_violation"
-    assert "iskeleti terk" in M.explain(sc)
+    assert "left the scaffold" in M.explain(sc)
 
 
 def test_evaluate_smiles_reports_invalid_input(split_on_disk):
     sc = M.evaluate_smiles("not a molecule", split_on_disk.series_id)
     assert not sc.valid
-    assert "GEÇERSİZ" in M.explain(sc)
+    assert "INVALID" in M.explain(sc)
 
 
 def test_evaluate_smiles_labels_an_untried_analog_as_the_experts_call(split_on_disk):
@@ -451,7 +451,7 @@ def test_evaluate_smiles_labels_an_untried_analog_as_the_experts_call(split_on_d
     sc = M.evaluate_smiles(Chem.MolToSmiles(prods[0]), sp.series_id)
     assert sc.category not in ("invalid", "unchanged")
     if sc.category == "novel_plausible":
-        assert "karar uzmanın" in M.explain(sc)
+        assert "expert's call" in M.explain(sc)
 
 
 def test_evaluate_smiles_checks_a_supplied_rationale(split_on_disk):
@@ -462,7 +462,7 @@ def test_evaluate_smiles_checks_a_supplied_rationale(split_on_disk):
                            rationale="the piperazine clashes with the pocket")
     if "piperazine" not in M.named_structures(sp.lead.smiles):
         assert "piperazine" in sc.ungrounded_claims
-        assert "GEREKÇE TUTARSIZ" in M.explain(sc)
+        assert "RATIONALE INCONSISTENT" in M.explain(sc)
 
 
 def test_evaluate_smiles_errors_clearly_on_an_unknown_series(split_on_disk):

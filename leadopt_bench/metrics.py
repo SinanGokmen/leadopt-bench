@@ -737,38 +737,40 @@ def explain(score: SuggestionScore) -> str:
     """Plain-language verdict for one evaluated molecule."""
     lines = []
     if not score.valid:
-        return f"GEÇERSİZ: {score.invalid_reason} -- bu bir molekül değil."
-    lines.append(f"geçerli molekül, lead'e Tanimoto {score.tanimoto_to_lead:.3f} "
-                 f"(seri tabanı {score.similarity_floor:.3f})")
+        return f"INVALID: {score.invalid_reason} -- this is not a molecule."
+    lines.append(f"valid molecule, Tanimoto {score.tanimoto_to_lead:.3f} to the lead "
+                 f"(series floor {score.similarity_floor:.3f})")
     if score.same_murcko_scaffold:
-        lines.append("aynı Murcko iskeleti")
+        lines.append("same Murcko scaffold")
     verdicts = {
-        "unchanged": "lead'in kendisi -- değişiklik yok",
-        "duplicate": "bu molekül zaten önerilmişti",
-        "scaffold_violation": "iskeleti terk etmiş: gerçek kampanyanın gittiğinden "
-                              "daha uzak, bu artık optimizasyon değil",
-        "recovered_target": "KİMYACILAR BUNU YAPTI ve potensi arttı",
-        "recovered_nonimprover": "kimyacılar bunu (ya da çok benzerini) yaptı, "
-                                 "ama potens artmadı",
-        "novel_plausible": "seride yok -- kimse yapmamış, referansımız yok, "
-                           "karar uzmanın",
+        "unchanged": "this is the lead itself -- nothing was changed",
+        "duplicate": "this molecule was already proposed",
+        "scaffold_violation": "left the scaffold: further from the lead than the real "
+                              "campaign ever went, so this is no longer optimization",
+        "recovered_target": "CHEMISTS MADE THIS and it was more potent",
+        "recovered_nonimprover": "chemists made this (or a close analog), but it was "
+                                 "not more potent",
+        "novel_plausible": "absent from the series -- nobody made it, we have no "
+                           "ground truth, this one is the expert's call",
     }
     lines.append(verdicts.get(score.category, score.category))
     if score.matched_series_molecule:
         pch = score.matched_series_pchembl
-        lines.append(f"eşleşen gerçek bileşik: {score.matched_series_molecule}"
-                     + (f", ölçülmüş p-değeri {pch}" if pch is not None else ""))
+        lines.append(f"matched real compound: {score.matched_series_molecule}"
+                     + (f", measured p-value {pch}" if pch is not None else ""))
     if score.direction_precision is not None:
-        lines.append(f"değişiklik tipi isabeti {score.direction_precision:.2f}"
-                     + (f" (seride işe yarayanlar: {', '.join(score.direction_hits)})"
+        lines.append(f"change-type accuracy {score.direction_precision:.2f}"
+                     + (f" (changes that worked in this series: "
+                        f"{', '.join(score.direction_hits)})"
                         if score.direction_hits else "")
-                     + (f" (seride görülmeyenler: {', '.join(score.direction_misses)})"
+                     + (f" (changes never seen in this series: "
+                        f"{', '.join(score.direction_misses)})"
                         if score.direction_misses else ""))
     if score.ungrounded_claims:
-        lines.append("GEREKÇE TUTARSIZ -- molekülde olmayan yapılardan bahsediyor: "
-                     + ", ".join(score.ungrounded_claims))
+        lines.append("RATIONALE INCONSISTENT -- it discusses structures that are not "
+                     "in the molecule: " + ", ".join(score.ungrounded_claims))
     if score.heavy_atom_delta:
-        lines.append(f"boyut değişimi {score.heavy_atom_delta:+d} ağır atom, "
+        lines.append(f"size change {score.heavy_atom_delta:+d} heavy atoms, "
                      f"{score.mw_delta:+.0f} Da")
     return "\n  ".join(lines)
 
