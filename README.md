@@ -88,6 +88,115 @@ zinc-binding group, and this series never explored removing it.
 
 ---
 
+## How it works
+
+### The problem it is built around
+
+Ask a language model to improve a drug candidate and you get a confident answer. The
+hard part is knowing whether the answer is any good.
+
+The field's usual solution is to score the proposals with a *prediction model* — an
+ADMET or affinity predictor. That creates a circular problem: the generator learns to
+satisfy the predictor, the benchmark uses the same predictor, and nobody can see the
+difference between real chemistry and gaming the scorer.
+
+This pipeline avoids the circle by going backwards in time. Medicinal chemists have
+already run thousands of optimization campaigns and published the results. In a
+finished campaign **the answer is known and it was measured, not predicted**. So:
+hide the ending, hand the model the beginning, and compare.
+
+### Building one question
+
+A question comes from a real published campaign. The pipeline pulls activity data
+from ChEMBL and keeps only series that are genuine optimization campaigns:
+
+- a single protein target, direct and unambiguous (ChEMBL confidence score 9)
+- a single assay, so the potencies are comparable to each other
+- at least 20 compounds, mean pairwise Tanimoto > 0.40 — a congeneric series, not an
+  unrelated pile of hits
+- at least 2 log units of activity range, so something was actually optimized
+
+Take a worked example, `CHEMBL6106211_IC50` — an HDAC1 series from a 2025 paper, 31
+compounds spanning pIC50 **5.31 to 8.47**. Every compound shares the same
+architecture: a cap group, an aryl ether, a pyridine–pyrazole core, an alkyl linker,
+and a hydroxamic acid as the zinc-binding group.
+
+The pipeline picks a **starting compound** from the weak end — here one at pIC50 5.46,
+carrying a bulky *tert*-butyl-isoxazole cap and an eleven-carbon linker. The remaining
+26 compounds that beat it by at least 1 log unit become the **answer key**.
+
+What the chemists actually did, visible in that key: they **dropped the bulky isoxazole
+cap** for a simple urea and **tuned the linker down to about seven carbons**. The best
+compound in the series reaches pIC50 8.47 — a thousand-fold gain.
+
+### What the model is given
+
+Only this:
+
+```
+Target protein: Histone deacetylase 1
+Assay endpoint: IC50
+Starting compound (SMILES): CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)no1
+Measured potency of the starting compound: pIC50 = 5.46
+
+Propose 5 distinct structural modifications ... explain the structure-activity
+reasoning for why you expect it to help.
+```
+
+No answer compounds, no count of them, no hint of how much gain is available. Every
+run audits all 32 real prompts for leakage.
+
+The rationale is a **separate required field** from the molecule, because a suggestion
+can be a change chemists really made while the stated reason is invented — and telling
+those two apart is the entire point.
+
+### Grading an answer
+
+Three checks, none of which asks a model for an opinion:
+
+| Check | How it is decided |
+|---|---|
+**Is it a valid molecule?** | RDKit parsing and sanitization, single fragment, sensible mass |
+**Was the scaffold kept?** | Morgan fingerprint Tanimoto to the starting compound |
+**Is the reasoning about this molecule?** | every ring and functional group the text names is looked for in the starting compound **or** in the proposal |
+
+The two thresholds that could have been arbitrary are instead **read off the series
+itself**:
+
+- the similarity floor is the *least similar* compound the real chemists made from that
+  lead. A proposal only counts as abandoning the scaffold if it strays further than the
+  real campaign ever did.
+- "a modification that raises potency" is not a curated belief about chemistry — it is
+  the set of functional-group changes observed between the lead and the real improved
+  compounds in that same series.
+
+The third check is the mechanizable part of what a chemist does when they glance at a
+suggestion and immediately see it is about the wrong compound. In this HDAC1 series,
+Gemma 3 12B proposed edits to a "piperidine" and a "quinoline" — neither is present
+anywhere in the molecule — while actually deleting an oxygen from the isoxazole ring.
+It never mentioned the hydroxamic acid, which is the one group an HDAC chemist would
+look at first.
+
+### What it refuses to do
+
+If a proposal is a valid, on-scaffold molecule that simply never appears in the series,
+it is labelled `novel_plausible` and **left unscored**. Nobody made that compound, so
+there is no measurement, and inventing one with a predictor would rebuild the circular
+problem above. Those are the suggestions a human has to judge — and a tool that
+pretends otherwise is worse than one that admits the gap.
+
+### Why there are control arms
+
+A single number is uninterpretable. "The model recovered 12% of the real improvements"
+only becomes meaningful once you know what *rote advice* and *random chemistry* score
+on the same 32 questions. So five reference arms answer the identical questions,
+including an **oracle** that is handed the real answers and a **generic** arm that
+proposes the same five substituents to every molecule, forever.
+
+That calibration changed how the results must be read: the generic arm scores **0.607**
+on change-type accuracy, because halogen scanning genuinely does raise potency. Any
+model scoring around 0.6 there has demonstrated nothing at all.
+
 ## What it found
 
 **Gemma 3 12B** (local, free), 32 splits × 5 suggestions = 160 suggestions:
