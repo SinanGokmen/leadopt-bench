@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leadopt-bench"
+version = "0.1.0"
+description = "Retrospective benchmark of LLM lead-optimization reasoning against published ChEMBL SAR series"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Sinan Gökmen" }]
+keywords = ["cheminformatics", "medicinal-chemistry", "llm-evaluation", "chembl", "rdkit"]
+
+dependencies = [
+    "rdkit>=2024.3",
+    "requests>=2.31",
+    "pandas>=2.0",
+    "numpy>=1.26",
+    "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+anthropic = ["anthropic>=0.40"]
+
+[project.urls]
+Repository = "https://github.com/SinanGokmen/leadopt-bench"
+
+[tool.setuptools]
+packages = ["leadopt_bench"]
+
+# The committed ChEMBL cache, series, splits and scored responses ship with the
+# package: an editable install keeps them where config.py expects them, so a
+# fresh clone can evaluate a molecule without downloading anything.
+[tool.setuptools.package-data]
+leadopt_bench = ["data/**/*.json", "data/**/*.json.gz", "data/**/*.csv", "README.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["leadopt_bench/tests"]

@@ -17,7 +17,16 @@ problem this project is a reaction to.
 
 ## Try a molecule right now
 
-Check your own idea — or a medicinal chemist's — against the historical record:
+```bash
+git clone https://github.com/SinanGokmen/leadopt-bench.git
+cd leadopt-bench
+pip install -e .
+```
+
+The 32 series, their splits and the scored model responses are committed, so this
+works offline — nothing is downloaded and no API key is needed.
+
+Now check your own idea — or a medicinal chemist's — against the historical record:
 
 ```python
 from leadopt_bench import metrics as M
@@ -161,22 +170,76 @@ suggestion and immediately see it is nonsense.
 ## Install and run
 
 ```bash
-pip install -r requirements.txt
+pip install -e ".[test]"          # editable, so the committed data stays findable
 
 # tests (no network access required)
-python3 -m pytest leadopt_bench/tests/ -q
+python3 -m pytest -q
+```
 
-# a full run with a local model (ollama)
+### Re-running a model over the whole panel
+
+Every response is cached on disk per condition, so re-running costs nothing and
+only missing splits are queried.
+
+```bash
+# a local open-weight model — needs ollama running and the model pulled:
+#   ollama pull gemma3:12b
 python3 -c "from leadopt_bench import llm; \
   llm.run_batch(llm.OllamaProvider(), model='gemma3:12b')"
 
-# scoring
+# a large open-weight model through OpenRouter (free tier covers 32 requests)
+export OPENROUTER_API_KEY=sk-or-...
+python3 -c "from leadopt_bench import llm; \
+  llm.run_batch(llm.get_provider('openrouter'), \
+                model='nvidia/nemotron-3-ultra-550b-a55b:free')"
+
+# a frontier model
+export ANTHROPIC_API_KEY=sk-ant-...
+python3 -c "from leadopt_bench import llm; \
+  llm.run_batch(llm.get_provider('anthropic'), model='claude-opus-5-5')"
+
+# no credentials at all — exercise the pipeline with the mock provider
+python3 -c "from leadopt_bench import llm; llm.run_batch(llm.MockProvider())"
+```
+
+Then score, which writes a per-run table and a per-suggestion table with every
+rationale, ready for expert review:
+
+```bash
 python3 -c "from leadopt_bench import metrics as M; \
-  M.write_scores(M.score_all('gemma3:12b'), 'report')"
+  print(M.write_scores(M.score_all('gemma3:12b'), 'report'))"
+# -> leadopt_bench/data/reports/scores_report.csv
+#    leadopt_bench/data/reports/suggestions_report.csv
 ```
 
 Providers share one interface: `ollama` (local), `openrouter`, `anthropic`, `mock`.
 Switching models is a single parameter.
+
+### Running the control arms
+
+```bash
+python3 -c "
+from leadopt_bench import baselines as B, llm, metrics as M
+for name in ('generic', 'random', 'neighbour', 'oracle'):
+    p = B.get_baseline(name)
+    llm.run_batch(p, strategy='window')
+    M.write_scores(M.score_all(p.DEFAULT_MODEL), f'baseline_{name}')
+"
+```
+
+### Rebuilding the panel from ChEMBL
+
+Only needed to change targets or criteria — the committed cache already covers the
+current panel.
+
+```bash
+python3 -c "from leadopt_bench.survey import survey; \
+  survey(['CHEMBL301', 'CHEMBL204'])"         # how many usable series per target
+python3 -c "from leadopt_bench.panel import build_panel; build_panel()"
+```
+
+Thresholds live in one place, `leadopt_bench/config.py`: `MIN_COMPOUNDS`,
+`MIN_MEAN_TANIMOTO`, `MIN_LOG_RANGE`, `CONFIDENCE_SCORE`.
 
 ## Modules
 
