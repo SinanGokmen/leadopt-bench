@@ -518,17 +518,61 @@ def test_resolve_molecule_raises_when_an_id_has_no_structure(split_on_disk, monk
 def test_evaluate_identifier_accepts_an_id_and_reports_the_structure(split_on_disk):
     sp = split_on_disk
     best = max(sp.targets, key=lambda t: t.pchembl)
-    score, smiles, source = M.evaluate_identifier(best.molecule_chembl_id, sp.series_id)
+    score, smiles, source, series = M.evaluate_identifier(
+        best.molecule_chembl_id, sp.series_id)
     assert score.category == "recovered_target"
     assert smiles == best.smiles
     assert source.startswith("local")
+    assert series["series_id"] == sp.series_id
 
 
 def test_evaluate_identifier_accepts_a_plain_smiles(split_on_disk):
     sp = split_on_disk
-    score, smiles, source = M.evaluate_identifier(sp.targets[0].smiles, sp.series_id)
+    score, smiles, source, _ = M.evaluate_identifier(sp.targets[0].smiles, sp.series_id)
     assert source == "smiles"
     assert score.valid
+
+
+# --- picking the series automatically -----------------------------------------
+
+def test_match_series_ranks_the_molecules_own_campaign_first(split_on_disk):
+    sp = split_on_disk
+    ranked = M.match_series(sp.targets[0].smiles)
+    assert ranked
+    assert ranked[0]["series_id"] == sp.series_id
+    assert ranked[0]["tanimoto_to_lead"] > 0
+
+
+def test_match_series_rejects_an_unparseable_molecule(split_on_disk):
+    with pytest.raises(ValueError, match="cannot parse"):
+        M.match_series("not a molecule")
+
+
+def test_match_series_returns_results_in_descending_similarity(split_on_disk):
+    ranked = M.match_series(split_on_disk.targets[0].smiles, top=3)
+    sims = [r["tanimoto_to_lead"] for r in ranked]
+    assert sims == sorted(sims, reverse=True)
+
+
+def test_series_can_be_omitted_and_is_chosen_and_reported(split_on_disk):
+    """One input is enough: the campaign is inferred and handed back."""
+    sp = split_on_disk
+    best = max(sp.targets, key=lambda t: t.pchembl)
+    score, smiles, source, series = M.evaluate_identifier(best.smiles)
+    assert series["series_id"] == sp.series_id
+    assert score.category == "recovered_target"
+
+
+def test_an_unrelated_molecule_is_refused_rather_than_forced(split_on_disk):
+    """Auto-matching aspirin to a kinase campaign would be a meaningless verdict."""
+    with pytest.raises(LookupError, match="resembles no campaign"):
+        M.evaluate_identifier("CC(=O)Oc1ccccc1C(=O)O")
+
+
+def test_an_unrelated_molecule_can_still_be_forced_with_an_explicit_series(split_on_disk):
+    score, _, _, _ = M.evaluate_identifier("CC(=O)Oc1ccccc1C(=O)O",
+                                           split_on_disk.series_id)
+    assert score.category == "scaffold_violation"
 
 
 def test_available_series_lists_what_can_be_tested_against(split_on_disk):

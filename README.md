@@ -25,6 +25,11 @@ self-contained and can be run on its own, in any order. Two of them take your in
 * **Option A** — paste any SMILES
 * **Option B** — paste a ChEMBL compound id instead
 
+Each takes **one input**. The campaign to compare against is picked automatically —
+whichever of the 32 starting compounds your molecule most resembles — and the cell
+prints which one it chose. If the molecule resembles none of them, it says so rather
+than forcing a meaningless comparison.
+
 Either way you get a colour-coded verdict, the two molecules drawn side by side, and
 the option to browse what an LLM proposed on the same series.
 
@@ -401,7 +406,7 @@ model's own reasoning in a column, which is what an expert review would work fro
 
 ## Tests
 
-202 tests, no network access (fake session and providers). The most important ones:
+208 tests, no network access (fake session and providers). The most important ones:
 
 - **no target compound leaks into the prompt** — all 32 real prompts are audited on
   every run

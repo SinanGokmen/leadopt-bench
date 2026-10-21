@@ -742,18 +742,64 @@ def resolve_molecule(identifier: str) -> tuple[str, str]:
     return smiles, "ChEMBL API"
 
 
-def evaluate_identifier(identifier: str, series_id: str, strategy: str = "window",
-                        modification: str = "", rationale: str = ""
-                        ) -> tuple[SuggestionScore, str, str]:
-    """`evaluate_smiles`, but the molecule may be given as a ChEMBL id.
+def match_series(smiles: str, strategy: str = "window",
+                 top: int = 3) -> list[dict]:
+    """Rank the panel's campaigns by how close their starting compound is.
 
-    Returns (score, smiles, source) so a caller can show which structure was
-    actually scored and where it came from.
+    Lets a caller hand over a molecule and nothing else: a proposal only makes
+    sense against the lead it was derived from, and in practice that lead is
+    whichever one the molecule most resembles.
+    """
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None:
+        raise ValueError(f"cannot parse SMILES: {smiles!r}")
+    fp = _fp(mol)
+
+    scored = []
+    for s in available_series(strategy):
+        lead = Chem.MolFromSmiles(s["lead_smiles"])
+        if lead is None:
+            continue
+        scored.append({**s, "tanimoto_to_lead":
+                       float(DataStructs.TanimotoSimilarity(fp, _fp(lead)))})
+    scored.sort(key=lambda s: -s["tanimoto_to_lead"])
+    return scored[:top]
+
+
+def evaluate_identifier(identifier: str, series_id: str | None = None,
+                        strategy: str = "window", modification: str = "",
+                        rationale: str = "") -> tuple[SuggestionScore, str, str, dict]:
+    """Score a molecule given as a SMILES *or* a ChEMBL id.
+
+    `series_id` may be omitted, in which case the closest campaign in the panel
+    is chosen and returned, so a caller can show which one was used. If the
+    molecule resembles no campaign at all -- nothing clears
+    SIMILARITY_FLOOR_MIN -- that is reported rather than forced into a
+    comparison that would produce a meaningless verdict.
+
+    Returns (score, smiles, source, series).
     """
     smiles, source = resolve_molecule(identifier)
+
+    if series_id is None:
+        candidates = match_series(smiles, strategy=strategy, top=1)
+        if not candidates:
+            raise LookupError("no series available to compare against")
+        if candidates[0]["tanimoto_to_lead"] < SIMILARITY_FLOOR_MIN:
+            raise LookupError(
+                f"this molecule resembles no campaign in the panel "
+                f"(closest is {candidates[0]['series_id']} at Tanimoto "
+                f"{candidates[0]['tanimoto_to_lead']:.3f}). Pass series_id "
+                f"explicitly to compare anyway.")
+        series = candidates[0]
+        series_id = series["series_id"]
+    else:
+        series = next((s for s in available_series(strategy)
+                       if s["series_id"] == series_id), {"series_id": series_id})
+
     score = evaluate_smiles(smiles, series_id, strategy=strategy,
                             modification=modification, rationale=rationale)
-    return score, smiles, source
+    return score, smiles, source, series
 
 
 def available_series(strategy: str = "window") -> list[dict]:
