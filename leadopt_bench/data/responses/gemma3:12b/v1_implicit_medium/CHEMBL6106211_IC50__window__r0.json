@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL6106211_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)no1\nMeasured potency of the starting compound: pIC50 = 5.46\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)n1",
+      "modification": "Removal of the methyl group on the piperidine nitrogen",
+      "rationale": "The piperidine nitrogen in the starting compound is tertiary, bearing three substituents. While this might contribute to lipophilicity, it also introduces steric bulk.  HDAC1's active site is relatively constrained.  Removing the methyl group to generate a secondary amine could reduce this steric hindrance, allowing for better binding to the HDAC1 catalytic pocket.  The secondary amine could also participate in a hydrogen bond with a residue in the active site, further stabilizing the interaction. This is a relatively simple modification with a high probability of success and minimal impact on overall molecular weight.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "high",
+      "index": 0
+    },
+    {
+      "smiles": "CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)c(O)n1",
+      "modification": "Introduction of a hydroxyl group at the 6-position of the quinoline ring",
+      "rationale": "The quinoline ring system is relatively lipophilic. Introducing a hydroxyl group at the 6-position introduces a hydrogen bond donor/acceptor.  HDAC1's active site contains polar residues.  A hydroxyl group could form a hydrogen bond with one of these residues, increasing binding affinity. The 6-position is a reasonable choice as it's not directly involved in the core scaffold's interactions and is likely accessible.  The hydroxyl group also increases aqueous solubility, which can be beneficial for overall drug-like properties.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)n1C(=O)c2ccccc2",
+      "modification": "Replacement of the decylamide with a benzamide",
+      "rationale": "The decylamide chain contributes significantly to the compound's lipophilicity. While lipophilicity is often beneficial, an excessively long alkyl chain can lead to non-specific binding and reduced selectivity. Replacing it with a benzamide introduces a more rigid, planar aromatic system. This could improve binding specificity by better matching the shape of the binding pocket. The benzamide also introduces a carbonyl group, which can participate in hydrogen bonding.  The overall effect is expected to be a shift from non-specific hydrophobic interactions to more targeted binding.",
+      "expected_fold_improvement": 1.4,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)n1OC(=O)C",
+      "modification": "Replacement of the quinoline nitrogen with a methylcarbamate",
+      "rationale": "The quinoline nitrogen is a basic center and may be protonated at physiological pH, potentially leading to electrostatic repulsion within the HDAC1 active site. Replacing it with a methylcarbamate introduces a neutral, polar group. The carbamate can act as a hydrogen bond acceptor. This modification aims to reduce potential electrostatic interactions and introduce a new hydrogen bonding interaction, potentially improving binding affinity and selectivity.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)n1C(C)(C)O",
+      "modification": "Replacement of the quinoline nitrogen with an isopropanol",
+      "rationale": "Similar to the previous modification, the quinoline nitrogen is a basic center and may be protonated at physiological pH, potentially leading to electrostatic repulsion within the HDAC1 active site. Replacing it with an isopropanol introduces a neutral, polar group. The isopropanol can act as a hydrogen bond donor. This modification aims to reduce potential electrostatic interactions and introduce a new hydrogen bonding interaction, potentially improving binding affinity and selectivity.",
+      "expected_fold_improvement": 1.05,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)n1\",\n\"modification\": \"Removal of the methyl group on the piperidine nitrogen\",\n\"rationale\": \"The piperidine nitrogen in the starting compound is tertiary, bearing three substituents. While this might contribute to lipophilicity, it also introduces steric bulk.  HDAC1's active site is relatively constrained.  Removing the methyl group to generate a secondary amine could reduce this steric hindrance, allowing for better binding to the HDAC1 catalytic pocket.  The secondary amine could also participate in a hydrogen bond with a residue in the active site, further stabilizing the interaction. This is a relatively simple modification with a high probability of success and minimal impact on overall molecular weight.\"\n  ,\n\"expected_fold_improvement\": 1.2\n  ,\n\"confidence\": \"high\"\n},\n{\n\"smiles\": \"CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)c(O)n1\",\n\"modification\": \"Introduction of a hydroxyl group at the 6-position of the quinoline ring\",\n\"rationale\": \"The quinoline ring system is relatively lipophilic. Introducing a hydroxyl group at the 6-position introduces a hydrogen bond donor/acceptor.  HDAC1's active site contains polar residues.  A hydroxyl group could form a hydrogen bond with one of these residues, increasing binding affinity. The 6-position is a reasonable choice as it's not directly involved in the core scaffold's interactions and is likely accessible.  The hydroxyl group also increases aqueous solubility, which can be beneficial for overall drug-like properties.\",\n\"expected_fold_improvement\": 1.3\n  ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)n1C(=O)c2ccccc2\",\n\"modification\": \"Replacement of the decylamide with a benzamide\",\n\"rationale\": \"The decylamide chain contributes significantly to the compound's lipophilicity. While lipophilicity is often beneficial, an excessively long alkyl chain can lead to non-specific binding and reduced selectivity. Replacing it with a benzamide introduces a more rigid, planar aromatic system. This could improve binding specificity by better matching the shape of the binding pocket. The benzamide also introduces a carbonyl group, which can participate in hydrogen bonding.  The overall effect is expected to be a shift from non-specific hydrophobic interactions to more targeted binding.\",\n\"expected_fold_improvement\": 1.4\n  ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)n1OC(=O)C\",\n\"modification\": \"Replacement of the quinoline nitrogen with a methylcarbamate\",\n\"rationale\": \"The quinoline nitrogen is a basic center and may be protonated at physiological pH, potentially leading to electrostatic repulsion within the HDAC1 active site. Replacing it with a methylcarbamate introduces a neutral, polar group. The carbamate can act as a hydrogen bond acceptor. This modification aims to reduce potential electrostatic interactions and introduce a new hydrogen bonding interaction, potentially improving binding affinity and selectivity.\",\n\"expected_fold_improvement\": 1.1\n  ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)n1C(C)(C)O\",\n\"modification\": \"Replacement of the quinoline nitrogen with an isopropanol\",\n\"rationale\": \"Similar to the previous modification, the quinoline nitrogen is a basic center and may be protonated at physiological pH, potentially leading to electrostatic repulsion within the HDAC1 active site. Replacing it with an isopropanol introduces a neutral, polar group. The isopropanol can act as a hydrogen bond donor. This modification aims to reduce potential electrostatic interactions and introduce a new hydrogen bonding interaction, potentially improving binding affinity and selectivity.\",\n\"expected_fold_improvement\": 1.05\n  ,\n\"confidence\": \"low\"\n}\n]\n}\n",
+  "usage": {
+    "input_tokens": 234,
+    "output_tokens": 1033,
+    "total_duration_s": 95.8
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 95.95,
+  "run_index": 0,
+  "timestamp": "2026-10-17T00:45:40",
+  "n_suggestions": 5
+}

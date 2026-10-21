@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL5538331_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "baseline_random",
+  "model": "baseline-random",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1F\nMeasured potency of the starting compound: pIC50 = 5.51\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "COc1ncc(-c2cc(OCCCCCCCF)c3ncnc(C)c3c2)cc1F",
+      "modification": "replace substituent with fluoro",
+      "rationale": "Substituting fluoro at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "Cc1ncnc2c(OCCCCCCCCCC(=O)Nc3ccccc3N)cc(-c3cnc(OS(C)(=O)=O)c(F)c3)cc12",
+      "modification": "replace substituent with methylsulfonyl",
+      "rationale": "Substituting methylsulfonyl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "COc1ncc(-c2cc(OCCCCCCCCl)c3ncnc(C)c3c2)cc1F",
+      "modification": "replace substituent with chloro",
+      "rationale": "Substituting chloro at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "Cc1ncnc2c(OCCCCCCCCCC(=O)Nc3ccccc3N)cc(C#N)cc12",
+      "modification": "replace substituent with nitrile",
+      "rationale": "Substituting nitrile at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "Cc1ncnc2c(OCCCCCCCCCC(=O)Nc3ccccc3N)cc(-c3cnc(Br)c(F)c3)cc12",
+      "modification": "replace substituent with bromo",
+      "rationale": "Substituting bromo at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"COc1ncc(-c2cc(OCCCCCCCF)c3ncnc(C)c3c2)cc1F\", \"modification\": \"replace substituent with fluoro\", \"rationale\": \"Substituting fluoro at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"Cc1ncnc2c(OCCCCCCCCCC(=O)Nc3ccccc3N)cc(-c3cnc(OS(C)(=O)=O)c(F)c3)cc12\", \"modification\": \"replace substituent with methylsulfonyl\", \"rationale\": \"Substituting methylsulfonyl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"COc1ncc(-c2cc(OCCCCCCCCl)c3ncnc(C)c3c2)cc1F\", \"modification\": \"replace substituent with chloro\", \"rationale\": \"Substituting chloro at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"Cc1ncnc2c(OCCCCCCCCCC(=O)Nc3ccccc3N)cc(C#N)cc12\", \"modification\": \"replace substituent with nitrile\", \"rationale\": \"Substituting nitrile at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"Cc1ncnc2c(OCCCCCCCCCC(=O)Nc3ccccc3N)cc(-c3cnc(Br)c(F)c3)cc12\", \"modification\": \"replace substituent with bromo\", \"rationale\": \"Substituting bromo at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.01,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:16",
+  "n_suggestions": 5
+}

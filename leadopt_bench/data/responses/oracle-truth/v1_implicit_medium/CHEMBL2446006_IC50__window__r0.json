@@ -1,0 +1,59 @@
+{
+  "series_id": "CHEMBL2446006_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "oracle",
+  "model": "oracle-truth",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\nMeasured potency of the starting compound: pIC50 = 6.23\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3cccc(OCCCCCCC(=O)NO)c3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 53.703179637025215,
+      "confidence": "high",
+      "index": 0
+    },
+    {
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(OCCCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 20.417379446695275,
+      "confidence": "high",
+      "index": 1
+    },
+    {
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3cccc(OCCCCCCCC(=O)NO)c3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 15.135612484362072,
+      "confidence": "high",
+      "index": 2
+    },
+    {
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3cccc(OCCCCCC(=O)NO)c3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 13.182567385564047,
+      "confidence": "high",
+      "index": 3
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3cccc(OCCCCCCC(=O)NO)c3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 53.703179637025215, \"confidence\": \"high\"}, {\"smiles\": \"COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(OCCCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 20.417379446695275, \"confidence\": \"high\"}, {\"smiles\": \"COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3cccc(OCCCCCCCC(=O)NO)c3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 15.135612484362072, \"confidence\": \"high\"}, {\"smiles\": \"COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3cccc(OCCCCCC(=O)NO)c3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 13.182567385564047, \"confidence\": \"high\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.0,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:31",
+  "n_suggestions": 4
+}

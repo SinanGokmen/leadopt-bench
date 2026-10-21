@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL3705904_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "mock",
+  "model": "mock-echo",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1\nMeasured potency of the starting compound: pIC50 = 6.5\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1F",
+      "modification": "add fluorine",
+      "rationale": "Generic placeholder rationale 0: add fluorine should improve binding.",
+      "expected_fold_improvement": 2.0,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1Cl",
+      "modification": "add chlorine",
+      "rationale": "Generic placeholder rationale 1: add chlorine should improve binding.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1C",
+      "modification": "add methyl",
+      "rationale": "Generic placeholder rationale 2: add methyl should improve binding.",
+      "expected_fold_improvement": 4.0,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1O",
+      "modification": "add hydroxyl",
+      "rationale": "Generic placeholder rationale 3: add hydroxyl should improve binding.",
+      "expected_fold_improvement": 5.0,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1N",
+      "modification": "add amine",
+      "rationale": "Generic placeholder rationale 4: add amine should improve binding.",
+      "expected_fold_improvement": 6.0,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1F\", \"modification\": \"add fluorine\", \"rationale\": \"Generic placeholder rationale 0: add fluorine should improve binding.\", \"expected_fold_improvement\": 2.0, \"confidence\": \"medium\"}, {\"smiles\": \"Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1Cl\", \"modification\": \"add chlorine\", \"rationale\": \"Generic placeholder rationale 1: add chlorine should improve binding.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1C\", \"modification\": \"add methyl\", \"rationale\": \"Generic placeholder rationale 2: add methyl should improve binding.\", \"expected_fold_improvement\": 4.0, \"confidence\": \"medium\"}, {\"smiles\": \"Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1O\", \"modification\": \"add hydroxyl\", \"rationale\": \"Generic placeholder rationale 3: add hydroxyl should improve binding.\", \"expected_fold_improvement\": 5.0, \"confidence\": \"medium\"}, {\"smiles\": \"Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1N\", \"modification\": \"add amine\", \"rationale\": \"Generic placeholder rationale 4: add amine should improve binding.\", \"expected_fold_improvement\": 6.0, \"confidence\": \"medium\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.0,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:01",
+  "n_suggestions": 5
+}

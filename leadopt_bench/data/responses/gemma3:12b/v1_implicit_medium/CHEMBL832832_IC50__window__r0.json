@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL832832_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Prothrombin",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Prothrombin (ChEMBL CHEMBL204)\nAssay endpoint: IC50\n\nStarting compound (SMILES): CC(=O)N[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccccc2s1\nMeasured potency of the starting compound: pIC50 = 6.37\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "CC(=O)N[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccccc2s1C",
+      "modification": "Addition of a methyl group to the sulfanyl group",
+      "rationale": "The sulfanyl group (SH) on the phenyl ring is likely involved in hydrogen bonding with the target protein. However, it's also a potential site for metabolic oxidation (sulfoxide formation), which could decrease potency and/or increase clearance. Adding a methyl group will block this oxidation pathway while maintaining the hydrogen bonding potential through the sulfur atom. The methyl group is small and unlikely to introduce significant steric clashes, and its lipophilicity could also improve membrane permeability and overall binding affinity. This is a common strategy to improve metabolic stability and maintain or enhance binding.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "CC(=O)N[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2cc(C)ccc2s1",
+      "modification": "Addition of a methyl group to the phenyl ring",
+      "rationale": "The phenyl ring is a significant hydrophobic region of the molecule. Introducing a methyl group at a position that doesn't clash with known binding pockets (e.g., ortho or meta) can increase hydrophobic interactions with the target protein. This can improve binding affinity. The methyl group is small and relatively easy to introduce synthetically.  We're assuming the phenyl ring is already contributing favorably to binding, and this modification aims to further optimize that interaction.",
+      "expected_fold_improvement": 1.15,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "CC(=O)N[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccccc2s1Cl",
+      "modification": "Replacement of the sulfanyl group with a chlorine atom",
+      "rationale": "The sulfanyl group, while potentially involved in hydrogen bonding, can also be a site of metabolic liability. Replacing it with a chlorine atom maintains a similar size and lipophilicity but eliminates the sulfur oxidation pathway. Chlorine is a good bioisostere for hydrogen, and the increased electronegativity could also subtly alter the electronic properties of the phenyl ring, potentially improving binding. This is a more drastic change than methylation, but could be beneficial if the sulfur is a significant metabolic liability.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 2
+    },
+    {
+      "smiles": "CC(=O)N[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2cc(N)ccc2s1",
+      "modification": "Replacement of the phenyl ring with a pyridyl ring",
+      "rationale": "The phenyl ring may be contributing to undesirable properties like poor solubility or metabolic instability. Replacing it with a pyridyl ring introduces a nitrogen atom, which can participate in hydrogen bonding and potentially improve aqueous solubility. The pyridyl ring is also a more rigid scaffold, which could constrain the molecule into a more favorable binding conformation. The nitrogen atom can also act as a hydrogen bond acceptor, potentially interacting with the target protein in a way the phenyl ring cannot.",
+      "expected_fold_improvement": 1.25,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "CC(=O)N[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2cc(C)ccc2s1N",
+      "modification": "Addition of an amine group to the phenyl ring",
+      "rationale": "Introducing a primary amine group onto the phenyl ring provides a new hydrogen bond donor/acceptor site. This could lead to a stronger interaction with the target protein. The amine group can also be protonated at physiological pH, increasing aqueous solubility. The position of the amine group would need to be carefully considered to avoid steric clashes, but if placed strategically, it could significantly improve binding affinity. This is a more polar modification, so its effect on permeability needs to be considered.",
+      "expected_fold_improvement": 1.18,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"CC(=O)N[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccccc2s1C\",\n\"modification\": \"Addition of a methyl group to the sulfanyl group\",\n\"rationale\": \"The sulfanyl group (SH) on the phenyl ring is likely involved in hydrogen bonding with the target protein. However, it's also a potential site for metabolic oxidation (sulfoxide formation), which could decrease potency and/or increase clearance. Adding a methyl group will block this oxidation pathway while maintaining the hydrogen bonding potential through the sulfur atom. The methyl group is small and unlikely to introduce significant steric clashes, and its lipophilicity could also improve membrane permeability and overall binding affinity. This is a common strategy to improve metabolic stability and maintain or enhance binding.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CC(=O)N[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2cc(C)ccc2s1\",\n\"modification\": \"Addition of a methyl group to the phenyl ring\",\n\"rationale\": \"The phenyl ring is a significant hydrophobic region of the molecule. Introducing a methyl group at a position that doesn't clash with known binding pockets (e.g., ortho or meta) can increase hydrophobic interactions with the target protein. This can improve binding affinity. The methyl group is small and relatively easy to introduce synthetically.  We're assuming the phenyl ring is already contributing favorably to binding, and this modification aims to further optimize that interaction.\"\n    ,\n\"expected_fold_improvement\": 1.15\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CC(=O)N[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccccc2s1Cl\",\n\"modification\": \"Replacement of the sulfanyl group with a chlorine atom\",\n\"rationale\": \"The sulfanyl group, while potentially involved in hydrogen bonding, can also be a site of metabolic liability. Replacing it with a chlorine atom maintains a similar size and lipophilicity but eliminates the sulfur oxidation pathway. Chlorine is a good bioisostere for hydrogen, and the increased electronegativity could also subtly alter the electronic properties of the phenyl ring, potentially improving binding. This is a more drastic change than methylation, but could be beneficial if the sulfur is a significant metabolic liability.\"\n    ,\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"CC(=O)N[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2cc(N)ccc2s1\",\n\"modification\": \"Replacement of the phenyl ring with a pyridyl ring\",\n\"rationale\": \"The phenyl ring may be contributing to undesirable properties like poor solubility or metabolic instability. Replacing it with a pyridyl ring introduces a nitrogen atom, which can participate in hydrogen bonding and potentially improve aqueous solubility. The pyridyl ring is also a more rigid scaffold, which could constrain the molecule into a more favorable binding conformation. The nitrogen atom can also act as a hydrogen bond acceptor, potentially interacting with the target protein in a way the phenyl ring cannot.\"\n    ,\n\"expected_fold_improvement\": 1.25\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CC(=O)N[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2cc(C)ccc2s1N\",\n\"modification\": \"Addition of an amine group to the phenyl ring\",\n\"rationale\": \"Introducing a primary amine group onto the phenyl ring provides a new hydrogen bond donor/acceptor site. This could lead to a stronger interaction with the target protein. The amine group can also be protonated at physiological pH, increasing aqueous solubility. The position of the amine group would need to be carefully considered to avoid steric clashes, but if placed strategically, it could significantly improve binding affinity. This is a more polar modification, so its effect on permeability needs to be considered.\"\n    ,\n\"expected_fold_improvement\": 1.18\n    ,\n\"confidence\": \"low\"\n}\n]\n}",
+  "usage": {
+    "input_tokens": 240,
+    "output_tokens": 1070,
+    "total_duration_s": 128.3
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 128.31,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:40:20",
+  "n_suggestions": 5
+}

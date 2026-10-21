@@ -1,0 +1,33 @@
+series_id,strategy,year_stratum,target_pref_name,model,prompt_variant,effort,run_index,n_requested,n_returned,error,similarity_floor,validity_rate,scaffold_compliance_rate,recovery_exact,recovery_close,any_recovery,generic_rate,ungrounded_rate,fraction_additive,mean_mw_delta,any_suggestion_trims,mean_direction_precision,invalid,unchanged,duplicate,scaffold_violation,recovered_target,recovered_nonimprover,novel_plausible
+CHEMBL1067528_Ki,window,old,Prothrombin,gemma3:12b,implicit,medium,0,5,5,,0.471,0.0,0.0,0.0,0.0,False,0.0,0.0,0.0,,False,,5,0,0,0,0,0,0
+CHEMBL2050420_IC50,window,old,Histone deacetylase 1,gemma3:12b,implicit,medium,0,5,5,,0.355,0.8,1.0,0.0,0.0,False,0.4,0.25,0.5,-16.8,False,0.625,1,0,0,0,0,0,4
+CHEMBL2433086_IC50,window,old,Bromodomain-containing protein 4,gemma3:12b,implicit,medium,0,5,5,,0.25,0.2,1.0,0.0,0.0,False,0.2,0.0,0.0,44.5,False,0.5,4,0,0,0,0,0,1
+CHEMBL2433591_IC50,window,old,Bromodomain-containing protein 4,gemma3:12b,implicit,medium,0,5,5,,0.333,0.8,1.0,0.0,0.0,False,0.2,0.25,0.5,28.1,False,0.375,1,0,0,0,0,0,4
+CHEMBL2439334_IC50,window,old,Epidermal growth factor receptor,gemma3:12b,implicit,medium,0,5,5,,0.382,1.0,1.0,0.0,0.0,False,0.2,0.0,1.0,38.2,False,0.533,0,0,0,0,0,0,5
+CHEMBL2439335_IC50,window,old,Epidermal growth factor receptor,gemma3:12b,implicit,medium,0,5,5,,0.481,1.0,1.0,0.0,0.0,False,0.0,0.4,0.2,2.8,False,,0,4,0,0,0,0,1
+CHEMBL2439336_IC50,window,old,Epidermal growth factor receptor,gemma3:12b,implicit,medium,0,5,5,,0.382,1.0,1.0,0.0,0.0,False,0.4,0.2,1.0,36.3,False,0.533,0,0,0,0,0,0,5
+CHEMBL2446006_IC50,window,old,Histone deacetylase 1,gemma3:12b,implicit,medium,0,5,5,,0.775,1.0,1.0,0.0,0.0,False,0.0,0.4,0.0,0.0,False,,0,5,0,0,0,0,0
+CHEMBL3095060_IC50,window,old,Epidermal growth factor receptor,gemma3:12b,implicit,medium,0,5,5,,0.264,1.0,1.0,0.0,0.0,False,0.4,0.2,0.6,8.6,True,0.933,0,0,0,0,0,1,4
+CHEMBL3226597_IC50,window,old,Bromodomain-containing protein 4,gemma3:12b,implicit,medium,0,5,5,,0.485,0.0,0.0,0.0,0.0,False,0.0,0.0,0.0,,False,,5,0,0,0,0,0,0
+CHEMBL3238948_IC50,window,old,Epidermal growth factor receptor,gemma3:12b,implicit,medium,0,5,5,,0.625,0.4,1.0,0.0,0.0,False,0.2,0.0,0.5,57.3,False,0.0,3,0,0,0,0,0,2
+CHEMBL3379478_IC50,window,old,Histone deacetylase 1,gemma3:12b,implicit,medium,0,5,5,,0.522,1.0,1.0,0.0,0.0,False,0.4,0.2,0.8,20.9,False,0.2,0,0,0,0,0,0,5
+CHEMBL3414207_IC50,window,old,Bromodomain-containing protein 4,gemma3:12b,implicit,medium,0,5,5,,0.25,1.0,1.0,0.0,0.0,False,0.2,0.4,0.6,35.7,False,0.4,0,0,0,0,0,0,5
+CHEMBL3424914_Ki,window,old,Prothrombin,gemma3:12b,implicit,medium,0,5,5,,0.485,0.0,0.0,0.0,0.0,False,0.0,0.0,0.0,,False,,5,0,0,0,0,0,0
+CHEMBL3587158_IC50,window,old,Bromodomain-containing protein 4,gemma3:12b,implicit,medium,0,5,5,,0.645,1.0,1.0,0.0,0.0,False,0.0,0.4,1.0,47.3,False,0.633,0,0,0,0,0,0,5
+CHEMBL3705904_IC50,window,old,Histone deacetylase 1,gemma3:12b,implicit,medium,0,5,5,,0.358,1.0,0.8,0.0,0.0,False,0.2,1.0,1.0,55.6,False,0.2,0,0,1,1,0,0,3
+CHEMBL5517452_IC50,window,new,Bromodomain-containing protein 4,gemma3:12b,implicit,medium,0,5,5,,0.353,0.2,1.0,0.0,0.0,False,0.0,0.0,0.0,0.0,False,,4,1,0,0,0,0,0
+CHEMBL5529441_IC50,window,new,Bromodomain-containing protein 4,gemma3:12b,implicit,medium,0,5,5,,0.716,0.8,1.0,0.0,0.0,False,0.0,0.5,0.0,0.4,True,0.125,1,0,0,0,0,0,4
+CHEMBL5538331_IC50,window,new,Histone deacetylase 1,gemma3:12b,implicit,medium,0,5,5,,0.538,0.0,0.0,0.0,0.0,False,0.0,0.0,0.0,,False,,5,0,0,0,0,0,0
+CHEMBL5539282_IC50,window,new,Bromodomain-containing protein 4,gemma3:12b,implicit,medium,0,5,5,,0.25,0.8,1.0,0.0,0.0,False,0.4,0.0,0.75,7.2,False,0.5,1,0,0,0,0,0,4
+CHEMBL5539704_IC50,window,new,Bromodomain-containing protein 4,gemma3:12b,implicit,medium,0,5,5,,0.437,1.0,1.0,0.0,0.0,False,0.2,1.0,0.2,-3.6,True,1.0,0,0,0,0,0,0,5
+CHEMBL6077283_Ki,window,new,Epidermal growth factor receptor,gemma3:12b,implicit,medium,0,5,5,,0.383,0.8,1.0,0.0,0.0,False,0.2,0.25,1.0,32.3,False,0.75,1,0,0,0,0,0,4
+CHEMBL6086969_IC50,window,new,Bromodomain-containing protein 4,gemma3:12b,implicit,medium,0,5,5,,0.626,0.0,0.0,0.0,0.0,False,0.0,0.0,0.0,,False,,5,0,0,0,0,0,0
+CHEMBL6096813_IC50,window,new,Histone deacetylase 1,gemma3:12b,implicit,medium,0,5,5,,0.494,0.6,1.0,0.0,0.0,False,0.2,1.0,0.667,13.7,False,0.167,2,0,0,0,0,0,3
+CHEMBL6106211_IC50,window,new,Histone deacetylase 1,gemma3:12b,implicit,medium,0,5,5,,0.663,0.2,1.0,0.0,0.0,False,0.0,1.0,0.0,-16.0,True,0.0,4,0,0,0,0,0,1
+CHEMBL6131558_IC50,window,new,Histone deacetylase 1,gemma3:12b,implicit,medium,0,5,5,,0.451,1.0,0.6,0.0,0.0,False,0.0,0.0,0.0,-118.7,True,0.257,0,0,0,2,0,0,3
+CHEMBL6187554_IC50,window,new,Prothrombin,gemma3:12b,implicit,medium,0,5,5,,0.419,1.0,1.0,0.0,0.0,False,0.4,0.0,0.6,9.4,False,0.1,0,0,0,0,0,0,5
+CHEMBL6187556_IC50,window,new,Prothrombin,gemma3:12b,implicit,medium,0,5,5,,0.429,1.0,1.0,0.0,0.0,False,0.2,0.2,0.8,34.5,False,0.667,0,0,0,0,0,0,5
+CHEMBL832832_IC50,window,old,Prothrombin,gemma3:12b,implicit,medium,0,5,5,,0.562,0.4,1.0,0.0,0.0,False,0.2,0.5,1.0,14.5,False,1.0,3,0,0,0,0,0,2
+CHEMBL838818_Ki,window,old,Prothrombin,gemma3:12b,implicit,medium,0,5,5,,0.42,1.0,1.0,0.0,0.0,False,0.4,1.0,1.0,27.3,False,0.8,0,0,0,0,0,0,5
+CHEMBL865059_IC50,window,old,Prothrombin,gemma3:12b,implicit,medium,0,5,5,,0.654,1.0,1.0,0.0,0.0,False,0.0,0.8,0.0,0.0,False,,0,5,0,0,0,0,0
+CHEMBL907072_IC50,window,old,Histone deacetylase 1,gemma3:12b,implicit,medium,0,5,5,,0.25,0.8,1.0,0.0,0.0,False,0.2,0.75,1.0,35.8,False,1.0,1,0,0,0,0,0,4

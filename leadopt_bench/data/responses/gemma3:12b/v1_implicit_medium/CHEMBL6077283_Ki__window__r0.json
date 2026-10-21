@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL6077283_Ki",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Epidermal growth factor receptor",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Epidermal growth factor receptor (ChEMBL CHEMBL203)\nAssay endpoint: Ki\n\nStarting compound (SMILES): COC1CCN(c2nccc(Nc3cc4n(C5CC5)c(C)cn4n3)n2)CC1\nMeasured potency of the starting compound: pKi = 6.02\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "COC1CCN(c2nccc(Nc3cc4n(C5CC5)c(C)cn4n3)n2)CC1C(=O)O",
+      "modification": "Carboxylic Acid Introduction",
+      "rationale": "The starting compound possesses a terminal methyl group. Introducing a carboxylic acid at this position offers several potential advantages. Firstly, the carboxylic acid can form a salt bridge with positively charged residues in the EGFR kinase domain, increasing binding affinity. Secondly, the carboxylic acid can participate in hydrogen bonding interactions, further stabilizing the complex.  The acidity of the carboxylic acid also allows for potential optimization of solubility and bioavailability.  The introduction is synthetically feasible via oxidation of the methyl group, potentially using potassium permanganate or a similar reagent. The resulting compound is also likely to be relatively stable.",
+      "expected_fold_improvement": 1.5,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "COC1CCN(c2nccc(Nc3cc4n(C5CC5)c(C)cn4n3)n2)CC(N)CC1",
+      "modification": "Dimethylamine Substitution",
+      "rationale": "The secondary amine on the piperidine ring is currently a simple methyl group. Replacing this with a dimethylamine introduces a basic nitrogen. This nitrogen could form a salt bridge with negatively charged residues in the ATP binding pocket of EGFR, potentially increasing affinity. The dimethyl substitution also increases the steric bulk, which could improve selectivity by disfavoring binding to other kinases.  The synthesis is straightforward, involving nucleophilic substitution of the methyl group with dimethylamine, potentially requiring forcing conditions but generally a well-established reaction.  The dimethylamine is also likely to improve aqueous solubility.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "COC1CCN(c2nccc(Nc3cc4n(C5CC5)c(C)cn4n3)n2)CC(C)O",
+      "modification": "Hydroxyl Introduction",
+      "rationale": "Similar to the carboxylic acid modification, introducing a hydroxyl group at the terminal position of the piperidine ring provides opportunities for hydrogen bonding.  The hydroxyl group can act as both a hydrogen bond donor and acceptor, increasing the potential for favorable interactions with the target protein.  The hydroxyl group also introduces a degree of polarity, which could improve aqueous solubility.  The synthesis could be achieved via bromination of the methyl group followed by nucleophilic substitution with hydroxide, or via a more complex oxidation/reduction sequence. The resulting alcohol is expected to be relatively stable.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "low",
+      "index": 2
+    },
+    {
+      "smiles": "COC1CCN(c2nccc(Nc3cc4n(C5CC5)c(C)cn4n3)n2)C(C)(C)C1",
+      "modification": "Isopropyl Substitution",
+      "rationale": "The piperidine ring currently has a simple ethyl substituent. Increasing the steric bulk of this substituent to an isopropyl group could improve selectivity.  The larger isopropyl group might favor interactions with a specific hydrophobic pocket in the EGFR kinase domain, while disfavoring binding to other kinases with smaller pockets.  The synthesis would involve nucleophilic substitution of the ethyl group with an isopropyl halide, which may require more forcing conditions than the dimethylamine substitution due to steric hindrance.  However, this is a synthetically feasible transformation.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "COC1CCN(c2nccc(Nc3cc4n(C5CC5)c(C)cn4n3)n2)CC1C",
+      "modification": "Methyl Group Removal",
+      "rationale": "The piperidine ring has two methyl groups. Removing one of these methyl groups could reduce steric clashes within the ATP binding pocket, potentially improving binding affinity.  It could also open up space for other substituents to interact with the target protein.  The synthesis would involve a de-methylation reaction, which can be challenging but is achievable through various methods, such as radical dealkylation. The resulting compound is expected to be relatively stable.",
+      "expected_fold_improvement": 1.05,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"COC1CCN(c2nccc(Nc3cc4n(C5CC5)c(C)cn4n3)n2)CC1C(=O)O\",\n\"modification\": \"Carboxylic Acid Introduction\",\n\"rationale\": \"The starting compound possesses a terminal methyl group. Introducing a carboxylic acid at this position offers several potential advantages. Firstly, the carboxylic acid can form a salt bridge with positively charged residues in the EGFR kinase domain, increasing binding affinity. Secondly, the carboxylic acid can participate in hydrogen bonding interactions, further stabilizing the complex.  The acidity of the carboxylic acid also allows for potential optimization of solubility and bioavailability.  The introduction is synthetically feasible via oxidation of the methyl group, potentially using potassium permanganate or a similar reagent. The resulting compound is also likely to be relatively stable.\"\n  ,\n\"expected_fold_improvement\": 1.5\n  ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"COC1CCN(c2nccc(Nc3cc4n(C5CC5)c(C)cn4n3)n2)CC(N)CC1\",\n\"modification\": \"Dimethylamine Substitution\",\n\"rationale\": \"The secondary amine on the piperidine ring is currently a simple methyl group. Replacing this with a dimethylamine introduces a basic nitrogen. This nitrogen could form a salt bridge with negatively charged residues in the ATP binding pocket of EGFR, potentially increasing affinity. The dimethyl substitution also increases the steric bulk, which could improve selectivity by disfavoring binding to other kinases.  The synthesis is straightforward, involving nucleophilic substitution of the methyl group with dimethylamine, potentially requiring forcing conditions but generally a well-established reaction.  The dimethylamine is also likely to improve aqueous solubility.\",\n\"expected_fold_improvement\": 1.3,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"COC1CCN(c2nccc(Nc3cc4n(C5CC5)c(C)cn4n3)n2)CC(C)O\",\n\"modification\": \"Hydroxyl Introduction\",\n\"rationale\": \"Similar to the carboxylic acid modification, introducing a hydroxyl group at the terminal position of the piperidine ring provides opportunities for hydrogen bonding.  The hydroxyl group can act as both a hydrogen bond donor and acceptor, increasing the potential for favorable interactions with the target protein.  The hydroxyl group also introduces a degree of polarity, which could improve aqueous solubility.  The synthesis could be achieved via bromination of the methyl group followed by nucleophilic substitution with hydroxide, or via a more complex oxidation/reduction sequence. The resulting alcohol is expected to be relatively stable.\",\n\"expected_fold_improvement\": 1.2,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"COC1CCN(c2nccc(Nc3cc4n(C5CC5)c(C)cn4n3)n2)C(C)(C)C1\",\n\"modification\": \"Isopropyl Substitution\",\n\"rationale\": \"The piperidine ring currently has a simple ethyl substituent. Increasing the steric bulk of this substituent to an isopropyl group could improve selectivity.  The larger isopropyl group might favor interactions with a specific hydrophobic pocket in the EGFR kinase domain, while disfavoring binding to other kinases with smaller pockets.  The synthesis would involve nucleophilic substitution of the ethyl group with an isopropyl halide, which may require more forcing conditions than the dimethylamine substitution due to steric hindrance.  However, this is a synthetically feasible transformation.\",\n\"expected_fold_improvement\": 1.1,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"COC1CCN(c2nccc(Nc3cc4n(C5CC5)c(C)cn4n3)n2)CC1C\",\n\"modification\": \"Methyl Group Removal\",\n\"rationale\": \"The piperidine ring has two methyl groups. Removing one of these methyl groups could reduce steric clashes within the ATP binding pocket, potentially improving binding affinity.  It could also open up space for other substituents to interact with the target protein.  The synthesis would involve a de-methylation reaction, which can be challenging but is achievable through various methods, such as radical dealkylation. The resulting compound is expected to be relatively stable.\",\n\"expected_fold_improvement\": 1.05,\n\"confidence\": \"low\"\n}\n]\n}",
+  "usage": {
+    "input_tokens": 219,
+    "output_tokens": 960,
+    "total_duration_s": 116.8
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 116.84,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:28:04",
+  "n_suggestions": 5
+}

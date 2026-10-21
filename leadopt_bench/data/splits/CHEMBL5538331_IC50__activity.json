@@ -1,0 +1,134 @@
+{
+  "series_id": "CHEMBL5538331_IC50",
+  "strategy": "activity",
+  "year_stratum": "new",
+  "target_chembl_id": "CHEMBL325",
+  "target_pref_name": "Histone deacetylase 1",
+  "standard_type": "IC50",
+  "lead_molecule": "CHEMBL5583643",
+  "lead_pchembl": 5.51,
+  "lead_year": 2024,
+  "lead_policy": "representative",
+  "early_pool_size": 9,
+  "n_targets": 9,
+  "max_gain": 2.04,
+  "median_gain": 1.73,
+  "median_lead_target_tanimoto": 0.571,
+  "target_years": [
+    2024
+  ],
+  "usable": true,
+  "lead": {
+    "molecule_chembl_id": "CHEMBL5583643",
+    "smiles": "COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1F",
+    "pchembl": 5.51,
+    "standard_type": "IC50",
+    "assay_chembl_id": "CHEMBL5538331",
+    "document_chembl_id": "CHEMBL5537133",
+    "document_year": 2024,
+    "n_measurements": 1
+  },
+  "targets": [
+    {
+      "molecule_chembl_id": "CHEMBL5592140",
+      "smiles": "COc1ncc(-c2cc(OCCCc3ccc(C(=O)Nc4ccccc4N)cc3)c3ncnc(C)c3c2)cc1NS(=O)(=O)c1ccc(F)cc1F",
+      "pchembl": 7.55,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5538331",
+      "document_chembl_id": "CHEMBL5537133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL5590999",
+      "smiles": "COc1ncc(-c2cc(OCCc3ccc(C(=O)Nc4ccccc4N)cc3)c3ncnc(C)c3c2)cc1NS(=O)(=O)c1ccc(F)cc1F",
+      "pchembl": 7.47,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5538331",
+      "document_chembl_id": "CHEMBL5537133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL5574185",
+      "smiles": "COc1ccc(-c2cc(OCCCc3ccc(C(=O)Nc4ccccc4N)cc3)c3ncnc(C)c3c2)cn1",
+      "pchembl": 7.43,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5538331",
+      "document_chembl_id": "CHEMBL5537133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL5570737",
+      "smiles": "COc1ncc(-c2cc(OCCOc3ccc(C(=O)Nc4ccccc4N)cc3)c3ncnc(C)c3c2)cc1NS(=O)(=O)c1ccc(F)cc1F",
+      "pchembl": 7.25,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5538331",
+      "document_chembl_id": "CHEMBL5537133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL5589731",
+      "smiles": "COc1ncc(-c2cc(OCCCc3ccc(C(=O)Nc4ccccc4N)cc3)c3ncnc(C)c3c2)cc1F",
+      "pchembl": 7.24,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5538331",
+      "document_chembl_id": "CHEMBL5537133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL5571753",
+      "smiles": "COc1ncc(-c2cc(OCc3ccc(C(=O)Nc4ccccc4N)cc3)c3ncnc(C)c3c2)cc1NS(=O)(=O)c1ccc(F)cc1F",
+      "pchembl": 7.07,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5538331",
+      "document_chembl_id": "CHEMBL5537133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL5571617",
+      "smiles": "COc1ccc(-c2cc(OCCc3ccc(C(=O)Nc4ccccc4N)cc3)c3ncnc(C)c3c2)cn1",
+      "pchembl": 7.05,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5538331",
+      "document_chembl_id": "CHEMBL5537133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL5573240",
+      "smiles": "COc1ncc(-c2cc(OCCCOc3ccc(C(=O)Nc4ccccc4N)cc3)c3ncnc(C)c3c2)cc1NS(=O)(=O)c1ccc(F)cc1F",
+      "pchembl": 7.02,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5538331",
+      "document_chembl_id": "CHEMBL5537133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL5571499",
+      "smiles": "COc1ccc(-c2cc(OCc3ccc(C(=O)Nc4ccccc4N)cc3)c3ncnc(C)c3c2)cn1",
+      "pchembl": 6.91,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5538331",
+      "document_chembl_id": "CHEMBL5537133",
+      "document_year": 2024,
+      "n_measurements": 1
+    }
+  ],
+  "lead_target_tanimoto": [
+    0.556,
+    0.578,
+    0.575,
+    0.538,
+    0.733,
+    0.567,
+    0.58,
+    0.567,
+    0.571
+  ]
+}

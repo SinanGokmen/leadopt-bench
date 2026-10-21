@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL838818_Ki",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Prothrombin",
+  "provider": "baseline_random",
+  "model": "baseline-random",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Prothrombin (ChEMBL CHEMBL204)\nAssay endpoint: Ki\n\nStarting compound (SMILES): CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2ccccc2s1\nMeasured potency of the starting compound: pKi = 6.68\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "NCCCC[C@@H](NC(=O)S(N)(=O)=O)C(=O)c1nc2ccccc2s1",
+      "modification": "replace substituent with sulfonamide",
+      "rationale": "Substituting sulfonamide at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "CC[C@@H](NC(=O)[C@@H]1CCCN1C(=O)[C@@H](Cc1ccccc1)NC)C(=O)c1nc2ccccc2s1",
+      "modification": "replace substituent with methyl",
+      "rationale": "Substituting methyl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "CN[C@H](CC1CC1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2ccccc2s1",
+      "modification": "replace substituent with cyclopropyl",
+      "rationale": "Substituting cyclopropyl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(F)(F)F",
+      "modification": "replace substituent with trifluoromethyl",
+      "rationale": "Substituting trifluoromethyl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "NCCCC[C@@H](NC(=O)[C@@H]1CCCN1C(=O)Cl)C(=O)c1nc2ccccc2s1",
+      "modification": "replace substituent with chloro",
+      "rationale": "Substituting chloro at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"NCCCC[C@@H](NC(=O)S(N)(=O)=O)C(=O)c1nc2ccccc2s1\", \"modification\": \"replace substituent with sulfonamide\", \"rationale\": \"Substituting sulfonamide at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"CC[C@@H](NC(=O)[C@@H]1CCCN1C(=O)[C@@H](Cc1ccccc1)NC)C(=O)c1nc2ccccc2s1\", \"modification\": \"replace substituent with methyl\", \"rationale\": \"Substituting methyl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"CN[C@H](CC1CC1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2ccccc2s1\", \"modification\": \"replace substituent with cyclopropyl\", \"rationale\": \"Substituting cyclopropyl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(F)(F)F\", \"modification\": \"replace substituent with trifluoromethyl\", \"rationale\": \"Substituting trifluoromethyl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"NCCCC[C@@H](NC(=O)[C@@H]1CCCN1C(=O)Cl)C(=O)c1nc2ccccc2s1\", \"modification\": \"replace substituent with chloro\", \"rationale\": \"Substituting chloro at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.01,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:16",
+  "n_suggestions": 5
+}

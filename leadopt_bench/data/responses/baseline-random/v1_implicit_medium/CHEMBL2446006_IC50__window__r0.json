@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL2446006_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "baseline_random",
+  "model": "baseline-random",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\nMeasured potency of the starting compound: pIC50 = 6.23\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](NN3CCNCC3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "modification": "replace substituent with piperazine",
+      "rationale": "Substituting piperazine at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "CCc1ccc(N[C@@H]2c3cc4c(cc3[C@@H](c3cc(OC)c(O)c(OC)c3)[C@H]3C(=O)OC[C@@H]32)OCO4)cc1",
+      "modification": "replace substituent with ethyl",
+      "rationale": "Substituting ethyl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "CN(C)[C@@H]1c2cc3c(cc2[C@@H](Nc2ccc(NC(=O)CCCCCC(=O)NO)cc2)[C@H]2COC(=O)[C@@H]21)OCO3",
+      "modification": "replace substituent with dimethylamino",
+      "rationale": "Substituting dimethylamino at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCN5CCNCC5)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "modification": "replace substituent with piperazine",
+      "rationale": "Substituting piperazine at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(C(=O)O)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "modification": "replace substituent with carboxylic_acid",
+      "rationale": "Substituting carboxylic_acid at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"COc1cc([C@@H]2c3cc4c(cc3[C@@H](NN3CCNCC3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\", \"modification\": \"replace substituent with piperazine\", \"rationale\": \"Substituting piperazine at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"CCc1ccc(N[C@@H]2c3cc4c(cc3[C@@H](c3cc(OC)c(O)c(OC)c3)[C@H]3C(=O)OC[C@@H]32)OCO4)cc1\", \"modification\": \"replace substituent with ethyl\", \"rationale\": \"Substituting ethyl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"CN(C)[C@@H]1c2cc3c(cc2[C@@H](Nc2ccc(NC(=O)CCCCCC(=O)NO)cc2)[C@H]2COC(=O)[C@@H]21)OCO3\", \"modification\": \"replace substituent with dimethylamino\", \"rationale\": \"Substituting dimethylamino at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCN5CCNCC5)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\", \"modification\": \"replace substituent with piperazine\", \"rationale\": \"Substituting piperazine at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(C(=O)O)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\", \"modification\": \"replace substituent with carboxylic_acid\", \"rationale\": \"Substituting carboxylic_acid at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.01,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:16",
+  "n_suggestions": 5
+}

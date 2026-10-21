@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL6187554_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Prothrombin",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Prothrombin (ChEMBL CHEMBL204)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Cc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(Cl)s1)C(=O)OC1CCN(C)CC1\nMeasured potency of the starting compound: pIC50 = 6.52\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "Cc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(Br)s1)C(=O)OC1CCN(C)CC1",
+      "modification": "Halogen Exchange: Chlorine to Bromine",
+      "rationale": "The chlorine atom on the phenyl ring is likely contributing to steric hindrance and potentially unfavorable hydrophobic interactions. Bromine is larger than chlorine, but its increased polarizability can lead to stronger halogen bonding interactions with the target protein. While the increased size could introduce some steric clashes, the potential for enhanced halogen bonding, particularly if a suitable pocket exists in the binding site, could outweigh this. This is a relatively conservative modification, as both halogens are common in drug molecules and the synthetic route is straightforward (halogen exchange).",
+      "expected_fold_improvement": 1.1,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "Cc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(N)s1)C(=O)OC1CCN(C)CC1",
+      "modification": "Phenyl Ring Substitution: Chlorine to Amino Group",
+      "rationale": "Introducing an amino group on the phenyl ring provides a hydrogen bond donor/acceptor. Prothrombin's active site likely contains acidic residues (e.g., aspartate, glutamate) that could form a favorable electrostatic interaction with the amino group. This could increase binding affinity. The amino group could also be protonated at physiological pH, creating a positive charge that enhances electrostatic interactions.  The synthetic route would involve nitration followed by reduction, which is well-established.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "Cc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(C#N)s1)C(=O)OC1CCN(C)CC1",
+      "modification": "Phenyl Ring Substitution: Chlorine to Cyanonitrile",
+      "rationale": "The cyano group is a strong dipole and can participate in both hydrogen bonding (as an acceptor) and dipole-dipole interactions. It's also relatively small, minimizing steric clashes. The increased polarity could improve binding affinity if a suitable pocket exists.  The synthetic route would involve a Sandmeyer reaction, which is a standard transformation.",
+      "expected_fold_improvement": 1.15,
+      "confidence": "low",
+      "index": 2
+    },
+    {
+      "smiles": "Cc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(OC(C)(C)O)s1)C(=O)OC1CCN(C)CC1",
+      "modification": "Phenyl Ring Substitution: Chlorine to tert-Butyl Ether",
+      "rationale": "Replacing the chlorine with a tert-butyl ether introduces a bulky, lipophilic group. This could increase hydrophobic interactions with the target protein, particularly if the binding site is relatively apolar. The tert-butyl group is also conformationally restricted, which could improve binding selectivity. The ether oxygen can also act as a hydrogen bond acceptor. Synthesis would involve a Williamson ether synthesis.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "Cc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(C=C)s1)C(=O)OC1CCN(C)CC1",
+      "modification": "Phenyl Ring Substitution: Chlorine to Vinyl Group",
+      "rationale": "Introducing a vinyl group provides a rigid, unsaturated moiety that can participate in \u03c0-\u03c0 stacking interactions with aromatic residues in the binding site. The double bond also provides a handle for potential further functionalization. The vinyl group is relatively small, minimizing steric clashes. Synthesis could be achieved via a Suzuki coupling reaction.",
+      "expected_fold_improvement": 1.05,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"Cc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(Br)s1)C(=O)OC1CCN(C)CC1\",\n\"modification\": \"Halogen Exchange: Chlorine to Bromine\",\n\"rationale\": \"The chlorine atom on the phenyl ring is likely contributing to steric hindrance and potentially unfavorable hydrophobic interactions. Bromine is larger than chlorine, but its increased polarizability can lead to stronger halogen bonding interactions with the target protein. While the increased size could introduce some steric clashes, the potential for enhanced halogen bonding, particularly if a suitable pocket exists in the binding site, could outweigh this. This is a relatively conservative modification, as both halogens are common in drug molecules and the synthetic route is straightforward (halogen exchange).\"\n    ,\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(N)s1)C(=O)OC1CCN(C)CC1\",\n\"modification\": \"Phenyl Ring Substitution: Chlorine to Amino Group\",\n\"rationale\": \"Introducing an amino group on the phenyl ring provides a hydrogen bond donor/acceptor. Prothrombin's active site likely contains acidic residues (e.g., aspartate, glutamate) that could form a favorable electrostatic interaction with the amino group. This could increase binding affinity. The amino group could also be protonated at physiological pH, creating a positive charge that enhances electrostatic interactions.  The synthetic route would involve nitration followed by reduction, which is well-established.\",\n    \"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(C#N)s1)C(=O)OC1CCN(C)CC1\",\n\"modification\": \"Phenyl Ring Substitution: Chlorine to Cyanonitrile\",\n\"rationale\": \"The cyano group is a strong dipole and can participate in both hydrogen bonding (as an acceptor) and dipole-dipole interactions. It's also relatively small, minimizing steric clashes. The increased polarity could improve binding affinity if a suitable pocket exists.  The synthetic route would involve a Sandmeyer reaction, which is a standard transformation.\",\n    \"expected_fold_improvement\": 1.15\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Cc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(OC(C)(C)O)s1)C(=O)OC1CCN(C)CC1\",\n\"modification\": \"Phenyl Ring Substitution: Chlorine to tert-Butyl Ether\",\n\"rationale\": \"Replacing the chlorine with a tert-butyl ether introduces a bulky, lipophilic group. This could increase hydrophobic interactions with the target protein, particularly if the binding site is relatively apolar. The tert-butyl group is also conformationally restricted, which could improve binding selectivity. The ether oxygen can also act as a hydrogen bond acceptor. Synthesis would involve a Williamson ether synthesis.\",\n    \"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Cc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(C=C)s1)C(=O)OC1CCN(C)CC1\",\n\"modification\": \"Phenyl Ring Substitution: Chlorine to Vinyl Group\",\n\"rationale\": \"Introducing a vinyl group provides a rigid, unsaturated moiety that can participate in \u03c0-\u03c0 stacking interactions with aromatic residues in the binding site. The double bond also provides a handle for potential further functionalization. The vinyl group is relatively small, minimizing steric clashes. Synthesis could be achieved via a Suzuki coupling reaction.\",\n    \"expected_fold_improvement\": 1.05\n    ,\n\"confidence\": \"low\"\n}\n]\n}",
+  "usage": {
+    "input_tokens": 236,
+    "output_tokens": 947,
+    "total_duration_s": 113.8
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 113.8,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:36:35",
+  "n_suggestions": 5
+}

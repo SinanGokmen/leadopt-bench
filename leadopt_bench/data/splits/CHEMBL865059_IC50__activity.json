@@ -1,0 +1,112 @@
+{
+  "series_id": "CHEMBL865059_IC50",
+  "strategy": "activity",
+  "year_stratum": "old",
+  "target_chembl_id": "CHEMBL204",
+  "target_pref_name": "Prothrombin",
+  "standard_type": "IC50",
+  "lead_molecule": "CHEMBL377667",
+  "lead_pchembl": 6.25,
+  "lead_year": 2006,
+  "lead_policy": "representative",
+  "early_pool_size": 7,
+  "n_targets": 7,
+  "max_gain": 2.75,
+  "median_gain": 2.53,
+  "median_lead_target_tanimoto": 0.684,
+  "target_years": [
+    2006
+  ],
+  "usable": true,
+  "lead": {
+    "molecule_chembl_id": "CHEMBL377667",
+    "smiles": "N=C(N)c1nnc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)s1",
+    "pchembl": 6.25,
+    "standard_type": "IC50",
+    "assay_chembl_id": "CHEMBL865059",
+    "document_chembl_id": "CHEMBL1147692",
+    "document_year": 2006,
+    "n_measurements": 1
+  },
+  "targets": [
+    {
+      "molecule_chembl_id": "CHEMBL377681",
+      "smiles": "N=C(N)c1ccc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)cn1",
+      "pchembl": 9.0,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL865059",
+      "document_chembl_id": "CHEMBL1147692",
+      "document_year": 2006,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL206205",
+      "smiles": "N=C(N)c1coc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)c1",
+      "pchembl": 8.89,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL865059",
+      "document_chembl_id": "CHEMBL1147692",
+      "document_year": 2006,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL381709",
+      "smiles": "N=C(N)c1csc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)n1",
+      "pchembl": 8.86,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL865059",
+      "document_chembl_id": "CHEMBL1147692",
+      "document_year": 2006,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL206418",
+      "smiles": "N=C(N)c1ccc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)cc1",
+      "pchembl": 8.78,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL865059",
+      "document_chembl_id": "CHEMBL1147692",
+      "document_year": 2006,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL207981",
+      "smiles": "Cc1cc(CNC(=O)[C@@H]2C=CCN2C(=O)C(CC2CCCCC2)NCC(=O)O)sc1C(=N)N",
+      "pchembl": 8.75,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL865059",
+      "document_chembl_id": "CHEMBL1147692",
+      "document_year": 2006,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL382843",
+      "smiles": "N=C(N)c1csc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)c1Cl",
+      "pchembl": 8.67,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL865059",
+      "document_chembl_id": "CHEMBL1147692",
+      "document_year": 2006,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL207770",
+      "smiles": "N=C(N)c1csc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)c1",
+      "pchembl": 8.57,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL865059",
+      "document_chembl_id": "CHEMBL1147692",
+      "document_year": 2006,
+      "n_measurements": 1
+    }
+  ],
+  "lead_target_tanimoto": [
+    0.684,
+    0.667,
+    0.688,
+    0.699,
+    0.743,
+    0.662,
+    0.675
+  ]
+}

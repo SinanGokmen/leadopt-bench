@@ -1,0 +1,112 @@
+{
+  "series_id": "CHEMBL3095060_IC50",
+  "strategy": "activity",
+  "year_stratum": "old",
+  "target_chembl_id": "CHEMBL203",
+  "target_pref_name": "Epidermal growth factor receptor",
+  "standard_type": "IC50",
+  "lead_molecule": "CHEMBL3092297",
+  "lead_pchembl": 6.16,
+  "lead_year": 2013,
+  "lead_policy": "representative",
+  "early_pool_size": 9,
+  "n_targets": 7,
+  "max_gain": 3.56,
+  "median_gain": 1.41,
+  "median_lead_target_tanimoto": 0.702,
+  "target_years": [
+    2013
+  ],
+  "usable": true,
+  "lead": {
+    "molecule_chembl_id": "CHEMBL3092297",
+    "smiles": "O=C(Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1O[C@H]1CCOC1)N1CCC(F)CC1",
+    "pchembl": 6.16,
+    "standard_type": "IC50",
+    "assay_chembl_id": "CHEMBL3095060",
+    "document_chembl_id": "CHEMBL3091333",
+    "document_year": 2013,
+    "n_measurements": 1
+  },
+  "targets": [
+    {
+      "molecule_chembl_id": "CHEMBL1173655",
+      "smiles": "CN(C)C/C=C/C(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1O[C@H]1CCOC1",
+      "pchembl": 9.72,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL3095060",
+      "document_chembl_id": "CHEMBL3091333",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL553",
+      "smiles": "C#Cc1cccc(Nc2ncnc3cc(OCCOC)c(OCCOC)cc23)c1",
+      "pchembl": 8.59,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL3095060",
+      "document_chembl_id": "CHEMBL3091333",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL3092313",
+      "smiles": "CN(C)CCCNC(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1O[C@H]1CCOC1",
+      "pchembl": 7.62,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL3095060",
+      "document_chembl_id": "CHEMBL3091333",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL3092322",
+      "smiles": "O=C(NCCO)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1O[C@H]1CCOC1",
+      "pchembl": 7.57,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL3095060",
+      "document_chembl_id": "CHEMBL3091333",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL3092314",
+      "smiles": "CCN(CC)CCCNC(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1O[C@H]1CCOC1",
+      "pchembl": 7.5,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL3095060",
+      "document_chembl_id": "CHEMBL3091333",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL3092324",
+      "smiles": "CS(=O)(=O)CCNC(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1O[C@H]1CCOC1",
+      "pchembl": 7.39,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL3095060",
+      "document_chembl_id": "CHEMBL3091333",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL3092308",
+      "smiles": "O=C(NCCN1CCCC1)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1O[C@H]1CCOC1",
+      "pchembl": 7.17,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL3095060",
+      "document_chembl_id": "CHEMBL3091333",
+      "document_year": 2013,
+      "n_measurements": 1
+    }
+  ],
+  "lead_target_tanimoto": [
+    0.723,
+    0.69,
+    0.674,
+    0.734,
+    0.702,
+    0.264,
+    0.711
+  ]
+}

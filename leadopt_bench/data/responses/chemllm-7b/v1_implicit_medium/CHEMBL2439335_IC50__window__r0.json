@@ -1,0 +1,37 @@
+{
+  "series_id": "CHEMBL2439335_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Epidermal growth factor receptor",
+  "provider": "ollama",
+  "model": "chemllm-7b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Epidermal growth factor receptor (ChEMBL CHEMBL203)\nAssay endpoint: IC50\n\nStarting compound (SMILES): C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(N5CCN(C)CC5)cc4)nc32)cc1\nMeasured potency of the starting compound: pIC50 = 5.82\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "system_variant": "default",
+  "suggestions": [
+    {
+      "smiles": "C=CC(=N)N)=O",
+      "modification": "Addition of the amine group at position C-2 to form a secondary amino compound.",
+      "rationale": "The addition will increase its potency against target by forming hydrogen bonding with active site residue. This is supported from literature where similar structural modification has been shown effective in increasing activity.",
+      "expected_fold_improvement": 0,
+      "confidence": "low",
+      "index": 0
+    }
+  ],
+  "raw_text": "{ \"suggestions\": [\n    {\n        \"smiles\":\n            \"C=CC(=N)N)=O\",\n      \t  \t\t \t   \t\t\t \"modification\":\"Addition of the amine group at position C-2 to form a secondary amino compound.\",\n    \t  \t          \t \"rationale\"\n    \t\t       \t   \t  :\"The addition will increase its potency against target by forming hydrogen bonding with active site residue. This is supported from literature where similar structural modification has been shown effective in increasing activity.\"\n    \t\t \t  \t    \t\t\t,\"expected_fold_improvement\": 0\n\t          \t   \t  , \"confidence\":\n    \t  \t        \t \"low\"\n    \t\t             }]}\n",
+  "usage": {
+    "input_tokens": 253,
+    "output_tokens": 156,
+    "total_duration_s": 11.8
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 11.82,
+  "run_index": 0,
+  "timestamp": "2026-10-20T17:12:06",
+  "n_suggestions": 1
+}

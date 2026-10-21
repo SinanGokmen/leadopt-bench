@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL2433086_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Bromodomain-containing protein 4 (ChEMBL CHEMBL1163125)\nAssay endpoint: IC50\n\nStarting compound (SMILES): CCNC(=O)C[C@H]1N=C(c2ccc(Cl)cc2)c2c(sc(C)c2C)-c2c(C)noc21\nMeasured potency of the starting compound: pIC50 = 5.68\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "CCNC(=O)C[C@H]1N=C(c2ccc(Br)cc2)c2c(sc(C)c2C)-c2c(C)noc21",
+      "modification": "Halogen Exchange: Chlorine to Bromine",
+      "rationale": "The starting compound contains a chlorine atom on the phenyl ring. While chlorine contributes to lipophilicity, bromine is larger and more polarizable than chlorine. This increased polarizability can lead to stronger halogen bonding interactions with residues in the bromodomain binding pocket.  Halogen bonding is a significant contributor to binding affinity for many bromodomain inhibitors.  The increased size of bromine might also allow for more favorable van der Waals contacts.  The change is synthetically straightforward, typically involving a halogen exchange reaction.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "CCNC(=O)C[C@H]1N=C(c2ccc(Cl)cc2)c2c(sc(C)c2C)-c2c(C)noc21C(C)(C)O",
+      "modification": "Tertiary Butyl Alcohol Addition",
+      "rationale": "The terminal methyl group on the phenyl ring is relatively small. Introducing a tertiary butyl alcohol group (-C(C)(C)OH) could increase the compound's lipophilicity and provide a hydrogen bond donor.  Bromodomains often have hydrophobic pockets and hydrogen bond acceptors that could be exploited. The tertiary alcohol is less prone to metabolic oxidation than a primary alcohol, potentially improving metabolic stability.  The steric bulk of the tertiary butyl group might also favor a specific binding conformation.  This modification is synthetically accessible via a Grignard reaction or similar alkylation.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "CCNC(=O)C[C@H]1N=C(c2ccc(Cl)cc2)c2c(sc(C)c2C)-c2c(C)noc21N",
+      "modification": "Amine Introduction",
+      "rationale": "The terminal nitrogen on the piperidine ring is currently tertiary. Converting it to a primary amine (-NH2) introduces a hydrogen bond donor and a potential site for electrostatic interactions.  Bromodomains often have acidic residues in their binding pockets that could form a salt bridge with a primary amine.  The increased polarity could also improve aqueous solubility.  This transformation could be achieved through a Hofmann rearrangement or similar degradation of the tertiary amine, followed by protection/deprotection steps.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 2
+    },
+    {
+      "smiles": "CCNC(=O)C[C@H]1N=C(c2ccc(Cl)cc2)c2c(sc(C)c2C)-c2c(C)noc21CC(C)(C)O",
+      "modification": "Ethyl Group Replacement",
+      "rationale": "The ethyl group on the phenyl ring is relatively small. Replacing it with an isopropyl group (-CH(CH3)2) increases the lipophilicity and steric bulk. This could lead to improved van der Waals interactions with hydrophobic pockets in the bromodomain. The increased steric bulk might also restrict conformational flexibility, potentially locking the molecule into a more favorable binding pose. This is synthetically achievable through a Suzuki coupling or similar cross-coupling reaction.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "CCNC(=O)C[C@H]1N=C(c2ccc(Cl)cc2)c2c(sc(C)c2C)-c2c(C)noc21C(=O)O",
+      "modification": "Carboxylic Acid Introduction",
+      "rationale": "Replacing the terminal methyl group with a carboxylic acid (-C(=O)OH) introduces a strong hydrogen bond donor and acceptor, and a potential site for electrostatic interactions.  The carboxylic acid could form a salt bridge with positively charged residues in the bromodomain.  It also introduces a handle for potential prodrug strategies to improve solubility and bioavailability.  This modification is synthetically accessible through oxidation of a methyl group, potentially requiring protection/deprotection steps for other sensitive functionalities.",
+      "expected_fold_improvement": 1.4,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"CCNC(=O)C[C@H]1N=C(c2ccc(Br)cc2)c2c(sc(C)c2C)-c2c(C)noc21\",\n\"modification\": \"Halogen Exchange: Chlorine to Bromine\",\n\"rationale\": \"The starting compound contains a chlorine atom on the phenyl ring. While chlorine contributes to lipophilicity, bromine is larger and more polarizable than chlorine. This increased polarizability can lead to stronger halogen bonding interactions with residues in the bromodomain binding pocket.  Halogen bonding is a significant contributor to binding affinity for many bromodomain inhibitors.  The increased size of bromine might also allow for more favorable van der Waals contacts.  The change is synthetically straightforward, typically involving a halogen exchange reaction.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CCNC(=O)C[C@H]1N=C(c2ccc(Cl)cc2)c2c(sc(C)c2C)-c2c(C)noc21C(C)(C)O\",\n\"modification\": \"Tertiary Butyl Alcohol Addition\",\n\"rationale\": \"The terminal methyl group on the phenyl ring is relatively small. Introducing a tertiary butyl alcohol group (-C(C)(C)OH) could increase the compound's lipophilicity and provide a hydrogen bond donor.  Bromodomains often have hydrophobic pockets and hydrogen bond acceptors that could be exploited. The tertiary alcohol is less prone to metabolic oxidation than a primary alcohol, potentially improving metabolic stability.  The steric bulk of the tertiary butyl group might also favor a specific binding conformation.  This modification is synthetically accessible via a Grignard reaction or similar alkylation.\"\n    ,\n\"expected_fold_improvement\": 1.3\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CCNC(=O)C[C@H]1N=C(c2ccc(Cl)cc2)c2c(sc(C)c2C)-c2c(C)noc21N\",\n\"modification\": \"Amine Introduction\",\n\"rationale\": \"The terminal nitrogen on the piperidine ring is currently tertiary. Converting it to a primary amine (-NH2) introduces a hydrogen bond donor and a potential site for electrostatic interactions.  Bromodomains often have acidic residues in their binding pockets that could form a salt bridge with a primary amine.  The increased polarity could also improve aqueous solubility.  This transformation could be achieved through a Hofmann rearrangement or similar degradation of the tertiary amine, followed by protection/deprotection steps.\"\n    ,\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"CCNC(=O)C[C@H]1N=C(c2ccc(Cl)cc2)c2c(sc(C)c2C)-c2c(C)noc21CC(C)(C)O\",\n\"modification\": \"Ethyl Group Replacement\",\n\"rationale\": \"The ethyl group on the phenyl ring is relatively small. Replacing it with an isopropyl group (-CH(CH3)2) increases the lipophilicity and steric bulk. This could lead to improved van der Waals interactions with hydrophobic pockets in the bromodomain. The increased steric bulk might also restrict conformational flexibility, potentially locking the molecule into a more favorable binding pose. This is synthetically achievable through a Suzuki coupling or similar cross-coupling reaction.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CCNC(=O)C[C@H]1N=C(c2ccc(Cl)cc2)c2c(sc(C)c2C)-c2c(C)noc21C(=O)O\",\n\"modification\": \"Carboxylic Acid Introduction\",\n\"rationale\": \"Replacing the terminal methyl group with a carboxylic acid (-C(=O)OH) introduces a strong hydrogen bond donor and acceptor, and a potential site for electrostatic interactions.  The carboxylic acid could form a salt bridge with positively charged residues in the bromodomain.  It also introduces a handle for potential prodrug strategies to improve solubility and bioavailability.  This modification is synthetically accessible through oxidation of a methyl group, potentially requiring protection/deprotection steps for other sensitive functionalities.\"\n    ,\n\"expected_fold_improvement\": 1.4\n    ,\n\"confidence\": \"low\"\n}\n]\n}\n",
+  "usage": {
+    "input_tokens": 242,
+    "output_tokens": 1017,
+    "total_duration_s": 94.3
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 94.31,
+  "run_index": 0,
+  "timestamp": "2026-10-17T00:50:36",
+  "n_suggestions": 5
+}

@@ -1,0 +1,59 @@
+{
+  "series_id": "CHEMBL5539282_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "provider": "oracle",
+  "model": "oracle-truth",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Bromodomain-containing protein 4 (ChEMBL CHEMBL1163125)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Cc1ccc(NC(=O)CCCOc2cc(=O)n(C)c3ccccc23)c(Br)c1\nMeasured potency of the starting compound: pIC50 = 5.93\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "Cc1sc2c(c1C)C(c1ccc(Cl)cc1)=N[C@@H](CC(=O)OC(C)(C)C)c1nnc(C)n1-2",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 77.62471166286927,
+      "confidence": "high",
+      "index": 0
+    },
+    {
+      "smiles": "Cn1c(=O)cc(OCCCC(=O)Nc2ccc(F)cc2)c2ccccc21",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 14.45439770745928,
+      "confidence": "high",
+      "index": 1
+    },
+    {
+      "smiles": "Cn1c(=O)cc(OCCCC(=O)Nc2ccc(F)cc2F)c2ccccc21",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 12.30268770812381,
+      "confidence": "high",
+      "index": 2
+    },
+    {
+      "smiles": "Cn1c(=O)cc(OCCCC(=O)NC2CCCCCC2)c2ccccc21",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 12.30268770812381,
+      "confidence": "high",
+      "index": 3
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"Cc1sc2c(c1C)C(c1ccc(Cl)cc1)=N[C@@H](CC(=O)OC(C)(C)C)c1nnc(C)n1-2\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 77.62471166286927, \"confidence\": \"high\"}, {\"smiles\": \"Cn1c(=O)cc(OCCCC(=O)Nc2ccc(F)cc2)c2ccccc21\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 14.45439770745928, \"confidence\": \"high\"}, {\"smiles\": \"Cn1c(=O)cc(OCCCC(=O)Nc2ccc(F)cc2F)c2ccccc21\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 12.30268770812381, \"confidence\": \"high\"}, {\"smiles\": \"Cn1c(=O)cc(OCCCC(=O)NC2CCCCCC2)c2ccccc21\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 12.30268770812381, \"confidence\": \"high\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.0,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:31",
+  "n_suggestions": 4
+}

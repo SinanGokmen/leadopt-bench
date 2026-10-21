@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL838818_Ki",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Prothrombin",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Prothrombin (ChEMBL CHEMBL204)\nAssay endpoint: Ki\n\nStarting compound (SMILES): CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2ccccc2s1\nMeasured potency of the starting compound: pKi = 6.68\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2c[nH]cccc2s1",
+      "modification": "Replacement of the terminal phenyl ring with a pyridyl ring.",
+      "rationale": "The starting compound features a phenyl ring at the end of the sulfonamide linker. While phenyl rings are common pharmacophores, they can sometimes be suboptimal due to metabolic liabilities (e.g., hydroxylation) and lack of specific interactions. Replacing the phenyl with a pyridyl ring introduces a nitrogen atom, which can participate in hydrogen bonding with residues in the prothrombin active site. This additional interaction could increase binding affinity. The pyridyl ring is also generally more metabolically stable than a phenyl ring. The change is synthetically feasible, likely involving a Suzuki coupling or similar cross-coupling reaction to introduce the pyridyl moiety.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2cc(Cl)ccc2s1",
+      "modification": "Introduction of a chlorine atom at the *ortho* position of the sulfonamide phenyl ring.",
+      "rationale": "Introducing a halogen, specifically chlorine, *ortho* to the sulfonamide nitrogen can induce a beneficial conformational change. The chlorine atom's steric bulk can restrict rotation around the phenyl-sulfonamide bond, potentially pre-organizing the molecule into a more favorable binding conformation.  Furthermore, the chlorine atom can participate in a weak halogen bond with a suitable acceptor in the binding pocket. This is a common strategy for improving binding affinity. The synthesis is straightforward, involving chlorination of the phenyl ring under appropriate conditions (e.g., using Cl2 and a Lewis acid catalyst).",
+      "expected_fold_improvement": 1.15,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2cc(O)ccc2s1",
+      "modification": "Introduction of a hydroxyl group at the *meta* position of the sulfonamide phenyl ring.",
+      "rationale": "A hydroxyl group can act as both a hydrogen bond donor and acceptor, increasing the potential for interactions with the target protein. Placing it *meta* to the sulfonamide avoids steric clashes and allows for a more flexible orientation. The hydroxyl group can also improve aqueous solubility, which can be beneficial for overall drug-like properties. Synthesis would involve a directed ortho-metalation followed by reaction with an electrophilic oxygen source, or a more traditional electrophilic aromatic substitution route.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 2
+    },
+    {
+      "smiles": "CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2cc(C(C)(C)C)ccc2s1",
+      "modification": "Replacement of the sulfonamide phenyl ring with a *t*-butylphenyl ring.",
+      "rationale": "The *t*-butyl group is bulky and lipophilic. Replacing the phenyl ring with a *t*-butylphenyl ring could increase hydrophobic interactions with the prothrombin binding pocket. The increased bulk might also restrict conformational flexibility, favoring a binding conformation. This modification is synthetically accessible via a Friedel-Crafts alkylation reaction.  Care must be taken to ensure the *t*-butyl group doesn't introduce unfavorable steric clashes.",
+      "expected_fold_improvement": 1.25,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2cc(N)ccc2s1",
+      "modification": "Introduction of an amino group at the *para* position of the sulfonamide phenyl ring.",
+      "rationale": "An amino group can act as a hydrogen bond donor and acceptor, and can also be protonated at physiological pH, introducing a positive charge. This positive charge could lead to favorable electrostatic interactions with negatively charged residues in the prothrombin active site. The synthesis would likely involve nitration followed by reduction of the nitro group.  The basicity of the amine may also improve aqueous solubility.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2c[nH]cccc2s1\",\n\"modification\": \"Replacement of the terminal phenyl ring with a pyridyl ring.\",\n\"rationale\": \"The starting compound features a phenyl ring at the end of the sulfonamide linker. While phenyl rings are common pharmacophores, they can sometimes be suboptimal due to metabolic liabilities (e.g., hydroxylation) and lack of specific interactions. Replacing the phenyl with a pyridyl ring introduces a nitrogen atom, which can participate in hydrogen bonding with residues in the prothrombin active site. This additional interaction could increase binding affinity. The pyridyl ring is also generally more metabolically stable than a phenyl ring. The change is synthetically feasible, likely involving a Suzuki coupling or similar cross-coupling reaction to introduce the pyridyl moiety.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2cc(Cl)ccc2s1\",\n\"modification\": \"Introduction of a chlorine atom at the *ortho* position of the sulfonamide phenyl ring.\",\n\"rationale\": \"Introducing a halogen, specifically chlorine, *ortho* to the sulfonamide nitrogen can induce a beneficial conformational change. The chlorine atom's steric bulk can restrict rotation around the phenyl-sulfonamide bond, potentially pre-organizing the molecule into a more favorable binding conformation.  Furthermore, the chlorine atom can participate in a weak halogen bond with a suitable acceptor in the binding pocket. This is a common strategy for improving binding affinity. The synthesis is straightforward, involving chlorination of the phenyl ring under appropriate conditions (e.g., using Cl2 and a Lewis acid catalyst).\"\n    ,\n\"expected_fold_improvement\": 1.15\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2cc(O)ccc2s1\",\n\"modification\": \"Introduction of a hydroxyl group at the *meta* position of the sulfonamide phenyl ring.\",\n\"rationale\": \"A hydroxyl group can act as both a hydrogen bond donor and acceptor, increasing the potential for interactions with the target protein. Placing it *meta* to the sulfonamide avoids steric clashes and allows for a more flexible orientation. The hydroxyl group can also improve aqueous solubility, which can be beneficial for overall drug-like properties. Synthesis would involve a directed ortho-metalation followed by reaction with an electrophilic oxygen source, or a more traditional electrophilic aromatic substitution route.\"\n    ,\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2cc(C(C)(C)C)ccc2s1\",\n\"modification\": \"Replacement of the sulfonamide phenyl ring with a *t*-butylphenyl ring.\",\n\"rationale\": \"The *t*-butyl group is bulky and lipophilic. Replacing the phenyl ring with a *t*-butylphenyl ring could increase hydrophobic interactions with the prothrombin binding pocket. The increased bulk might also restrict conformational flexibility, favoring a binding conformation. This modification is synthetically accessible via a Friedel-Crafts alkylation reaction.  Care must be taken to ensure the *t*-butyl group doesn't introduce unfavorable steric clashes.\"\n    ,\n\"expected_fold_improvement\": 1.25\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2cc(N)ccc2s1\",\n\"modification\": \"Introduction of an amino group at the *para* position of the sulfonamide phenyl ring.\",\n\"rationale\": \"An amino group can act as a hydrogen bond donor and acceptor, and can also be protonated at physiological pH, introducing a positive charge. This positive charge could lead to favorable electrostatic interactions with negatively charged residues in the prothrombin active site. The synthesis would likely involve nitration followed by reduction of the nitro group.  The basicity of the amine may also improve aqueous solubility.\"\n    ,\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"low\"\n}\n]\n}",
+  "usage": {
+    "input_tokens": 231,
+    "output_tokens": 1100,
+    "total_duration_s": 131.9
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 131.91,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:42:28",
+  "n_suggestions": 5
+}

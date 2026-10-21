@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL1067528_Ki",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Prothrombin",
+  "provider": "oracle",
+  "model": "oracle-truth",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Prothrombin (ChEMBL CHEMBL204)\nAssay endpoint: Ki\n\nStarting compound (SMILES): C[C@@H](N)C(=O)N1CCC[C@H]1C(=O)NCc1ccc(C(=N)N)cc1\nMeasured potency of the starting compound: pKi = 5.85\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "N=C(N)c1ccc(CNC(=O)[C@@H]2CCCN2C(=O)[C@H](N)Cc2ccccc2)cc1",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 354.81338923357606,
+      "confidence": "high",
+      "index": 0
+    },
+    {
+      "smiles": "CC(C)(C)C[C@@H](N)C(=O)N1CCC[C@H]1C(=O)NCc1ccc(C(=N)N)cc1",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 128.82495516931348,
+      "confidence": "high",
+      "index": 1
+    },
+    {
+      "smiles": "CC[C@@H](C)[C@@H](N)C(=O)N1CCC[C@H]1C(=O)NCc1ccc(C(=N)N)cc1",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 70.79457843841388,
+      "confidence": "high",
+      "index": 2
+    },
+    {
+      "smiles": "N=C(N)c1ccc(CNC(=O)[C@@H]2CCCN2C(=O)[C@H](N)C2CCCCC2)cc1",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 61.65950018614822,
+      "confidence": "high",
+      "index": 3
+    },
+    {
+      "smiles": "CC(C)[C@@H](N)C(=O)N1CCC[C@H]1C(=O)NCc1ccc(C(=N)N)cc1",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 20.417379446695318,
+      "confidence": "high",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"N=C(N)c1ccc(CNC(=O)[C@@H]2CCCN2C(=O)[C@H](N)Cc2ccccc2)cc1\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 354.81338923357606, \"confidence\": \"high\"}, {\"smiles\": \"CC(C)(C)C[C@@H](N)C(=O)N1CCC[C@H]1C(=O)NCc1ccc(C(=N)N)cc1\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 128.82495516931348, \"confidence\": \"high\"}, {\"smiles\": \"CC[C@@H](C)[C@@H](N)C(=O)N1CCC[C@H]1C(=O)NCc1ccc(C(=N)N)cc1\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 70.79457843841388, \"confidence\": \"high\"}, {\"smiles\": \"N=C(N)c1ccc(CNC(=O)[C@@H]2CCCN2C(=O)[C@H](N)C2CCCCC2)cc1\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 61.65950018614822, \"confidence\": \"high\"}, {\"smiles\": \"CC(C)[C@@H](N)C(=O)N1CCC[C@H]1C(=O)NCc1ccc(C(=N)N)cc1\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 20.417379446695318, \"confidence\": \"high\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.0,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:31",
+  "n_suggestions": 5
+}

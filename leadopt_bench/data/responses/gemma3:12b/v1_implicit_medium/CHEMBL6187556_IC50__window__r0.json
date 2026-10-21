@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL6187556_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Prothrombin",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Prothrombin (ChEMBL CHEMBL204)\nAssay endpoint: IC50\n\nStarting compound (SMILES): COC(=O)[C@H](CNC(=O)c1ccc(Cl)s1)NS(=O)(=O)c1cccc(N2CCCC2=O)c1C\nMeasured potency of the starting compound: pIC50 = 6.37\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "COC(=O)[C@H](CNC(=O)c1ccc(Br)s1)NS(=O)(=O)c1cccc(N2CCCC2=O)c1C",
+      "modification": "Halogen Exchange: Chlorine to Bromine",
+      "rationale": "The chlorine atom on the phenyl ring is likely contributing to steric hindrance and potentially unfavorable hydrophobic interactions. Bromine is larger than chlorine and more polarizable. While the increased size could introduce some steric clashes, the increased polarizability might enhance halogen bonding with residues in the binding pocket, potentially leading to a more favorable interaction and improved binding affinity. This is a common strategy in medicinal chemistry \u2013 sometimes a larger, more polarizable halogen can improve binding despite a slight increase in steric bulk. The change is synthetically straightforward, typically involving a halogen exchange reaction.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "COC(=O)[C@H](CNC(=O)c1ccc(Cl)s1)NS(=O)(=O)c1cccc(N2CCCC2=O)c1CC",
+      "modification": "Methyl Group Removal",
+      "rationale": "The terminal methyl group on the cyclohexane ring is likely contributing to lipophilicity without providing any specific binding interactions. Removing this group reduces the overall molecular weight and lipophilicity, potentially improving aqueous solubility and reducing non-specific hydrophobic interactions. This can lead to a cleaner binding profile and improved potency. It's a simple removal of a methyl group, easily achieved via reduction of a ketone precursor or other established methods.",
+      "expected_fold_improvement": 1.15,
+      "confidence": "low",
+      "index": 1
+    },
+    {
+      "smiles": "COC(=O)[C@H](CNC(=O)c1ccc(Cl)s1)NS(=O)(=O)c1cccc(N2CCCC2=O)c1CCC(C)(C)C",
+      "modification": "Cyclohexane Ring Expansion to a 1,3-Dimethylcyclohexane",
+      "rationale": "The cyclohexane ring is relatively rigid. Introducing two methyl groups on the ring will increase conformational flexibility, allowing the molecule to better adapt to the shape of the binding pocket. The methyl groups also add some lipophilicity, which could be beneficial if the pocket is hydrophobic. The conformational changes could allow for more optimal positioning of the sulfonamide and amide groups for hydrogen bonding or other interactions. This is synthetically more challenging, requiring a ring expansion strategy, but feasible.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "COC(=O)[C@H](CNC(=O)c1ccc(Cl)s1)NS(=O)(=O)c1cccc(N2CCCC2=O)c1C(C)O",
+      "modification": "Cyclohexane Ring Hydroxylation",
+      "rationale": "Introducing a hydroxyl group on the cyclohexane ring provides a hydrogen bond donor/acceptor. This could form a crucial interaction with a polar residue in the binding pocket, increasing affinity. The hydroxyl group also increases aqueous solubility. The position of the hydroxyl group (axial or equatorial) will influence the molecule's conformation and binding, so further optimization might be needed. This can be achieved through oxidation or other functionalization strategies.",
+      "expected_fold_improvement": 1.25,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "COC(=O)[C@H](CNC(=O)c1ccc(Cl)s1)N(C)S(=O)(=O)c1cccc(N2CCCC2=O)c1C",
+      "modification": "Amide Nitrogen Methylation",
+      "rationale": "The amide nitrogen is likely participating in hydrogen bonding, but it could be more effectively engaged if it were methylated. Methylation would prevent amide hydrogen bonding, potentially forcing the molecule to adopt a conformation that maximizes other favorable interactions. It also increases lipophilicity slightly. This is a straightforward alkylation reaction.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"COC(=O)[C@H](CNC(=O)c1ccc(Br)s1)NS(=O)(=O)c1cccc(N2CCCC2=O)c1C\",\n\"modification\": \"Halogen Exchange: Chlorine to Bromine\",\n\"rationale\": \"The chlorine atom on the phenyl ring is likely contributing to steric hindrance and potentially unfavorable hydrophobic interactions. Bromine is larger than chlorine and more polarizable. While the increased size could introduce some steric clashes, the increased polarizability might enhance halogen bonding with residues in the binding pocket, potentially leading to a more favorable interaction and improved binding affinity. This is a common strategy in medicinal chemistry \u2013 sometimes a larger, more polarizable halogen can improve binding despite a slight increase in steric bulk. The change is synthetically straightforward, typically involving a halogen exchange reaction.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"COC(=O)[C@H](CNC(=O)c1ccc(Cl)s1)NS(=O)(=O)c1cccc(N2CCCC2=O)c1CC\",\n\"modification\": \"Methyl Group Removal\",\n\"rationale\": \"The terminal methyl group on the cyclohexane ring is likely contributing to lipophilicity without providing any specific binding interactions. Removing this group reduces the overall molecular weight and lipophilicity, potentially improving aqueous solubility and reducing non-specific hydrophobic interactions. This can lead to a cleaner binding profile and improved potency. It's a simple removal of a methyl group, easily achieved via reduction of a ketone precursor or other established methods.\",\n\"expected_fold_improvement\": 1.15,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"COC(=O)[C@H](CNC(=O)c1ccc(Cl)s1)NS(=O)(=O)c1cccc(N2CCCC2=O)c1CCC(C)(C)C\",\n\"modification\": \"Cyclohexane Ring Expansion to a 1,3-Dimethylcyclohexane\",\n\"rationale\": \"The cyclohexane ring is relatively rigid. Introducing two methyl groups on the ring will increase conformational flexibility, allowing the molecule to better adapt to the shape of the binding pocket. The methyl groups also add some lipophilicity, which could be beneficial if the pocket is hydrophobic. The conformational changes could allow for more optimal positioning of the sulfonamide and amide groups for hydrogen bonding or other interactions. This is synthetically more challenging, requiring a ring expansion strategy, but feasible.\",\n\"expected_fold_improvement\": 1.3,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"COC(=O)[C@H](CNC(=O)c1ccc(Cl)s1)NS(=O)(=O)c1cccc(N2CCCC2=O)c1C(C)O\",\n\"modification\": \"Cyclohexane Ring Hydroxylation\",\n\"rationale\": \"Introducing a hydroxyl group on the cyclohexane ring provides a hydrogen bond donor/acceptor. This could form a crucial interaction with a polar residue in the binding pocket, increasing affinity. The hydroxyl group also increases aqueous solubility. The position of the hydroxyl group (axial or equatorial) will influence the molecule's conformation and binding, so further optimization might be needed. This can be achieved through oxidation or other functionalization strategies.\",\n\"expected_fold_improvement\": 1.25,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"COC(=O)[C@H](CNC(=O)c1ccc(Cl)s1)N(C)S(=O)(=O)c1cccc(N2CCCC2=O)c1C\",\n\"modification\": \"Amide Nitrogen Methylation\",\n\"rationale\": \"The amide nitrogen is likely participating in hydrogen bonding, but it could be more effectively engaged if it were methylated. Methylation would prevent amide hydrogen bonding, potentially forcing the molecule to adopt a conformation that maximizes other favorable interactions. It also increases lipophilicity slightly. This is a straightforward alkylation reaction.\",\n\"expected_fold_improvement\": 1.1,\n\"confidence\": \"low\"\n}\n]\n}\n",
+  "usage": {
+    "input_tokens": 227,
+    "output_tokens": 920,
+    "total_duration_s": 111.1
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 111.09,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:38:29",
+  "n_suggestions": 5
+}

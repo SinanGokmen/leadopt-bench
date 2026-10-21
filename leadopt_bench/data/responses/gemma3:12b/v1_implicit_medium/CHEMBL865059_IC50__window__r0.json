@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL865059_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Prothrombin",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Prothrombin (ChEMBL CHEMBL204)\nAssay endpoint: IC50\n\nStarting compound (SMILES): N=C(N)c1nnc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)s1\nMeasured potency of the starting compound: pIC50 = 6.25\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "N=C(N)c1nnc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)s1",
+      "modification": "Starting Compound",
+      "rationale": "This is the baseline for comparison. pIC50 = 6.25. All subsequent modifications will be judged against this value.",
+      "expected_fold_improvement": 0,
+      "confidence": "high",
+      "index": 0
+    },
+    {
+      "smiles": "N=C(N)c1nnc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)s1",
+      "modification": "Replace the terminal methyl group of the cyclohexyl with a trifluoromethyl group",
+      "rationale": "The cyclohexyl ring is likely contributing to lipophilicity, but may also be introducing conformational flexibility that is detrimental to binding. Replacing a methyl group with a trifluoromethyl group maintains lipophilicity but introduces steric bulk and restricts rotation. This could improve binding affinity by pre-organizing the molecule into a more favorable conformation for interaction with the prothrombin active site. Trifluoromethyl groups are also known to improve metabolic stability. This is a relatively conservative modification, and I expect a modest improvement in potency.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "N=C(N)c1nnc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)s1",
+      "modification": "Replace the terminal amide oxygen with a sulfonamide (O -> NHSO2CH3)",
+      "rationale": "The terminal amide is a potential hydrogen bond donor/acceptor, but its utility is dependent on the precise environment within the prothrombin binding pocket. Replacing it with a sulfonamide introduces a more acidic proton, potentially forming a stronger, more directional hydrogen bond. The methylsulfonyl group also adds a degree of steric bulk and lipophilicity. This modification is relatively straightforward to synthesize and could significantly improve binding affinity.",
+      "expected_fold_improvement": 1.5,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "N=C(N)c1nnc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)s1",
+      "modification": "Replace the central piperidine ring with a morpholine ring",
+      "rationale": "The piperidine ring introduces a basic nitrogen, which may be interacting unfavorably with the protein. Morpholine is a less basic, more polar heterocycle. Replacing the piperidine with morpholine could reduce electrostatic repulsion and improve solubility. The morpholine ring also has a different conformational profile compared to piperidine, which could lead to a more favorable binding pose. This is a more significant change, but morpholine is a common scaffold in medicinal chemistry and the synthesis is well-established.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "N=C(N)c1nnc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)s1",
+      "modification": "Introduce a cyclopropyl group at the benzylic position of the cyclohexyl ring (replacing the CH2)",
+      "rationale": "The cyclohexyl ring is likely contributing to lipophilicity, but may also be introducing conformational flexibility that is detrimental to binding. Introducing a cyclopropyl group at the benzylic position maintains lipophilicity but introduces significant steric bulk and restricts rotation. This could improve binding affinity by pre-organizing the molecule into a more favorable conformation for interaction with the prothrombin active site. Cyclopropyl groups are also known to act as bioisosteres for gem-dimethyl groups, which can sometimes improve metabolic stability.",
+      "expected_fold_improvement": 1.4,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"N=C(N)c1nnc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)s1\",\n\"modification\": \"Starting Compound\",\n\"rationale\": \"This is the baseline for comparison. pIC50 = 6.25. All subsequent modifications will be judged against this value.\"\n    ,\n\"expected_fold_improvement\": 0\n    ,\n\"confidence\": \"high\"\n},\n{\n\"smiles\": \"N=C(N)c1nnc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)s1\",\n\"modification\": \"Replace the terminal methyl group of the cyclohexyl with a trifluoromethyl group\",\n\"rationale\": \"The cyclohexyl ring is likely contributing to lipophilicity, but may also be introducing conformational flexibility that is detrimental to binding. Replacing a methyl group with a trifluoromethyl group maintains lipophilicity but introduces steric bulk and restricts rotation. This could improve binding affinity by pre-organizing the molecule into a more favorable conformation for interaction with the prothrombin active site. Trifluoromethyl groups are also known to improve metabolic stability. This is a relatively conservative modification, and I expect a modest improvement in potency.\",\n\"expected_fold_improvement\": 1.2,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"N=C(N)c1nnc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)s1\",\n\"modification\": \"Replace the terminal amide oxygen with a sulfonamide (O -> NHSO2CH3)\",\n\"rationale\": \"The terminal amide is a potential hydrogen bond donor/acceptor, but its utility is dependent on the precise environment within the prothrombin binding pocket. Replacing it with a sulfonamide introduces a more acidic proton, potentially forming a stronger, more directional hydrogen bond. The methylsulfonyl group also adds a degree of steric bulk and lipophilicity. This modification is relatively straightforward to synthesize and could significantly improve binding affinity.\",\n\"expected_fold_improvement\": 1.5,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"N=C(N)c1nnc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)s1\",\n\"modification\": \"Replace the central piperidine ring with a morpholine ring\",\n\"rationale\": \"The piperidine ring introduces a basic nitrogen, which may be interacting unfavorably with the protein. Morpholine is a less basic, more polar heterocycle. Replacing the piperidine with morpholine could reduce electrostatic repulsion and improve solubility. The morpholine ring also has a different conformational profile compared to piperidine, which could lead to a more favorable binding pose. This is a more significant change, but morpholine is a common scaffold in medicinal chemistry and the synthesis is well-established.\",\n\"expected_fold_improvement\": 1.3,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"N=C(N)c1nnc(CNC(=O)[C@@H]2C=CCN2C(=O)[C@@H](CC2CCCCC2)NCC(=O)O)s1\",\n\"modification\": \"Introduce a cyclopropyl group at the benzylic position of the cyclohexyl ring (replacing the CH2)\",\n\"rationale\": \"The cyclohexyl ring is likely contributing to lipophilicity, but may also be introducing conformational flexibility that is detrimental to binding. Introducing a cyclopropyl group at the benzylic position maintains lipophilicity but introduces significant steric bulk and restricts rotation. This could improve binding affinity by pre-organizing the molecule into a more favorable conformation for interaction with the prothrombin active site. Cyclopropyl groups are also known to act as bioisosteres for gem-dimethyl groups, which can sometimes improve metabolic stability.\",\n\"expected_fold_improvement\": 1.4,\n\"confidence\": \"low\"\n}\n]\n}\n",
+  "usage": {
+    "input_tokens": 230,
+    "output_tokens": 926,
+    "total_duration_s": 113.2
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 113.18,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:44:40",
+  "n_suggestions": 5
+}

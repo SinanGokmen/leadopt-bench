@@ -1,0 +1,37 @@
+{
+  "series_id": "CHEMBL5517452_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "provider": "ollama",
+  "model": "chemllm-7b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Bromodomain-containing protein 4 (ChEMBL CHEMBL1163125)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Cc1cc(-c2nccn2Cc2ccccc2)cn(C)c1=O\nMeasured potency of the starting compound: pIC50 = 6.5\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "system_variant": "default",
+  "suggestions": [
+    {
+      "smiles": "Cc1cc(-c2n3ccc(C)(n4)c23)[CH]([NH:37][C@@H](/C=N/[C@S]=O)\f)/F[Si+])(=NC(F)(Cl)=N[F-])[N+](N=C(Cl))=[PbBr 5])[1,10a-diazatricyclo-[6.4;0.[13]21:16][12],11c-hexadecaH-indeno [2',3':9.,8.]d[im_18]>",
+      "modification": "Addition of a bromo group at the 5-position on one side, and addition to this same ring system (the other half) by adding two fluorine groups across from each-other. This is done in order increase lipophilicity as well decrease its polarity so that it will be more readily able penetrate into cells where our target protein resides.",
+      "rationale": "The rationale behind the structural modification of this compound lies within a series (or cascade) mechanism by which we are attempting to modulate, or fine-tune. This is done in order increase lipophilicity as well decrease its polarity so that it will be more readily able penetrate into cells where our target protein resides.",
+      "expected_fold_improvement": 1,
+      "confidence": "high",
+      "index": 0
+    }
+  ],
+  "raw_text": "{ \"suggestions\": [\n    {\n        \"smiles\":\n            \"Cc1cc(-c2n3ccc(C)(n4)c23)[CH]([NH:37][C@@H](/C=N/[C@S]=O)\\f)/F[Si+])(=NC(F)(Cl)=N[F-])[N+](N=C(Cl))=[PbBr 5])[1,10a-diazatricyclo-[6.4;0.[13]21:16][12],11c-hexadecaH-indeno [2',3':9.,8.]d[im_18]>\",\n        \"modification\": \"Addition of a bromo group at the 5-position on one side, and addition to this same ring system (the other half) by adding two fluorine groups across from each-other. This is done in order increase lipophilicity as well decrease its polarity so that it will be more readily able penetrate into cells where our target protein resides.\",\n        \"rationale\": \"The rationale behind the structural modification of this compound lies within a series (or cascade) mechanism by which we are attempting to modulate, or fine-tune. This is done in order increase lipophilicity as well decrease its polarity so that it will be more readily able penetrate into cells where our target protein resides.\" ,\n        \"expected_fold_improvement\": 1\n    ,\n   \"confidence\":\n     \t          \t\t \t\"high\"\n}\n] }",
+  "usage": {
+    "input_tokens": 238,
+    "output_tokens": 321,
+    "total_duration_s": 31.2
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 31.2,
+  "run_index": 0,
+  "timestamp": "2026-10-21T00:47:59",
+  "n_suggestions": 1
+}

@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL6187556_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Prothrombin",
+  "provider": "baseline_neighbour",
+  "model": "baseline-neighbour",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Prothrombin (ChEMBL CHEMBL204)\nAssay endpoint: IC50\n\nStarting compound (SMILES): COC(=O)[C@H](CNC(=O)c1ccc(Cl)s1)NS(=O)(=O)c1cccc(N2CCCC2=O)c1C\nMeasured potency of the starting compound: pIC50 = 6.37\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "CN[C@H](Cc1ccc(F)cc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccccc2s1",
+      "modification": "a potent compound known for this target",
+      "rationale": "This chemotype reaches pIC50 9.9 against the same protein.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "high",
+      "index": 0
+    },
+    {
+      "smiles": "CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccc(OC)cc2s1",
+      "modification": "a potent compound known for this target",
+      "rationale": "This chemotype reaches pIC50 9.8 against the same protein.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "high",
+      "index": 1
+    },
+    {
+      "smiles": "CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccc(F)cc2s1",
+      "modification": "a potent compound known for this target",
+      "rationale": "This chemotype reaches pIC50 9.8 against the same protein.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "high",
+      "index": 2
+    },
+    {
+      "smiles": "CN[C@H](CC1CCCCC1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccccc2s1",
+      "modification": "a potent compound known for this target",
+      "rationale": "This chemotype reaches pIC50 9.7 against the same protein.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "high",
+      "index": 3
+    },
+    {
+      "smiles": "C[C@@](N)(Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccccc2s1",
+      "modification": "a potent compound known for this target",
+      "rationale": "This chemotype reaches pIC50 9.7 against the same protein.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "high",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"CN[C@H](Cc1ccc(F)cc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccccc2s1\", \"modification\": \"a potent compound known for this target\", \"rationale\": \"This chemotype reaches pIC50 9.9 against the same protein.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"high\"}, {\"smiles\": \"CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccc(OC)cc2s1\", \"modification\": \"a potent compound known for this target\", \"rationale\": \"This chemotype reaches pIC50 9.8 against the same protein.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"high\"}, {\"smiles\": \"CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccc(F)cc2s1\", \"modification\": \"a potent compound known for this target\", \"rationale\": \"This chemotype reaches pIC50 9.8 against the same protein.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"high\"}, {\"smiles\": \"CN[C@H](CC1CCCCC1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccccc2s1\", \"modification\": \"a potent compound known for this target\", \"rationale\": \"This chemotype reaches pIC50 9.7 against the same protein.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"high\"}, {\"smiles\": \"C[C@@](N)(Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)NC(CCCN=C(N)N)C(=O)c1nc2ccccc2s1\", \"modification\": \"a potent compound known for this target\", \"rationale\": \"This chemotype reaches pIC50 9.7 against the same protein.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"high\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.0,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:23",
+  "n_suggestions": 5
+}

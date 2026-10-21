@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL3705904_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1\nMeasured potency of the starting compound: pIC50 = 6.5\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc3ccccc3c2ccccc2)cc1",
+      "modification": "Replacement of phenyl with a biphenyl group on the hydroxamate.",
+      "rationale": "The hydroxamate moiety is a key zinc-binding group in HDAC inhibitors. The current phenyl ring attached to the hydroxamate is likely contributing to binding, but its conformational flexibility may be suboptimal. Replacing it with a biphenyl group introduces rigidity and allows for exploration of a more defined orientation of the hydroxamate relative to the HDAC catalytic site. This could improve binding affinity and selectivity. The biphenyl also provides additional surface area for hydrophobic interactions, which are often important in enzyme binding. This modification is synthetically feasible via Suzuki coupling of a brominated hydroxamate precursor with phenylboronic acid.",
+      "expected_fold_improvement": 1.5,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc1ccccc1c2ccccc2)cc1",
+      "modification": "Cyclization of the hydroxamate phenyl ring to a cyclopentyl.",
+      "rationale": "The phenyl ring on the hydroxamate is likely contributing to binding, but its conformational flexibility may be suboptimal. Replacing it with a cyclopentyl group introduces rigidity and allows for exploration of a more defined orientation of the hydroxamate relative to the HDAC catalytic site. This could improve binding affinity and selectivity. The cyclopentyl also provides additional surface area for hydrophobic interactions, which are often important in enzyme binding. This modification is synthetically feasible via a multi-step process involving reduction of the carbonyl, cyclization, and oxidation.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "low",
+      "index": 1
+    },
+    {
+      "smiles": "Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2c3ccccc3)cc1",
+      "modification": "Addition of a methyl group to the phenyl ring of the amide.",
+      "rationale": "The phenyl ring of the amide is a potential site for hydrophobic interactions with the HDAC enzyme. Introducing a methyl group at a strategic position (e.g., *ortho* or *meta*) could enhance these interactions, leading to improved binding affinity. The methyl group is relatively small and should not significantly disrupt the overall scaffold. This modification is synthetically accessible via electrophilic aromatic substitution.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "high",
+      "index": 2
+    },
+    {
+      "smiles": "Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2Cl)cc1",
+      "modification": "Introduction of a chlorine atom on the phenyl ring of the hydroxamate.",
+      "rationale": "Halogenation, particularly with chlorine, is a common strategy to modulate lipophilicity and introduce a dipole moment. The chlorine atom can participate in halogen bonding with the target protein, potentially increasing binding affinity. The increased lipophilicity may also improve membrane permeability and bioavailability. The position of the chlorine would need to be optimized, but *ortho* or *para* positions are reasonable starting points. This modification is synthetically straightforward via electrophilic aromatic substitution.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2N)cc1",
+      "modification": "Replacement of the phenyl ring on the hydroxamate with a pyridine ring.",
+      "rationale": "Replacing the phenyl ring with a pyridine ring introduces a nitrogen atom, which can act as a hydrogen bond acceptor. This could lead to new and favorable interactions with the HDAC enzyme. The pyridine ring is also more polar than a phenyl ring, which could influence solubility and binding mode. This modification is synthetically feasible via nucleophilic aromatic substitution or cross-coupling reactions.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc3ccccc3c2ccccc2)cc1\",\n\"modification\": \"Replacement of phenyl with a biphenyl group on the hydroxamate.\",\n\"rationale\": \"The hydroxamate moiety is a key zinc-binding group in HDAC inhibitors. The current phenyl ring attached to the hydroxamate is likely contributing to binding, but its conformational flexibility may be suboptimal. Replacing it with a biphenyl group introduces rigidity and allows for exploration of a more defined orientation of the hydroxamate relative to the HDAC catalytic site. This could improve binding affinity and selectivity. The biphenyl also provides additional surface area for hydrophobic interactions, which are often important in enzyme binding. This modification is synthetically feasible via Suzuki coupling of a brominated hydroxamate precursor with phenylboronic acid.\"\n    ,\n\"expected_fold_improvement\": 1.5\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc1ccccc1c2ccccc2)cc1\",\n\"modification\": \"Cyclization of the hydroxamate phenyl ring to a cyclopentyl.\",\n\"rationale\": \"The phenyl ring on the hydroxamate is likely contributing to binding, but its conformational flexibility may be suboptimal. Replacing it with a cyclopentyl group introduces rigidity and allows for exploration of a more defined orientation of the hydroxamate relative to the HDAC catalytic site. This could improve binding affinity and selectivity. The cyclopentyl also provides additional surface area for hydrophobic interactions, which are often important in enzyme binding. This modification is synthetically feasible via a multi-step process involving reduction of the carbonyl, cyclization, and oxidation.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2c3ccccc3)cc1\",\n\"modification\": \"Addition of a methyl group to the phenyl ring of the amide.\",\n\"rationale\": \"The phenyl ring of the amide is a potential site for hydrophobic interactions with the HDAC enzyme. Introducing a methyl group at a strategic position (e.g., *ortho* or *meta*) could enhance these interactions, leading to improved binding affinity. The methyl group is relatively small and should not significantly disrupt the overall scaffold. This modification is synthetically accessible via electrophilic aromatic substitution.\"\n    ,\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"high\"\n},\n{\n\"smiles\": \"Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2Cl)cc1\",\n\"modification\": \"Introduction of a chlorine atom on the phenyl ring of the hydroxamate.\",\n\"rationale\": \"Halogenation, particularly with chlorine, is a common strategy to modulate lipophilicity and introduce a dipole moment. The chlorine atom can participate in halogen bonding with the target protein, potentially increasing binding affinity. The increased lipophilicity may also improve membrane permeability and bioavailability. The position of the chlorine would need to be optimized, but *ortho* or *para* positions are reasonable starting points. This modification is synthetically straightforward via electrophilic aromatic substitution.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2N)cc1\",\n\"modification\": \"Replacement of the phenyl ring on the hydroxamate with a pyridine ring.\",\n\"rationale\": \"Replacing the phenyl ring with a pyridine ring introduces a nitrogen atom, which can act as a hydrogen bond acceptor. This could lead to new and favorable interactions with the HDAC enzyme. The pyridine ring is also more polar than a phenyl ring, which could influence solubility and binding mode. This modification is synthetically feasible via nucleophilic aromatic substitution or cross-coupling reactions.\"\n    ,\n\"expected_fold_improvement\": 1.3\n    ,\n\"confidence\": \"low\"\n}\n]\n}",
+  "usage": {
+    "input_tokens": 219,
+    "output_tokens": 939,
+    "total_duration_s": 107.5
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 107.54,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:15:35",
+  "n_suggestions": 5
+}

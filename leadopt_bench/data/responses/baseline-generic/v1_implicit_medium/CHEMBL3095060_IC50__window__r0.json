@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL3095060_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Epidermal growth factor receptor",
+  "provider": "baseline_generic",
+  "model": "baseline-generic",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Epidermal growth factor receptor (ChEMBL CHEMBL203)\nAssay endpoint: IC50\n\nStarting compound (SMILES): O=C(Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1O[C@H]1CCOC1)N1CCC(F)CC1\nMeasured potency of the starting compound: pIC50 = 6.16\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "Fc1ccc(Nc2ncnc3cc(O[C@H]4CCOC4)c(F)cc23)cc1Cl",
+      "modification": "add fluoro",
+      "rationale": "Adding a fluoro group should improve potency by strengthening interactions in the binding site.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "Fc1ccc(Nc2ncnc3cc(O[C@H]4CCOC4)c(Cl)cc23)cc1Cl",
+      "modification": "add chloro",
+      "rationale": "Adding a chloro group should improve potency by strengthening interactions in the binding site.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "Cc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1O[C@H]1CCOC1",
+      "modification": "add methyl",
+      "rationale": "Adding a methyl group should improve potency by strengthening interactions in the binding site.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "Oc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1O[C@H]1CCOC1",
+      "modification": "add hydroxyl",
+      "rationale": "Adding a hydroxyl group should improve potency by strengthening interactions in the binding site.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "Fc1ccc(Nc2ncnc3cc(O[C@H]4CCOC4)c(C(F)(F)F)cc23)cc1Cl",
+      "modification": "add trifluoromethyl",
+      "rationale": "Adding a trifluoromethyl group should improve potency by strengthening interactions in the binding site.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"Fc1ccc(Nc2ncnc3cc(O[C@H]4CCOC4)c(F)cc23)cc1Cl\", \"modification\": \"add fluoro\", \"rationale\": \"Adding a fluoro group should improve potency by strengthening interactions in the binding site.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"Fc1ccc(Nc2ncnc3cc(O[C@H]4CCOC4)c(Cl)cc23)cc1Cl\", \"modification\": \"add chloro\", \"rationale\": \"Adding a chloro group should improve potency by strengthening interactions in the binding site.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"Cc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1O[C@H]1CCOC1\", \"modification\": \"add methyl\", \"rationale\": \"Adding a methyl group should improve potency by strengthening interactions in the binding site.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"Oc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2cc1O[C@H]1CCOC1\", \"modification\": \"add hydroxyl\", \"rationale\": \"Adding a hydroxyl group should improve potency by strengthening interactions in the binding site.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"Fc1ccc(Nc2ncnc3cc(O[C@H]4CCOC4)c(C(F)(F)F)cc23)cc1Cl\", \"modification\": \"add trifluoromethyl\", \"rationale\": \"Adding a trifluoromethyl group should improve potency by strengthening interactions in the binding site.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.0,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:08",
+  "n_suggestions": 5
+}

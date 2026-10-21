@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL3414207_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Bromodomain-containing protein 4 (ChEMBL CHEMBL1163125)\nAssay endpoint: IC50\n\nStarting compound (SMILES): O=c1[nH]c(-c2cccc(S(=O)(=O)NC3CCCC3)c2)cs1\nMeasured potency of the starting compound: pIC50 = 5.85\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "O=c1[nH]c(-c2cccc(S(=O)(=O)NCc3ccccc3)c2)cs1",
+      "modification": "Replacement of the 4-carbon alkyl chain with a phenyl group",
+      "rationale": "The current compound features a 4-carbon alkyl chain linked to the sulfonamide. Bromodomains often engage in hydrophobic interactions with their ligands. While the alkyl chain provides some hydrophobicity, a phenyl group offers a larger, more rigid hydrophobic surface area. This increased hydrophobic contact could lead to a more favorable binding interaction with the bromodomain, potentially increasing affinity and thus improving IC50. The phenyl group is also synthetically accessible via standard coupling reactions.",
+      "expected_fold_improvement": 1.5,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "O=c1[nH]c(-c2cccc(S(=O)(=O)NC3CCC(Cl)3)c2)cs1",
+      "modification": "Introduction of a chlorine atom on the alkyl chain",
+      "rationale": "Halogen bonding is an increasingly recognized interaction in drug binding. Introducing a chlorine atom onto the alkyl chain provides a potential halogen bond donor. Bromodomains contain electronegative atoms (oxygen, nitrogen) that could act as halogen bond acceptors. The chlorine atom's relatively small size minimizes steric clashes while still providing a significant dipole moment. This halogen bond could contribute to a more favorable binding pose and increase potency. The chlorination can be achieved via radical chlorination or other established methods.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "O=c1[nH]c(-c2cccc(S(=O)(=O)NCc3ccccc3c4ccccc4)c2)cs1",
+      "modification": "Addition of a second phenyl group to the alkyl chain",
+      "rationale": "Building on the first modification, further increasing the hydrophobic surface area by adding a second phenyl group to the alkyl chain could lead to even stronger binding. This creates a 'bis-phenyl' moiety, offering a larger hydrophobic pocket for the bromodomain to interact with. While this increases molecular weight, the potential for increased affinity warrants investigation. Standard Suzuki coupling or similar cross-coupling reactions would be suitable for synthesis.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "low",
+      "index": 2
+    },
+    {
+      "smiles": "O=c1[nH]c(-c2cccc(S(=O)(=O)NCc3cc[nH]ccc3)c2)cs1",
+      "modification": "Introduction of an amine group on the alkyl chain",
+      "rationale": "Introducing a basic amine group on the alkyl chain could allow for ionic interactions with acidic residues within the bromodomain binding pocket. This electrostatic interaction could contribute significantly to binding affinity. The amine group can be introduced via amination of a suitable precursor. The pKa of the amine will be important to consider for optimal binding; a secondary amine is chosen to avoid potential issues with protonation state.",
+      "expected_fold_improvement": 1.4,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "O=c1[nH]c(-c2cccc(S(=O)(=O)NC3CCC(N)3)c2)cs1",
+      "modification": "Replacement of the alkyl chain with a tertiary amine",
+      "rationale": "Replacing the alkyl chain with a tertiary amine introduces a more rigid, basic functionality. The nitrogen atom can act as a hydrogen bond acceptor and potentially engage in electrostatic interactions. The tertiary amine also introduces a degree of conformational constraint, which could improve binding selectivity by reducing entropic penalties upon binding. Synthesis could involve reductive amination or other standard amine formation reactions.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"O=c1[nH]c(-c2cccc(S(=O)(=O)NCc3ccccc3)c2)cs1\",\n\"modification\": \"Replacement of the 4-carbon alkyl chain with a phenyl group\",\n\"rationale\": \"The current compound features a 4-carbon alkyl chain linked to the sulfonamide. Bromodomains often engage in hydrophobic interactions with their ligands. While the alkyl chain provides some hydrophobicity, a phenyl group offers a larger, more rigid hydrophobic surface area. This increased hydrophobic contact could lead to a more favorable binding interaction with the bromodomain, potentially increasing affinity and thus improving IC50. The phenyl group is also synthetically accessible via standard coupling reactions.\"\n    \t\t \t \t \t \t \t \t \t,\"expected_fold_improvement\": 1.5\n    \t\t \t \t \t \t \t \t \t,\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"O=c1[nH]c(-c2cccc(S(=O)(=O)NC3CCC(Cl)3)c2)cs1\",\n\"modification\": \"Introduction of a chlorine atom on the alkyl chain\",\n\"rationale\": \"Halogen bonding is an increasingly recognized interaction in drug binding. Introducing a chlorine atom onto the alkyl chain provides a potential halogen bond donor. Bromodomains contain electronegative atoms (oxygen, nitrogen) that could act as halogen bond acceptors. The chlorine atom's relatively small size minimizes steric clashes while still providing a significant dipole moment. This halogen bond could contribute to a more favorable binding pose and increase potency. The chlorination can be achieved via radical chlorination or other established methods.\",\n    \t\t \t \t \t \t \t \t \t\"expected_fold_improvement\": 1.2\n    \t\t \t \t \t \t \t \t \t,\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"O=c1[nH]c(-c2cccc(S(=O)(=O)NCc3ccccc3c4ccccc4)c2)cs1\",\n\"modification\": \"Addition of a second phenyl group to the alkyl chain\",\n\"rationale\": \"Building on the first modification, further increasing the hydrophobic surface area by adding a second phenyl group to the alkyl chain could lead to even stronger binding. This creates a 'bis-phenyl' moiety, offering a larger hydrophobic pocket for the bromodomain to interact with. While this increases molecular weight, the potential for increased affinity warrants investigation. Standard Suzuki coupling or similar cross-coupling reactions would be suitable for synthesis.\",\n    \t\t \t \t \t \t \t \t \t\"expected_fold_improvement\": 1.3\n    \t\t \t \t \t \t \t \t \t,\"confidence\": \"low\"\n},\n{\n\"smiles\": \"O=c1[nH]c(-c2cccc(S(=O)(=O)NCc3cc[nH]ccc3)c2)cs1\",\n\"modification\": \"Introduction of an amine group on the alkyl chain\",\n\"rationale\": \"Introducing a basic amine group on the alkyl chain could allow for ionic interactions with acidic residues within the bromodomain binding pocket. This electrostatic interaction could contribute significantly to binding affinity. The amine group can be introduced via amination of a suitable precursor. The pKa of the amine will be important to consider for optimal binding; a secondary amine is chosen to avoid potential issues with protonation state.\",\n    \t\t \t \t \t \t \t \t \t\"expected_fold_improvement\": 1.4\n    \t\t \t \t \t \t \t \t \t,\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"O=c1[nH]c(-c2cccc(S(=O)(=O)NC3CCC(N)3)c2)cs1\",\n\"modification\": \"Replacement of the alkyl chain with a tertiary amine\",\n\"rationale\": \"Replacing the alkyl chain with a tertiary amine introduces a more rigid, basic functionality. The nitrogen atom can act as a hydrogen bond acceptor and potentially engage in electrostatic interactions. The tertiary amine also introduces a degree of conformational constraint, which could improve binding selectivity by reducing entropic penalties upon binding. Synthesis could involve reductive amination or other standard amine formation reactions.\",\n    \t\t \t \t \t \t \t \t \t\"expected_fold_improvement\": 1.1\n    \t\t \t \t \t \t \t \t \t,\"confidence\": \"low\"\n}\n]\n}\n",
+  "usage": {
+    "input_tokens": 225,
+    "output_tokens": 1012,
+    "total_duration_s": 120.4
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 120.44,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:09:36",
+  "n_suggestions": 5
+}

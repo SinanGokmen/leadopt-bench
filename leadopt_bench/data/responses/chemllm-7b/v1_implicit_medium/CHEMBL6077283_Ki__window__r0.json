@@ -1,0 +1,37 @@
+{
+  "series_id": "CHEMBL6077283_Ki",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Epidermal growth factor receptor",
+  "provider": "ollama",
+  "model": "chemllm-7b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Epidermal growth factor receptor (ChEMBL CHEMBL203)\nAssay endpoint: Ki\n\nStarting compound (SMILES): COC1CCN(c2nccc(Nc3cc4n(C5CC5)c(C)cn4n3)n2)CC1\nMeasured potency of the starting compound: pKi = 6.02\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "system_variant": "default",
+  "suggestions": [
+    {
+      "smiles": "C1CCN(C2=NC=C(NC3CN4CCC5OC6CCCCS56)n23))[C@H]([CH:9]=[O+]12)[NH+][=N-13])[OH+:10]> {",
+      "modification": "[Propose structural modification to the starting compound. The SMILES of this modified molecule is as follows:] 'C1CCN(C2=NC=C(N)n23)c3[nH]c([O+]4[C@@][Ring:9]=[OH+:10])[N+](=[NH-13])[CH@12)[Sb6CCCCCCC7OC8CN5CO56)]'",
+      "rationale": "[Explanation of the structure activity reasoning for why you expect this modification to help.]",
+      "expected_fold_improvement": 1,
+      "confidence": "medium",
+      "index": 0
+    }
+  ],
+  "raw_text": "{ \"suggestions\": [\n    {\n        \"smiles\":\n            \"C1CCN(C2=NC=C(NC3CN4CCC5OC6CCCCS56)n23))[C@H]([CH:9]=[O+]12)[NH+][=N-13])[OH+:10]> { \"\n  , \"modification\": \"[Propose structural modification to the starting compound. The SMILES of this modified molecule is as follows:] 'C1CCN(C2=NC=C(N)n23)c3[nH]c([O+]4[C@@][Ring:9]=[OH+:10])[N+](=[NH-13])[CH@12)[Sb6CCCCCCC7OC8CN5CO56)]'\"\n\n  , \"rationale\": \"[Explanation of the structure activity reasoning for why you expect this modification to help.]\" ,\"expected_fold_improvement\" :1\n    ,\n                  \t\"confidence\":\"medium\"\n            }\n] }",
+  "usage": {
+    "input_tokens": 240,
+    "output_tokens": 223,
+    "total_duration_s": 17.2
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 17.23,
+  "run_index": 0,
+  "timestamp": "2026-10-21T01:31:03",
+  "n_suggestions": 1
+}

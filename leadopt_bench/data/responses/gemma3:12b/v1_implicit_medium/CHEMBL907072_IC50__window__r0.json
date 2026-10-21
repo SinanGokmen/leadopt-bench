@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL907072_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): COc1ccc2[nH]c(C)c(CC(=O)N[C@H](CCCCCC(C)=O)C(=O)NCCc3c(-c4ccccc4)[nH]c4ccccc34)c2c1\nMeasured potency of the starting compound: pIC50 = 5.5\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "COc1ccc2[nH]c(C)c(CC(=O)N[C@H](CCCCCC(C)=O)C(=O)NCCc3c(-c4ccccc4)[nH]c4ccccc34)c2c1C",
+      "modification": "Addition of Methyl Group to Phenyl Ring",
+      "rationale": "The phenyl ring at the 4-position of the indole moiety is currently unsubstituted.  HDAC1 possesses a relatively hydrophobic catalytic pocket. Introducing a methyl group at this position (or other small alkyl group) could increase hydrophobic interactions with the pocket, potentially improving binding affinity.  The position is likely accessible, as it's not sterically hindered by the rest of the molecule.  Methylation is also synthetically straightforward, often achievable via Friedel-Crafts alkylation or similar methods.  We're aiming for a small, incremental improvement, and a methyl group is a good starting point for exploring this interaction.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "COc1ccc2[nH]c(C)c(CC(=O)N[C@H](CCCCCC(C)=O)C(=O)NCCc3c(-c4ccccc4)c4ccccc34)c2c1Oc",
+      "modification": "Introduction of a Methoxy Group on the Phenyl Ring",
+      "rationale": "Similar to the previous modification, the phenyl ring is currently unsubstituted. However, a methoxy group introduces a hydrogen bond acceptor.  HDAC1's active site may contain a hydrogen bond donor that could interact favorably with the oxygen of the methoxy group.  The methoxy group also increases the overall polarity of the molecule, which could improve solubility and potentially influence binding mode.  The electronic effects of the methoxy group could also subtly alter the conformation of the phenyl ring, optimizing its fit within the binding pocket.  This is a slightly more polar modification than a methyl group, so we're exploring a different type of interaction.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 1
+    },
+    {
+      "smiles": "COc1ccc2[nH]c(C)c(CC(=O)N[C@H](CCCCCC(C)=O)C(=O)NCCc3c(-c4ccccc4)[nH]c4ccccc34)c2c1N",
+      "modification": "Replacement of the Indole Nitrogen with a Nitrogen",
+      "rationale": "The indole nitrogen is a potential site for unwanted metabolism (N-oxidation) and may not be optimally positioned for hydrogen bonding or other interactions within the HDAC1 active site. Replacing it with a simple nitrogen could eliminate this metabolic liability and potentially allow for a different, more favorable binding mode.  The change is relatively subtle, maintaining a similar overall shape and charge distribution.  This is a higher-risk modification, as it fundamentally alters a key structural element, but the potential reward is significant if the new nitrogen engages in a beneficial interaction.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "low",
+      "index": 2
+    },
+    {
+      "smiles": "COc1ccc2[nH]c(C)c(CC(=O)N[C@H](CCCCCC(C)=O)C(=O)NCCc3c(-c4ccccc4)[nH]c4ccccc34)c2c1CC(C)(C)C",
+      "modification": "Increase Alkyl Chain Length on the Amide Nitrogen",
+      "rationale": "The alkyl chain attached to the amide nitrogen currently consists of a propyl group.  HDAC1's active site may have a hydrophobic pocket that can accommodate a longer alkyl chain. Increasing the chain length to a butyl group could increase hydrophobic interactions, leading to improved binding affinity.  The increased chain length also provides more conformational flexibility, potentially allowing the molecule to adopt a more favorable binding pose.  This is a relatively conservative modification, as it maintains the amide linkage and only alters the alkyl chain.",
+      "expected_fold_improvement": 1.15,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "COc1ccc2[nH]c(C)c(CC(=O)N[C@H](CCCCCC(C)=O)C(=O)NCCc3c(-c4ccccc4)[nH]c4ccccc34)c2c1C(=O)O",
+      "modification": "Replacement of the Terminal Methyl Ester with a Carboxylic Acid",
+      "rationale": "The terminal methyl ester on the cyclohexyl ring is a potential site for hydrolysis. Replacing it with a carboxylic acid introduces a negative charge at physiological pH. This negative charge could form a salt bridge with a positively charged residue in the HDAC1 active site, leading to a significant increase in binding affinity.  The carboxylic acid also introduces a hydrogen bond donor, which could further enhance binding.  This modification is synthetically feasible, involving ester hydrolysis.",
+      "expected_fold_improvement": 1.4,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"COc1ccc2[nH]c(C)c(CC(=O)N[C@H](CCCCCC(C)=O)C(=O)NCCc3c(-c4ccccc4)[nH]c4ccccc34)c2c1C\",\n\"modification\": \"Addition of Methyl Group to Phenyl Ring\",\n\"rationale\": \"The phenyl ring at the 4-position of the indole moiety is currently unsubstituted.  HDAC1 possesses a relatively hydrophobic catalytic pocket. Introducing a methyl group at this position (or other small alkyl group) could increase hydrophobic interactions with the pocket, potentially improving binding affinity.  The position is likely accessible, as it's not sterically hindered by the rest of the molecule.  Methylation is also synthetically straightforward, often achievable via Friedel-Crafts alkylation or similar methods.  We're aiming for a small, incremental improvement, and a methyl group is a good starting point for exploring this interaction.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"COc1ccc2[nH]c(C)c(CC(=O)N[C@H](CCCCCC(C)=O)C(=O)NCCc3c(-c4ccccc4)c4ccccc34)c2c1Oc\",\n\"modification\": \"Introduction of a Methoxy Group on the Phenyl Ring\",\n\"rationale\": \"Similar to the previous modification, the phenyl ring is currently unsubstituted. However, a methoxy group introduces a hydrogen bond acceptor.  HDAC1's active site may contain a hydrogen bond donor that could interact favorably with the oxygen of the methoxy group.  The methoxy group also increases the overall polarity of the molecule, which could improve solubility and potentially influence binding mode.  The electronic effects of the methoxy group could also subtly alter the conformation of the phenyl ring, optimizing its fit within the binding pocket.  This is a slightly more polar modification than a methyl group, so we're exploring a different type of interaction.\"\n    ,\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"COc1ccc2[nH]c(C)c(CC(=O)N[C@H](CCCCCC(C)=O)C(=O)NCCc3c(-c4ccccc4)[nH]c4ccccc34)c2c1N\",\n\"modification\": \"Replacement of the Indole Nitrogen with a Nitrogen\",\n\"rationale\": \"The indole nitrogen is a potential site for unwanted metabolism (N-oxidation) and may not be optimally positioned for hydrogen bonding or other interactions within the HDAC1 active site. Replacing it with a simple nitrogen could eliminate this metabolic liability and potentially allow for a different, more favorable binding mode.  The change is relatively subtle, maintaining a similar overall shape and charge distribution.  This is a higher-risk modification, as it fundamentally alters a key structural element, but the potential reward is significant if the new nitrogen engages in a beneficial interaction.\"\n    ,\n\"expected_fold_improvement\": 1.3\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"COc1ccc2[nH]c(C)c(CC(=O)N[C@H](CCCCCC(C)=O)C(=O)NCCc3c(-c4ccccc4)[nH]c4ccccc34)c2c1CC(C)(C)C\",\n\"modification\": \"Increase Alkyl Chain Length on the Amide Nitrogen\",\n\"rationale\": \"The alkyl chain attached to the amide nitrogen currently consists of a propyl group.  HDAC1's active site may have a hydrophobic pocket that can accommodate a longer alkyl chain. Increasing the chain length to a butyl group could increase hydrophobic interactions, leading to improved binding affinity.  The increased chain length also provides more conformational flexibility, potentially allowing the molecule to adopt a more favorable binding pose.  This is a relatively conservative modification, as it maintains the amide linkage and only alters the alkyl chain.\"\n    ,\n\"expected_fold_improvement\": 1.15\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"COc1ccc2[nH]c(C)c(CC(=O)N[C@H](CCCCCC(C)=O)C(=O)NCCc3c(-c4ccccc4)[nH]c4ccccc34)c2c1C(=O)O\",\n\"modification\": \"Replacement of the Terminal Methyl Ester with a Carboxylic Acid\",\n\"rationale\": \"The terminal methyl ester on the cyclohexyl ring is a potential site for hydrolysis. Replacing it with a carboxylic acid introduces a negative charge at physiological pH. This negative charge could form a salt bridge with a positively charged residue in the HDAC1 active site, leading to a significant increase in binding affinity.  The carboxylic acid also introduces a hydrogen bond donor, which could further enhance binding.  This modification is synthetically feasible, involving ester hydrolysis.\"\n    ,\n\"expected_fold_improvement\": 1.4\n    ,\n\"confidence\": \"medium\"\n}\n]\n}",
+  "usage": {
+    "input_tokens": 244,
+    "output_tokens": 1139,
+    "total_duration_s": 138.6
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 138.65,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:46:34",
+  "n_suggestions": 5
+}
