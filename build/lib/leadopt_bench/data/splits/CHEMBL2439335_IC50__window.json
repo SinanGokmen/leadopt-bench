@@ -1,0 +1,200 @@
+{
+  "series_id": "CHEMBL2439335_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_chembl_id": "CHEMBL203",
+  "target_pref_name": "Epidermal growth factor receptor",
+  "standard_type": "IC50",
+  "lead_molecule": "CHEMBL2437461",
+  "lead_pchembl": 5.82,
+  "lead_year": 2013,
+  "lead_policy": "representative",
+  "early_pool_size": 9,
+  "n_targets": 15,
+  "max_gain": 3.06,
+  "median_gain": 2.03,
+  "median_lead_target_tanimoto": 0.614,
+  "target_years": [
+    2013
+  ],
+  "usable": true,
+  "lead": {
+    "molecule_chembl_id": "CHEMBL2437461",
+    "smiles": "C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(N5CCN(C)CC5)cc4)nc32)cc1",
+    "pchembl": 5.82,
+    "standard_type": "IC50",
+    "assay_chembl_id": "CHEMBL2439335",
+    "document_chembl_id": "CHEMBL2434822",
+    "document_year": 2013,
+    "n_measurements": 1
+  },
+  "targets": [
+    {
+      "molecule_chembl_id": "CHEMBL2437462",
+      "smiles": "C=CC(=O)Nc1cccc(-n2c(=O)cnc3cnc(Nc4ccc(N5CCN(C)CC5)cc4)nc32)c1",
+      "pchembl": 8.88,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437469",
+      "smiles": "C=CC(=O)Nc1cccc(-n2c(=O)cnc3cnc(Nc4ccc(N5CCN(C)CC5)cc4OC)nc32)c1",
+      "pchembl": 8.59,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437471",
+      "smiles": "C=CC(=O)Nc1cccc(-n2c(=O)c(C)nc3cnc(Nc4ccc(OC)cc4)nc32)c1",
+      "pchembl": 8.24,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437460",
+      "smiles": "C=CC(=O)Nc1cccc(-n2c(=O)cnc3cnc(Nc4ccc(N5CCOCC5)cc4)nc32)c1",
+      "pchembl": 8.14,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437488",
+      "smiles": "C=CC(=O)Nc1cccc(-n2c(=O)cnc3cnc(Nc4ccccc4)nc32)c1",
+      "pchembl": 7.96,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437467",
+      "smiles": "C=CC(=O)Nc1cccc(-n2c(=O)cnc3cnc(Nc4ccc(C(N)=O)cc4)nc32)c1",
+      "pchembl": 7.93,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437464",
+      "smiles": "C=CC(=O)Nc1cccc(-n2c(=O)cnc3cnc(Nc4ccc(N5CCCC5)cc4)nc32)c1",
+      "pchembl": 7.89,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437466",
+      "smiles": "C=CC(=O)Nc1cccc(-n2c(=O)cnc3cnc(Nc4ccc(NC(C)=O)cc4)nc32)c1",
+      "pchembl": 7.85,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437465",
+      "smiles": "C=CC(=O)Nc1cccc(-n2c(=O)cnc3cnc(Nc4ccc(N(CC)CC)cc4)nc32)c1",
+      "pchembl": 7.85,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437463",
+      "smiles": "C=CC(=O)Nc1cccc(-n2c(=O)cnc3cnc(Nc4ccc(N5CCCCC5)cc4)nc32)c1",
+      "pchembl": 7.83,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437479",
+      "smiles": "C=CC(=O)Nc1cccc(-n2c(=O)cnc3cnc(Nc4ccc(OC)cc4)nc32)c1",
+      "pchembl": 7.83,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437458",
+      "smiles": "C=CC(=O)Nc1cccc(-n2c(=O)cnc3cnc(Nc4ccc(Cl)cc4)nc32)c1",
+      "pchembl": 7.31,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437483",
+      "smiles": "COc1ccc(Nc2ncc3ncc(=O)n(-c4ccc(NC(=O)/C=C/CN(C)C)cc4)c3n2)cc1",
+      "pchembl": 7.12,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437486",
+      "smiles": "CN(C)C/C=C/C(=O)Nc1cccc(-n2c(=O)cnc3cnc(Nc4ccccc4)nc32)c1",
+      "pchembl": 6.96,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2437482",
+      "smiles": "C=CC(=O)Oc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC)cc4)nc32)cc1",
+      "pchembl": 6.91,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2439335",
+      "document_chembl_id": "CHEMBL2434822",
+      "document_year": 2013,
+      "n_measurements": 1
+    }
+  ],
+  "lead_target_tanimoto": [
+    0.594,
+    0.481,
+    0.553,
+    0.614,
+    0.71,
+    0.611,
+    0.652,
+    0.608,
+    0.721,
+    0.597,
+    0.627,
+    0.7,
+    0.494,
+    0.662,
+    0.846
+  ]
+}

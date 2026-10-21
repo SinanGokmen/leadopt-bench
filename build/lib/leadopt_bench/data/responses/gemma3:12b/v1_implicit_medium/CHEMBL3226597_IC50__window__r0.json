@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL3226597_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Bromodomain-containing protein 4 (ChEMBL CHEMBL1163125)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Cc1noc(C)c1-c1ccc2c(c1)ncn2Cc1ccc(Cl)c(Cl)c1\nMeasured potency of the starting compound: pIC50 = 5.0\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "Cc1noc(C)c1-c1ccc2c(c1)ncn2Cc1ccc(C(C)(C)C)c1",
+      "modification": "Replacement of one Chlorine with a tert-butyl group",
+      "rationale": "The starting compound contains two chlorine atoms. While halogens can contribute to binding through halogen bonding, they can also introduce steric clashes and unfavorable lipophilic interactions, particularly if they are not optimally positioned.  Given the relatively small size of the bromodomain binding pocket, and the potential for the chlorines to be projecting outwards, replacing one chlorine with a tert-butyl group could be beneficial. The tert-butyl group provides a larger, more hydrophobic surface area for favorable van der Waals interactions within the binding pocket.  The increased bulk might also promote a more optimal orientation of the molecule, leading to improved binding affinity.  The tert-butyl group is synthetically accessible via Friedel-Crafts alkylation, making this a reasonable modification.",
+      "expected_fold_improvement": 1.5,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "Cc1noc(C)c1-c1ccc2c(c1)ncn2Cc1ccc(NC(O)C)c1",
+      "modification": "Replacement of one Chlorine with an acetamide group",
+      "rationale": "Introducing a hydrogen bond donor/acceptor can significantly improve binding affinity if a complementary hydrogen bond acceptor/donor is present in the binding pocket. Replacing one chlorine with an acetamide group introduces both a hydrogen bond donor (N-H) and acceptor (C=O). This modification increases the potential for specific interactions with the target protein. The acetamide group is relatively small and should not introduce significant steric clashes.  Synthesis is achievable via nucleophilic aromatic substitution with acetamide under appropriate conditions.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "Cc1noc(C)c1-c1ccc2c(c1)ncn2Cc1ccc(C=O)c1",
+      "modification": "Replacement of one Chlorine with a carbonyl group",
+      "rationale": "Similar to the acetamide, introducing a carbonyl group can provide a hydrogen bond acceptor.  The carbonyl group is more polar than the chlorine, which could improve aqueous solubility and potentially enhance binding if a hydrogen bond donor is present in the binding pocket.  The carbonyl group is also relatively small and less sterically demanding than a tert-butyl group. Synthesis could be achieved through a multi-step process involving oxidation of a methyl group or through a Grignard reaction followed by oxidation.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 2
+    },
+    {
+      "smiles": "Cc1noc(C)c1-c1ccc2c(c1)ncn2Cc1ccc(C(F)(F)F)c1",
+      "modification": "Replacement of one Chlorine with a trifluoromethyl group",
+      "rationale": "Replacing a chlorine with a trifluoromethyl group can significantly alter the lipophilicity and electronic properties of the molecule. The trifluoromethyl group is highly hydrophobic and electron-withdrawing. This can improve membrane permeability and potentially enhance binding through increased hydrophobic interactions. The electron-withdrawing nature can also influence the pKa of nearby groups, potentially optimizing interactions with charged residues in the binding pocket.  The trifluoromethyl group is synthetically accessible via various methods, including trifluoromethylation reactions.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "Cc1noc(C)c1-c1ccc2c(c1)ncn2Cc1ccc(CN)c1",
+      "modification": "Replacement of one Chlorine with a cyano group",
+      "rationale": "The cyano group is a small, strongly electron-withdrawing group.  This can influence the electronic distribution within the molecule and potentially improve binding through dipole-dipole interactions or by modulating the acidity of nearby protons.  The cyano group is also relatively rigid, which can restrict conformational flexibility and potentially lock the molecule into a more favorable binding pose. Synthesis can be achieved via nucleophilic aromatic substitution with cyanide.",
+      "expected_fold_improvement": 1.0,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"Cc1noc(C)c1-c1ccc2c(c1)ncn2Cc1ccc(C(C)(C)C)c1\",\n\"modification\": \"Replacement of one Chlorine with a tert-butyl group\",\n\"rationale\": \"The starting compound contains two chlorine atoms. While halogens can contribute to binding through halogen bonding, they can also introduce steric clashes and unfavorable lipophilic interactions, particularly if they are not optimally positioned.  Given the relatively small size of the bromodomain binding pocket, and the potential for the chlorines to be projecting outwards, replacing one chlorine with a tert-butyl group could be beneficial. The tert-butyl group provides a larger, more hydrophobic surface area for favorable van der Waals interactions within the binding pocket.  The increased bulk might also promote a more optimal orientation of the molecule, leading to improved binding affinity.  The tert-butyl group is synthetically accessible via Friedel-Crafts alkylation, making this a reasonable modification.\"\n    ,\n\"expected_fold_improvement\": 1.5\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1noc(C)c1-c1ccc2c(c1)ncn2Cc1ccc(NC(O)C)c1\",\n\"modification\": \"Replacement of one Chlorine with an acetamide group\",\n\"rationale\": \"Introducing a hydrogen bond donor/acceptor can significantly improve binding affinity if a complementary hydrogen bond acceptor/donor is present in the binding pocket. Replacing one chlorine with an acetamide group introduces both a hydrogen bond donor (N-H) and acceptor (C=O). This modification increases the potential for specific interactions with the target protein. The acetamide group is relatively small and should not introduce significant steric clashes.  Synthesis is achievable via nucleophilic aromatic substitution with acetamide under appropriate conditions.\",\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1noc(C)c1-c1ccc2c(c1)ncn2Cc1ccc(C=O)c1\",\n\"modification\": \"Replacement of one Chlorine with a carbonyl group\",\n\"rationale\": \"Similar to the acetamide, introducing a carbonyl group can provide a hydrogen bond acceptor.  The carbonyl group is more polar than the chlorine, which could improve aqueous solubility and potentially enhance binding if a hydrogen bond donor is present in the binding pocket.  The carbonyl group is also relatively small and less sterically demanding than a tert-butyl group. Synthesis could be achieved through a multi-step process involving oxidation of a methyl group or through a Grignard reaction followed by oxidation.\",\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Cc1noc(C)c1-c1ccc2c(c1)ncn2Cc1ccc(C(F)(F)F)c1\",\n\"modification\": \"Replacement of one Chlorine with a trifluoromethyl group\",\n\"rationale\": \"Replacing a chlorine with a trifluoromethyl group can significantly alter the lipophilicity and electronic properties of the molecule. The trifluoromethyl group is highly hydrophobic and electron-withdrawing. This can improve membrane permeability and potentially enhance binding through increased hydrophobic interactions. The electron-withdrawing nature can also influence the pKa of nearby groups, potentially optimizing interactions with charged residues in the binding pocket.  The trifluoromethyl group is synthetically accessible via various methods, including trifluoromethylation reactions.\",\n\"expected_fold_improvement\": 1.3\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1noc(C)c1-c1ccc2c(c1)ncn2Cc1ccc(CN)c1\",\n\"modification\": \"Replacement of one Chlorine with a cyano group\",\n\"rationale\": \"The cyano group is a small, strongly electron-withdrawing group.  This can influence the electronic distribution within the molecule and potentially improve binding through dipole-dipole interactions or by modulating the acidity of nearby protons.  The cyano group is also relatively rigid, which can restrict conformational flexibility and potentially lock the molecule into a more favorable binding pose. Synthesis can be achieved via nucleophilic aromatic substitution with cyanide.\",\n\"expected_fold_improvement\": 1.0\n    ,\n\"confidence\": \"low\"\n}\n]\n}\n",
+  "usage": {
+    "input_tokens": 228,
+    "output_tokens": 969,
+    "total_duration_s": 113.8
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 113.8,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:03:24",
+  "n_suggestions": 5
+}

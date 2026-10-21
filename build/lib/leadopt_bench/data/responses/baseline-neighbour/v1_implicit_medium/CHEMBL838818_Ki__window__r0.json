@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL838818_Ki",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Prothrombin",
+  "provider": "baseline_neighbour",
+  "model": "baseline-neighbour",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Prothrombin (ChEMBL CHEMBL204)\nAssay endpoint: Ki\n\nStarting compound (SMILES): CN[C@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](CCCCN)C(=O)c1nc2ccccc2s1\nMeasured potency of the starting compound: pKi = 6.68\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "CCc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(Cl)s1)C(=O)OCC[S@+](C)[O-]",
+      "modification": "a potent compound known for this target",
+      "rationale": "This chemotype reaches pKi 9.9 against the same protein.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "high",
+      "index": 0
+    },
+    {
+      "smiles": "CN(C)CC[C@@H]1CCCN1c1cccc(S(=O)(=O)N[C@@H](CNC(=O)c2ccc(Cl)s2)C(=O)OCC[S@+](C)[O-])c1",
+      "modification": "a potent compound known for this target",
+      "rationale": "This chemotype reaches pKi 9.8 against the same protein.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "high",
+      "index": 1
+    },
+    {
+      "smiles": "Cc1c(N2CCCC2CO)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(Cl)s1)C(=O)OCC[S+](C)[O-]",
+      "modification": "a potent compound known for this target",
+      "rationale": "This chemotype reaches pKi 9.7 against the same protein.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "high",
+      "index": 2
+    },
+    {
+      "smiles": "C[S@+]([O-])CCOC(=O)[C@H](CNC(=O)c1ccc(Cl)s1)NS(=O)(=O)c1cccc(N2CCC[C@H](O)C2)c1",
+      "modification": "a potent compound known for this target",
+      "rationale": "This chemotype reaches pKi 9.6 against the same protein.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "high",
+      "index": 3
+    },
+    {
+      "smiles": "CN(C)C[C@@H]1CCN(c2cccc(S(=O)(=O)N[C@@H](CNC(=O)c3ccc(Cl)s3)C(=O)OCC[S@+](C)[O-])c2)C1=O",
+      "modification": "a potent compound known for this target",
+      "rationale": "This chemotype reaches pKi 9.6 against the same protein.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "high",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"CCc1c(N2CCCC2=O)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(Cl)s1)C(=O)OCC[S@+](C)[O-]\", \"modification\": \"a potent compound known for this target\", \"rationale\": \"This chemotype reaches pKi 9.9 against the same protein.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"high\"}, {\"smiles\": \"CN(C)CC[C@@H]1CCCN1c1cccc(S(=O)(=O)N[C@@H](CNC(=O)c2ccc(Cl)s2)C(=O)OCC[S@+](C)[O-])c1\", \"modification\": \"a potent compound known for this target\", \"rationale\": \"This chemotype reaches pKi 9.8 against the same protein.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"high\"}, {\"smiles\": \"Cc1c(N2CCCC2CO)cccc1S(=O)(=O)N[C@@H](CNC(=O)c1ccc(Cl)s1)C(=O)OCC[S+](C)[O-]\", \"modification\": \"a potent compound known for this target\", \"rationale\": \"This chemotype reaches pKi 9.7 against the same protein.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"high\"}, {\"smiles\": \"C[S@+]([O-])CCOC(=O)[C@H](CNC(=O)c1ccc(Cl)s1)NS(=O)(=O)c1cccc(N2CCC[C@H](O)C2)c1\", \"modification\": \"a potent compound known for this target\", \"rationale\": \"This chemotype reaches pKi 9.6 against the same protein.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"high\"}, {\"smiles\": \"CN(C)C[C@@H]1CCN(c2cccc(S(=O)(=O)N[C@@H](CNC(=O)c3ccc(Cl)s3)C(=O)OCC[S@+](C)[O-])c2)C1=O\", \"modification\": \"a potent compound known for this target\", \"rationale\": \"This chemotype reaches pKi 9.6 against the same protein.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"high\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.0,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:23",
+  "n_suggestions": 5
+}

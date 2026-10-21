@@ -1,0 +1,90 @@
+{
+  "series_id": "CHEMBL3587158_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_chembl_id": "CHEMBL1163125",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "standard_type": "IC50",
+  "lead_molecule": "CHEMBL3585458",
+  "lead_pchembl": 5.1,
+  "lead_year": 2015,
+  "lead_policy": "representative",
+  "early_pool_size": 34,
+  "n_targets": 5,
+  "max_gain": 1.8,
+  "median_gain": 1.0,
+  "median_lead_target_tanimoto": 0.656,
+  "target_years": [
+    2015
+  ],
+  "usable": true,
+  "lead": {
+    "molecule_chembl_id": "CHEMBL3585458",
+    "smiles": "Cc1cncc(-c2cnc(NC3CCNCC3)c3[nH]c(=O)c(C)cc23)c1C",
+    "pchembl": 5.1,
+    "standard_type": "IC50",
+    "assay_chembl_id": "CHEMBL3587158",
+    "document_chembl_id": "CHEMBL3585343",
+    "document_year": 2015,
+    "n_measurements": 1
+  },
+  "targets": [
+    {
+      "molecule_chembl_id": "CHEMBL3586722",
+      "smiles": "Cc1cc2c(-c3cccc4[nH]ncc34)cnc(NC3CCNCC3)c2[nH]c1=O",
+      "pchembl": 6.9,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL3587158",
+      "document_chembl_id": "CHEMBL3585343",
+      "document_year": 2015,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL3586721",
+      "smiles": "Cc1cc2c(-c3cccc(O)c3)cnc(NC3CCNCC3)c2[nH]c1=O",
+      "pchembl": 6.2,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL3587158",
+      "document_chembl_id": "CHEMBL3585343",
+      "document_year": 2015,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL3586719",
+      "smiles": "Cc1cc2c(-c3ccccc3)cnc(NC3CCNCC3)c2[nH]c1=O",
+      "pchembl": 6.1,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL3587158",
+      "document_chembl_id": "CHEMBL3585343",
+      "document_year": 2015,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL3586724",
+      "smiles": "Cc1cc2c(-c3cn[nH]c3)cnc(NC3CCNCC3)c2[nH]c1=O",
+      "pchembl": 6.1,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL3587158",
+      "document_chembl_id": "CHEMBL3585343",
+      "document_year": 2015,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL3585460",
+      "smiles": "Cc1cc2c(-c3cncc(NS(C)(=O)=O)c3)cnc(NC3CCNCC3)c2[nH]c1=O",
+      "pchembl": 6.1,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL3587158",
+      "document_chembl_id": "CHEMBL3585343",
+      "document_year": 2015,
+      "n_measurements": 1
+    }
+  ],
+  "lead_target_tanimoto": [
+    0.702,
+    0.678,
+    0.656,
+    0.645,
+    0.651
+  ]
+}

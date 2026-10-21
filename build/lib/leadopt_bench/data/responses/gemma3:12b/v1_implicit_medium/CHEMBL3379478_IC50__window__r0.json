@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL3379478_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): O=C1CC[C@H](C(=O)N[C@H](CCCCCS)C(=O)Nc2ccccc2)N1\nMeasured potency of the starting compound: pIC50 = 7.0\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "O=C1CC[C@H](C(=O)N[C@H](CCCCCS)C(=O)Nc2ccc(C(=O)O)cc2)N1",
+      "modification": "Introduction of a carboxylic acid on the phenyl ring",
+      "rationale": "HDAC1 possesses a zinc-binding domain that utilizes a conserved zinc ion to coordinate catalytic residues. Introducing a carboxylic acid group on the phenyl ring provides an additional, potentially strong, coordinating group for the zinc ion. This could enhance binding affinity and improve potency. The position *ortho* to the amide linkage is chosen to minimize steric clashes and maximize the potential for favorable interactions with the binding pocket.  The carboxylic acid is also a common feature in many HDAC inhibitors, suggesting it's a generally beneficial motif.  Synthetically, this is achievable via directed ortho-metallation followed by carboxylation, or through a Suzuki coupling with a boronic acid derivative.",
+      "expected_fold_improvement": 1.5,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "O=C1CC[C@H](C(=O)N[C@H](CCCCCS)C(=O)Nc2ccc(Cl)cc2)N1",
+      "modification": "Introduction of a chlorine atom on the phenyl ring",
+      "rationale": "Halogen bonding is an increasingly recognized interaction in drug design. Introducing a chlorine atom on the phenyl ring can create a halogen bond with a suitable acceptor in the HDAC1 binding pocket. This interaction, while relatively weak individually, can contribute significantly to overall binding affinity when strategically positioned. The *meta* position is selected to avoid steric clashes with the amide and to allow for a more linear halogen bond.  Chlorine is also a relatively small halogen, minimizing disruption to the overall shape of the molecule.  This modification is synthetically accessible via electrophilic aromatic substitution.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "low",
+      "index": 1
+    },
+    {
+      "smiles": "O=C1CC[C@H](C(=O)N[C@H](CCCCCS)C(=O)Nc2ccc(N)cc2)N1",
+      "modification": "Introduction of an amine group on the phenyl ring",
+      "rationale": "The introduction of an amine group on the phenyl ring could provide a hydrogen bond donor/acceptor interaction with the HDAC1 binding pocket. This could improve binding affinity and selectivity. The amine group can also be protonated at physiological pH, creating a positive charge that could interact with negatively charged residues in the binding site. The *para* position is chosen to maximize the potential for hydrogen bonding.  Synthetically, this could be achieved via nitration followed by reduction, or through a Buchwald-Hartwig amination.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "O=C1CC[C@H](C(=O)N[C@H](CCCCS)C(=O)Nc2ccc(C#N)cc2)N1",
+      "modification": "Introduction of a cyano group on the phenyl ring",
+      "rationale": "The cyano group is a strong dipole and can participate in dipole-dipole interactions with the target protein. It is also relatively small and rigid, minimizing conformational flexibility and potentially improving binding selectivity. The *ortho* position is selected to maximize the potential for dipole-dipole interactions.  Synthetically, this could be achieved via Sandmeyer reaction from an aniline derivative.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "O=C1CC[C@H](C(=O)N[C@H](CCCC(C)S)C(=O)Nc2ccccc2)N1",
+      "modification": "Replacement of the terminal methyl group on the butyl chain with a methyl group",
+      "rationale": "The butyl chain likely contributes to lipophilicity and may be involved in hydrophobic interactions. Replacing the terminal methyl group with a larger methyl group could increase the lipophilicity and potentially improve binding affinity. This modification is synthetically straightforward, involving a Grignard reaction with methylmagnesium bromide followed by reduction.",
+      "expected_fold_improvement": 1.05,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"O=C1CC[C@H](C(=O)N[C@H](CCCCCS)C(=O)Nc2ccc(C(=O)O)cc2)N1\",\n\"modification\": \"Introduction of a carboxylic acid on the phenyl ring\",\n\"rationale\": \"HDAC1 possesses a zinc-binding domain that utilizes a conserved zinc ion to coordinate catalytic residues. Introducing a carboxylic acid group on the phenyl ring provides an additional, potentially strong, coordinating group for the zinc ion. This could enhance binding affinity and improve potency. The position *ortho* to the amide linkage is chosen to minimize steric clashes and maximize the potential for favorable interactions with the binding pocket.  The carboxylic acid is also a common feature in many HDAC inhibitors, suggesting it's a generally beneficial motif.  Synthetically, this is achievable via directed ortho-metallation followed by carboxylation, or through a Suzuki coupling with a boronic acid derivative.\"\n    \t\t \t \t \t \t \t \t \t,\"expected_fold_improvement\": 1.5\n    \t\t \t \t \t \t \t \t \t,\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"O=C1CC[C@H](C(=O)N[C@H](CCCCCS)C(=O)Nc2ccc(Cl)cc2)N1\",\n\"modification\": \"Introduction of a chlorine atom on the phenyl ring\",\n\"rationale\": \"Halogen bonding is an increasingly recognized interaction in drug design. Introducing a chlorine atom on the phenyl ring can create a halogen bond with a suitable acceptor in the HDAC1 binding pocket. This interaction, while relatively weak individually, can contribute significantly to overall binding affinity when strategically positioned. The *meta* position is selected to avoid steric clashes with the amide and to allow for a more linear halogen bond.  Chlorine is also a relatively small halogen, minimizing disruption to the overall shape of the molecule.  This modification is synthetically accessible via electrophilic aromatic substitution.\"\n    \t\t \t \t \t \t \t \t \t,\"expected_fold_improvement\": 1.2\n    \t\t \t \t \t \t \t \t \t,\"confidence\": \"low\"\n},\n{\n\"smiles\": \"O=C1CC[C@H](C(=O)N[C@H](CCCCCS)C(=O)Nc2ccc(N)cc2)N1\",\n\"modification\": \"Introduction of an amine group on the phenyl ring\",\n\"rationale\": \"The introduction of an amine group on the phenyl ring could provide a hydrogen bond donor/acceptor interaction with the HDAC1 binding pocket. This could improve binding affinity and selectivity. The amine group can also be protonated at physiological pH, creating a positive charge that could interact with negatively charged residues in the binding site. The *para* position is chosen to maximize the potential for hydrogen bonding.  Synthetically, this could be achieved via nitration followed by reduction, or through a Buchwald-Hartwig amination.\"\n    \t\t \t \t \t \t \t \t \t,\"expected_fold_improvement\": 1.3\n    \t\t \t \t \t \t \t \t \t,\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"O=C1CC[C@H](C(=O)N[C@H](CCCCS)C(=O)Nc2ccc(C#N)cc2)N1\",\n\"modification\": \"Introduction of a cyano group on the phenyl ring\",\n\"rationale\": \"The cyano group is a strong dipole and can participate in dipole-dipole interactions with the target protein. It is also relatively small and rigid, minimizing conformational flexibility and potentially improving binding selectivity. The *ortho* position is selected to maximize the potential for dipole-dipole interactions.  Synthetically, this could be achieved via Sandmeyer reaction from an aniline derivative.\"\n    \t\t \t \t \t \t \t \t \t,\"expected_fold_improvement\": 1.1\n    \t\t \t \t \t \t \t \t \t,\"confidence\": \"low\"\n},\n{\n\"smiles\": \"O=C1CC[C@H](C(=O)N[C@H](CCCC(C)S)C(=O)Nc2ccccc2)N1\",\n\"modification\": \"Replacement of the terminal methyl group on the butyl chain with a methyl group\",\n\"rationale\": \"The butyl chain likely contributes to lipophilicity and may be involved in hydrophobic interactions. Replacing the terminal methyl group with a larger methyl group could increase the lipophilicity and potentially improve binding affinity. This modification is synthetically straightforward, involving a Grignard reaction with methylmagnesium bromide followed by reduction.\"\n    \t\t \t \t \t \t \t \t \t,\"expected_fold_improvement\": 1.05\n    \t\t \t \t \t \t \t \t \t,\"confidence\": \"low\"\n}\n]\n}\n",
+  "usage": {
+    "input_tokens": 223,
+    "output_tokens": 1120,
+    "total_duration_s": 135.7
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 135.76,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:07:21",
+  "n_suggestions": 5
+}

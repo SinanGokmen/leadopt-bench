@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL5529441_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Bromodomain-containing protein 4 (ChEMBL CHEMBL1163125)\nAssay endpoint: IC50\n\nStarting compound (SMILES): CCS(=O)(=O)Nc1cc(-c2cc(NC3CCN(C)CC3)c(=O)n(C)c2)cc2c1ccn2C(C)(c1ccccn1)c1ccccn1\nMeasured potency of the starting compound: pIC50 = 5.28\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "CCS(=O)(=O)Nc1cc(-c2cc(NC3CCN(C)CC3)c(=O)n(C)c2)cc2c1ccn2C(C)(c1cc(N)c1)c1ccccn1",
+      "modification": "Replacement of pyridine nitrogen with a piperidine.",
+      "rationale": "The pyridine nitrogen in the starting compound is a potential hydrogen bond acceptor, but its basicity could also lead to unwanted ionic interactions within the bromodomain binding pocket. Replacing it with a piperidine introduces a secondary amine, which is less basic and can act as a hydrogen bond donor. This subtle change could improve binding affinity by shifting the electrostatic profile and potentially forming a more favorable hydrogen bond with a key residue in the binding pocket. The piperidine also introduces a degree of conformational constraint, which could pre-organize the molecule for optimal binding. This is a relatively conservative modification, maintaining overall shape and size while altering the electronic properties.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "CCS(=O)(=O)Nc1cc(-c2cc(NC3CCN(C)CC3)c(=O)n(C)c2)cc2c1ccn2C(C)(c1cc(Cl)c1)c1ccccn1",
+      "modification": "Introduction of a chlorine atom at the 4-position of the terminal phenyl ring.",
+      "rationale": "The terminal phenyl ring is likely involved in hydrophobic interactions within the bromodomain. Introducing a chlorine atom at the 4-position provides a small, strategically placed halogen. Halogens are known to participate in halogen bonding, a weak but directional interaction that can contribute to binding affinity. The chlorine's size is minimal, minimizing steric clashes, while its electronegativity can enhance hydrophobic interactions. This modification is relatively simple to implement synthetically and could provide a measurable improvement in potency.  The 4-position is chosen as it is likely to be accessible for halogen bonding without significant steric hindrance from other parts of the molecule.",
+      "expected_fold_improvement": 1.15,
+      "confidence": "low",
+      "index": 1
+    },
+    {
+      "smiles": "CCS(=O)(=O)Nc1cc(-c2cc(NC3CCN(C)CC3)c(=O)n(C)c2)cc2c1ccn2C(C)(c1cc(C=O)c1)c1ccccn1",
+      "modification": "Introduction of a ketone group at the 4-position of the terminal phenyl ring.",
+      "rationale": "Similar to the chlorine substitution, introducing a ketone group at the 4-position of the terminal phenyl ring can enhance hydrophobic interactions and potentially participate in hydrogen bonding. The carbonyl oxygen can act as a hydrogen bond acceptor, while the adjacent carbon can participate in van der Waals interactions. The ketone is slightly larger than the chlorine, so steric considerations are important, but the potential for additional binding interactions makes it worthwhile exploring. This modification could also alter the electronic properties of the phenyl ring, influencing its overall contribution to binding.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "CCS(=O)(=O)Nc1cc(-c2cc(NC3CCN(C)CC3)c(=O)n(C)c2)cc2c1ccn2C(C)(c1cc(S)c1)c1ccccn1",
+      "modification": "Replacement of the terminal phenyl ring with a thiophene ring.",
+      "rationale": "The terminal phenyl ring is a significant portion of the molecule. Replacing it with a thiophene ring maintains a similar overall shape and size but introduces a sulfur atom. Sulfur is more polarizable than carbon, which can lead to stronger van der Waals interactions. Furthermore, the sulfur atom can participate in sulfur-aromatic interactions, which are increasingly recognized as important in drug binding. This modification is more significant than the previous two, but the increased potential for favorable interactions justifies the risk. The thiophene also alters the electronic properties of the terminal ring, which could be beneficial.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "CCS(=O)(=O)Nc1cc(-c2cc(NC3CCN(C)CC3)c(=O)n(C)c2)cc2c1ccn2C(C)(c1cc(cc(F)c1)c1ccccn1",
+      "modification": "Introduction of a fluorine atom at the 3-position of the terminal phenyl ring.",
+      "rationale": "Fluorine is a small, highly electronegative atom. Placing it at the 3-position of the terminal phenyl ring can subtly alter the electronic distribution and dipole moment of the ring, potentially improving binding affinity through electrostatic interactions. Fluorine also introduces a degree of metabolic stability by blocking sites of oxidative metabolism. While the effect of a single fluorine is often subtle, it can be a valuable tool for fine-tuning binding affinity and improving drug-like properties. The 3-position is chosen to avoid steric clashes with the bromodomain.",
+      "expected_fold_improvement": 1.05,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"CCS(=O)(=O)Nc1cc(-c2cc(NC3CCN(C)CC3)c(=O)n(C)c2)cc2c1ccn2C(C)(c1cc(N)c1)c1ccccn1\",\n\"modification\": \"Replacement of pyridine nitrogen with a piperidine.\",\n\"rationale\": \"The pyridine nitrogen in the starting compound is a potential hydrogen bond acceptor, but its basicity could also lead to unwanted ionic interactions within the bromodomain binding pocket. Replacing it with a piperidine introduces a secondary amine, which is less basic and can act as a hydrogen bond donor. This subtle change could improve binding affinity by shifting the electrostatic profile and potentially forming a more favorable hydrogen bond with a key residue in the binding pocket. The piperidine also introduces a degree of conformational constraint, which could pre-organize the molecule for optimal binding. This is a relatively conservative modification, maintaining overall shape and size while altering the electronic properties.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CCS(=O)(=O)Nc1cc(-c2cc(NC3CCN(C)CC3)c(=O)n(C)c2)cc2c1ccn2C(C)(c1cc(Cl)c1)c1ccccn1\",\n\"modification\": \"Introduction of a chlorine atom at the 4-position of the terminal phenyl ring.\",\n\"rationale\": \"The terminal phenyl ring is likely involved in hydrophobic interactions within the bromodomain. Introducing a chlorine atom at the 4-position provides a small, strategically placed halogen. Halogens are known to participate in halogen bonding, a weak but directional interaction that can contribute to binding affinity. The chlorine's size is minimal, minimizing steric clashes, while its electronegativity can enhance hydrophobic interactions. This modification is relatively simple to implement synthetically and could provide a measurable improvement in potency.  The 4-position is chosen as it is likely to be accessible for halogen bonding without significant steric hindrance from other parts of the molecule.\",\n\"expected_fold_improvement\": 1.15,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"CCS(=O)(=O)Nc1cc(-c2cc(NC3CCN(C)CC3)c(=O)n(C)c2)cc2c1ccn2C(C)(c1cc(C=O)c1)c1ccccn1\",\n\"modification\": \"Introduction of a ketone group at the 4-position of the terminal phenyl ring.\",\n\"rationale\": \"Similar to the chlorine substitution, introducing a ketone group at the 4-position of the terminal phenyl ring can enhance hydrophobic interactions and potentially participate in hydrogen bonding. The carbonyl oxygen can act as a hydrogen bond acceptor, while the adjacent carbon can participate in van der Waals interactions. The ketone is slightly larger than the chlorine, so steric considerations are important, but the potential for additional binding interactions makes it worthwhile exploring. This modification could also alter the electronic properties of the phenyl ring, influencing its overall contribution to binding.\",\n\"expected_fold_improvement\": 1.1,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CCS(=O)(=O)Nc1cc(-c2cc(NC3CCN(C)CC3)c(=O)n(C)c2)cc2c1ccn2C(C)(c1cc(S)c1)c1ccccn1\",\n\"modification\": \"Replacement of the terminal phenyl ring with a thiophene ring.\",\n\"rationale\": \"The terminal phenyl ring is a significant portion of the molecule. Replacing it with a thiophene ring maintains a similar overall shape and size but introduces a sulfur atom. Sulfur is more polarizable than carbon, which can lead to stronger van der Waals interactions. Furthermore, the sulfur atom can participate in sulfur-aromatic interactions, which are increasingly recognized as important in drug binding. This modification is more significant than the previous two, but the increased potential for favorable interactions justifies the risk. The thiophene also alters the electronic properties of the terminal ring, which could be beneficial.\",\n\"expected_fold_improvement\": 1.3,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CCS(=O)(=O)Nc1cc(-c2cc(NC3CCN(C)CC3)c(=O)n(C)c2)cc2c1ccn2C(C)(c1cc(cc(F)c1)c1ccccn1\",\n\"modification\": \"Introduction of a fluorine atom at the 3-position of the terminal phenyl ring.\",\n\"rationale\": \"Fluorine is a small, highly electronegative atom. Placing it at the 3-position of the terminal phenyl ring can subtly alter the electronic distribution and dipole moment of the ring, potentially improving binding affinity through electrostatic interactions. Fluorine also introduces a degree of metabolic stability by blocking sites of oxidative metabolism. While the effect of a single fluorine is often subtle, it can be a valuable tool for fine-tuning binding affinity and improving drug-like properties. The 3-position is chosen to avoid steric clashes with the bromodomain.\",\n\"expected_fold_improvement\": 1.05,\n\"confidence\": \"low\"\n}\n]\n}\n",
+  "usage": {
+    "input_tokens": 249,
+    "output_tokens": 1168,
+    "total_duration_s": 137.3
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 137.31,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:19:13",
+  "n_suggestions": 5
+}

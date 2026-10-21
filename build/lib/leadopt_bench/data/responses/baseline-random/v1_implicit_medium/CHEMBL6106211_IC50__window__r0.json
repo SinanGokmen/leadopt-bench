@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL6106211_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "baseline_random",
+  "model": "baseline-random",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)no1\nMeasured potency of the starting compound: pIC50 = 5.46\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC#N)c4)c3)cc2)no1",
+      "modification": "replace substituent with nitrile",
+      "rationale": "Substituting nitrile at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(Cn5ccnc5)c4)c3)cc2)no1",
+      "modification": "replace substituent with imidazol_1_yl",
+      "rationale": "Substituting imidazol_1_yl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "COCCCCCCCCCn1cc(-c2cc(Oc3ccc(NC(=O)Nc4cc(C(C)(C)C)on4)cc3)ccn2)cn1",
+      "modification": "replace substituent with methoxy",
+      "rationale": "Substituting methoxy at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "CCC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)no1",
+      "modification": "replace substituent with ethyl",
+      "rationale": "Substituting ethyl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCC(N)=O)c4)c3)cc2)no1",
+      "modification": "replace substituent with carboxamide",
+      "rationale": "Substituting carboxamide at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC#N)c4)c3)cc2)no1\", \"modification\": \"replace substituent with nitrile\", \"rationale\": \"Substituting nitrile at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(Cn5ccnc5)c4)c3)cc2)no1\", \"modification\": \"replace substituent with imidazol_1_yl\", \"rationale\": \"Substituting imidazol_1_yl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"COCCCCCCCCCn1cc(-c2cc(Oc3ccc(NC(=O)Nc4cc(C(C)(C)C)on4)cc3)ccn2)cn1\", \"modification\": \"replace substituent with methoxy\", \"rationale\": \"Substituting methoxy at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"CCC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCCCC(=O)NO)c4)c3)cc2)no1\", \"modification\": \"replace substituent with ethyl\", \"rationale\": \"Substituting ethyl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"CC(C)(C)c1cc(NC(=O)Nc2ccc(Oc3ccnc(-c4cnn(CCCCCCCCC(N)=O)c4)c3)cc2)no1\", \"modification\": \"replace substituent with carboxamide\", \"rationale\": \"Substituting carboxamide at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.01,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:16",
+  "n_suggestions": 5
+}

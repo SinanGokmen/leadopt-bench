@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL6086969_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Bromodomain-containing protein 4 (ChEMBL CHEMBL1163125)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)c2cc(-c3[nH]c(C4CCCC4)nc3C)oc12\nMeasured potency of the starting compound: pIC50 = 5.22\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)c2cc(-c3[nH]c(C4CCCC4)nc3C)oc12c1ccccc1",
+      "modification": "Addition of a phenyl group to the distal terminal of the linker",
+      "rationale": "The distal terminal of the linker is currently a simple methyl group. Bromodomains often have a hydrophobic pocket that can accommodate aromatic rings. Introducing a phenyl group here could increase hydrophobic interactions with the binding pocket, potentially improving binding affinity. The phenyl group is relatively small and should not introduce significant steric clashes. This modification is synthetically accessible via Suzuki coupling or similar cross-coupling reactions.",
+      "expected_fold_improvement": 1.5,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)c2cc(-c3[nH]c(C4CCCC4)nc3C)oc12c(C)C",
+      "modification": "Replacement of the terminal methyl group on the linker with an ethyl group",
+      "rationale": "Similar to the previous modification, increasing the size of the terminal group on the linker could improve hydrophobic interactions. An ethyl group is larger than a methyl group, and may better fill a hydrophobic pocket. This is a relatively simple modification, achievable through alkylation or reduction of a carbonyl group.  The increased size could also introduce some conformational constraint, potentially pre-organizing the molecule for better binding.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "low",
+      "index": 1
+    },
+    {
+      "smiles": "Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)c2cc(-c3[nH]c(C4CCCC4)nc3C)oc12N(C)C",
+      "modification": "Replacement of the terminal amine on the piperidine ring with a dimethylamine",
+      "rationale": "The terminal amine on the piperidine ring is currently a primary amine.  Bromodomains often have hydrogen bond acceptors in their binding pockets. Replacing the primary amine with a dimethylamine introduces a tertiary amine, which is a better hydrogen bond acceptor and can also participate in electrostatic interactions. The dimethylamine is also slightly bulkier, which could improve selectivity by introducing steric clashes with off-target proteins. This modification is readily achieved via reductive amination.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)c2cc(-c3[nH]c(C4CCCC4)nc3C)oc12c1cc(O)cc1",
+      "modification": "Introduction of a hydroxyl group on the phenyl ring of the linker",
+      "rationale": "Introducing a hydroxyl group on the phenyl ring of the linker could introduce a hydrogen bond donor/acceptor interaction with the target protein. This could improve binding affinity and/or selectivity. The position *ortho* to the linker is chosen to minimize steric clashes while still allowing for potential hydrogen bonding. This modification is synthetically accessible via electrophilic aromatic substitution followed by reduction of a nitro group, or via directed ortho-metalation.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)c2cc(-c3[nH]c(C4CCCC4)nc3C)oc12c1ccccc1c(C)(C)O",
+      "modification": "Addition of a tertiary butyl group to the phenyl ring of the linker",
+      "rationale": "Similar to the first modification, adding a bulky, hydrophobic group like a tertiary butyl group to the phenyl ring could increase hydrophobic interactions with the binding pocket. The tertiary butyl group is larger than a phenyl group, and may better fill a hydrophobic pocket. This modification is synthetically accessible via Friedel-Crafts alkylation.",
+      "expected_fold_improvement": 1.4,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)c2cc(-c3[nH]c(C4CCCC4)nc3C)oc12c1ccccc1\",\n\"modification\": \"Addition of a phenyl group to the distal terminal of the linker\",\n\"rationale\": \"The distal terminal of the linker is currently a simple methyl group. Bromodomains often have a hydrophobic pocket that can accommodate aromatic rings. Introducing a phenyl group here could increase hydrophobic interactions with the binding pocket, potentially improving binding affinity. The phenyl group is relatively small and should not introduce significant steric clashes. This modification is synthetically accessible via Suzuki coupling or similar cross-coupling reactions.\"\n    ,\n\"expected_fold_improvement\": 1.5\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)c2cc(-c3[nH]c(C4CCCC4)nc3C)oc12c(C)C\",\n\"modification\": \"Replacement of the terminal methyl group on the linker with an ethyl group\",\n\"rationale\": \"Similar to the previous modification, increasing the size of the terminal group on the linker could improve hydrophobic interactions. An ethyl group is larger than a methyl group, and may better fill a hydrophobic pocket. This is a relatively simple modification, achievable through alkylation or reduction of a carbonyl group.  The increased size could also introduce some conformational constraint, potentially pre-organizing the molecule for better binding.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)c2cc(-c3[nH]c(C4CCCC4)nc3C)oc12N(C)C\",\n\"modification\": \"Replacement of the terminal amine on the piperidine ring with a dimethylamine\",\n\"rationale\": \"The terminal amine on the piperidine ring is currently a primary amine.  Bromodomains often have hydrogen bond acceptors in their binding pockets. Replacing the primary amine with a dimethylamine introduces a tertiary amine, which is a better hydrogen bond acceptor and can also participate in electrostatic interactions. The dimethylamine is also slightly bulkier, which could improve selectivity by introducing steric clashes with off-target proteins. This modification is readily achieved via reductive amination.\"\n    ,\n\"expected_fold_improvement\": 1.3\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)c2cc(-c3[nH]c(C4CCCC4)nc3C)oc12c1cc(O)cc1\",\n\"modification\": \"Introduction of a hydroxyl group on the phenyl ring of the linker\",\n\"rationale\": \"Introducing a hydroxyl group on the phenyl ring of the linker could introduce a hydrogen bond donor/acceptor interaction with the target protein. This could improve binding affinity and/or selectivity. The position *ortho* to the linker is chosen to minimize steric clashes while still allowing for potential hydrogen bonding. This modification is synthetically accessible via electrophilic aromatic substitution followed by reduction of a nitro group, or via directed ortho-metalation.\"\n    ,\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)c2cc(-c3[nH]c(C4CCCC4)nc3C)oc12c1ccccc1c(C)(C)O\",\n\"modification\": \"Addition of a tertiary butyl group to the phenyl ring of the linker\",\n\"rationale\": \"Similar to the first modification, adding a bulky, hydrophobic group like a tertiary butyl group to the phenyl ring could increase hydrophobic interactions with the binding pocket. The tertiary butyl group is larger than a phenyl group, and may better fill a hydrophobic pocket. This modification is synthetically accessible via Friedel-Crafts alkylation.\"\n    ,\n\"expected_fold_improvement\": 1.4\n    ,\n\"confidence\": \"medium\"\n}\n]\n}",
+  "usage": {
+    "input_tokens": 256,
+    "output_tokens": 1048,
+    "total_duration_s": 128.7
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 128.71,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:30:01",
+  "n_suggestions": 5
+}

@@ -17,6 +17,13 @@ problem this project is a reaction to.
 
 ## Try a molecule right now
 
+**Nothing to install:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SinanGokmen/leadopt-bench/blob/main/try_a_molecule.ipynb)
+
+The notebook runs in the browser. Paste a SMILES, get the verdict, see the molecules
+drawn side by side, and browse what an LLM proposed on the same series.
+
+Or locally:
+
 ```bash
 git clone https://github.com/SinanGokmen/leadopt-bench.git
 cd leadopt-bench
@@ -259,6 +266,23 @@ Thresholds live in one place, `leadopt_bench/config.py`: `MIN_COMPOUNDS`,
 
 Detailed design notes and methodological decisions:
 [leadopt_bench/README.md](leadopt_bench/README.md)
+
+## Results in the repository
+
+Every scored run is committed, so the results can be read without running anything —
+GitHub renders these as sortable tables in the browser:
+
+| File | What it holds |
+|---|---|
+[`suggestions_final_gemma3_12b.csv`](leadopt_bench/data/reports/suggestions_final_gemma3_12b.csv) | all 160 LLM suggestions: molecule, modification, rationale, category, flags |
+[`scores_final_gemma3_12b.csv`](leadopt_bench/data/reports/scores_final_gemma3_12b.csv) | per-split roll-up for the same run |
+[`suggestions_final_oracle-truth.csv`](leadopt_bench/data/reports/suggestions_final_oracle-truth.csv) | the oracle arm — the real answers, for comparison |
+[`suggestions_final_baseline-generic.csv`](leadopt_bench/data/reports/suggestions_final_baseline-generic.csv) | rote generic advice, the null floor |
+[`survey_phase1.csv`](leadopt_bench/data/reports/survey_phase1.csv) | all 14 targets surveyed, with usable-series counts |
+[`task2_manifest.json`](leadopt_bench/data/reports/task2_manifest.json) | the 32 splits: lead, gain, target count, stratum |
+
+`suggestions_*.csv` is the file to open first — one row per suggestion, with the
+model's own reasoning in a column, which is what an expert review would work from.
 
 ## Tests
 

@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL5539282_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Bromodomain-containing protein 4 (ChEMBL CHEMBL1163125)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Cc1ccc(NC(=O)CCCOc2cc(=O)n(C)c3ccccc23)c(Br)c1\nMeasured potency of the starting compound: pIC50 = 5.93\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "Cc1ccc(NC(=O)CCCOc2cc(=O)n(C)c3ccccc23)c(C)c1",
+      "modification": "Replacement of Bromine with Methyl",
+      "rationale": "The bromine atom, while potentially contributing to initial binding through halogen bonding, is also likely introducing steric clashes and unfavorable lipophilic interactions within the bromodomain binding pocket. Bromine is a relatively large atom, and its presence can restrict conformational flexibility, hindering optimal binding. Replacing it with a methyl group maintains some lipophilicity but significantly reduces steric bulk and allows for greater conformational freedom, potentially improving binding affinity and reducing off-target effects. This is a common strategy when a halogen is present but not essential for binding.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "Cc1ccc(NC(=O)CCCOc2cc(=O)n(C)c3cccc(Cl)c23)c(Br)c1",
+      "modification": "Replacement of one phenyl ring's hydrogen with Chlorine",
+      "rationale": "Introducing a chlorine atom on one of the phenyl rings can be a strategic move to explore halogen bonding interactions. While bromine is present, a smaller chlorine atom might offer a more favorable balance of halogen bonding potential and steric hindrance. The position of the chlorine is chosen to be para to the amide linkage, as this position is likely to be accessible within the binding pocket and could participate in a favorable halogen bond with a protein residue. This is a relatively conservative modification, as it maintains the overall scaffold while probing for subtle binding improvements.",
+      "expected_fold_improvement": 1.15,
+      "confidence": "low",
+      "index": 1
+    },
+    {
+      "smiles": "Cc1ccc(NC(=O)CCCOc2cc(=O)n(C)c3ccccc23)c(Br)c(C(C)(C)C)c1",
+      "modification": "Addition of a tert-butyl group at the benzylic position",
+      "rationale": "The benzylic position (the carbon directly attached to the phenyl ring bearing the bromine) is often a site of metabolic instability, prone to oxidation. Introducing a bulky tert-butyl group at this position provides steric protection against such metabolic degradation. While this doesn't directly improve binding, increased metabolic stability translates to a longer half-life *in vivo*, effectively increasing the compound's potency. Furthermore, the tert-butyl group's lipophilicity could contribute favorably to binding, although the steric bulk needs to be considered.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "Cc1ccc(NC(=O)CCCOc2cc(=O)n(C)c3cccc(N)c23)c(Br)c1",
+      "modification": "Replacement of one phenyl ring's hydrogen with an amine",
+      "rationale": "Introducing an amine group on one of the phenyl rings provides a handle for potential hydrogen bonding interactions with the bromodomain. Amines can act as both hydrogen bond donors and acceptors, increasing the potential for favorable interactions. The position is chosen to be para to the amide linkage, as this position is likely to be accessible within the binding pocket. The basicity of the amine could also contribute to electrostatic interactions, although this needs to be balanced against potential off-target effects due to the amine's protonation state at physiological pH. This modification introduces a significant change in polarity and requires careful consideration of its impact on solubility and permeability.",
+      "expected_fold_improvement": 1.25,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "Cc1ccc(NC(=O)CCCOc2cc(=O)n(C)c3cccc(C(=O)O)c23)c(Br)c1",
+      "modification": "Replacement of one phenyl ring's hydrogen with a carboxylic acid",
+      "rationale": "Introducing a carboxylic acid group on one of the phenyl rings provides a handle for potential ionic interactions with the bromodomain. Carboxylic acids are negatively charged at physiological pH and can form salt bridges with positively charged residues in the binding pocket. This modification introduces a significant change in polarity and requires careful consideration of its impact on solubility and permeability. The carboxylic acid could also improve aqueous solubility, which can be beneficial for *in vivo* efficacy. However, the negative charge could also lead to unwanted interactions with other proteins.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"Cc1ccc(NC(=O)CCCOc2cc(=O)n(C)c3ccccc23)c(C)c1\",\n\"modification\": \"Replacement of Bromine with Methyl\",\n\"rationale\": \"The bromine atom, while potentially contributing to initial binding through halogen bonding, is also likely introducing steric clashes and unfavorable lipophilic interactions within the bromodomain binding pocket. Bromine is a relatively large atom, and its presence can restrict conformational flexibility, hindering optimal binding. Replacing it with a methyl group maintains some lipophilicity but significantly reduces steric bulk and allows for greater conformational freedom, potentially improving binding affinity and reducing off-target effects. This is a common strategy when a halogen is present but not essential for binding.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1ccc(NC(=O)CCCOc2cc(=O)n(C)c3cccc(Cl)c23)c(Br)c1\",\n\"modification\": \"Replacement of one phenyl ring's hydrogen with Chlorine\",\n\"rationale\": \"Introducing a chlorine atom on one of the phenyl rings can be a strategic move to explore halogen bonding interactions. While bromine is present, a smaller chlorine atom might offer a more favorable balance of halogen bonding potential and steric hindrance. The position of the chlorine is chosen to be para to the amide linkage, as this position is likely to be accessible within the binding pocket and could participate in a favorable halogen bond with a protein residue. This is a relatively conservative modification, as it maintains the overall scaffold while probing for subtle binding improvements.\"\n    ,\n\"expected_fold_improvement\": 1.15\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Cc1ccc(NC(=O)CCCOc2cc(=O)n(C)c3ccccc23)c(Br)c(C(C)(C)C)c1\",\n\"modification\": \"Addition of a tert-butyl group at the benzylic position\",\n\"rationale\": \"The benzylic position (the carbon directly attached to the phenyl ring bearing the bromine) is often a site of metabolic instability, prone to oxidation. Introducing a bulky tert-butyl group at this position provides steric protection against such metabolic degradation. While this doesn't directly improve binding, increased metabolic stability translates to a longer half-life *in vivo*, effectively increasing the compound's potency. Furthermore, the tert-butyl group's lipophilicity could contribute favorably to binding, although the steric bulk needs to be considered.\"\n    ,\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1ccc(NC(=O)CCCOc2cc(=O)n(C)c3cccc(N)c23)c(Br)c1\",\n\"modification\": \"Replacement of one phenyl ring's hydrogen with an amine\",\n\"rationale\": \"Introducing an amine group on one of the phenyl rings provides a handle for potential hydrogen bonding interactions with the bromodomain. Amines can act as both hydrogen bond donors and acceptors, increasing the potential for favorable interactions. The position is chosen to be para to the amide linkage, as this position is likely to be accessible within the binding pocket. The basicity of the amine could also contribute to electrostatic interactions, although this needs to be balanced against potential off-target effects due to the amine's protonation state at physiological pH. This modification introduces a significant change in polarity and requires careful consideration of its impact on solubility and permeability.\"\n    ,\n\"expected_fold_improvement\": 1.25\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Cc1ccc(NC(=O)CCCOc2cc(=O)n(C)c3cccc(C(=O)O)c23)c(Br)c1\",\n\"modification\": \"Replacement of one phenyl ring's hydrogen with a carboxylic acid\",\n\"rationale\": \"Introducing a carboxylic acid group on one of the phenyl rings provides a handle for potential ionic interactions with the bromodomain. Carboxylic acids are negatively charged at physiological pH and can form salt bridges with positively charged residues in the binding pocket. This modification introduces a significant change in polarity and requires careful consideration of its impact on solubility and permeability. The carboxylic acid could also improve aqueous solubility, which can be beneficial for *in vivo* efficacy. However, the negative charge could also lead to unwanted interactions with other proteins.\"\n    ,\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"low\"\n}\n]\n}\n",
+  "usage": {
+    "input_tokens": 227,
+    "output_tokens": 1030,
+    "total_duration_s": 138.5
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 138.52,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:23:37",
+  "n_suggestions": 5
+}

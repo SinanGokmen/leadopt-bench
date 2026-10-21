@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL6131558_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Cc1c(N)cccc1-c1cn(-c2ccc(OCCCCCC(=O)NO)cc2)c2ccc(C#N)cc12\nMeasured potency of the starting compound: pIC50 = 6.53\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "Cc1c(N)cccc1-c1cn(-c2ccc(O)cc2)c2ccc(C#N)cc12",
+      "modification": "Removal of the hexyl chain from the hydroxamic acid.",
+      "rationale": "The hydroxamic acid moiety is crucial for HDAC inhibition, chelating the zinc ion in the active site. The hexyl chain is likely contributing to lipophilicity and potentially non-specific binding, which could hinder optimal positioning of the hydroxamic acid for zinc chelation. While some lipophilicity is beneficial for membrane permeability and target engagement, an excessively long alkyl chain can introduce steric clashes or hydrophobic interactions that disrupt binding. Removing the hexyl chain simplifies the molecule, potentially improving binding affinity by reducing these unfavorable interactions and allowing for a more favorable orientation of the hydroxamic acid within the HDAC1 active site. This is a common strategy in lead optimization \u2013 simplifying the structure to reveal the core pharmacophore.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "Cc1c(N)cccc1-c1cn(-c2ccc(O)cc2)c2ccc(C=N)cc12",
+      "modification": "Replacement of the nitrile with a cyano group.",
+      "rationale": "The nitrile group on the phenyl ring is a relatively bulky, electron-withdrawing group. While it might contribute to some binding interactions, it also introduces significant steric bulk. Replacing it with a cyano group (-CN) reduces the steric hindrance while maintaining a similar electronic profile. The cyano group is smaller and more planar, potentially allowing for a more favorable interaction with the surrounding amino acid residues in the HDAC1 binding pocket. This subtle change could improve binding affinity without drastically altering the overall scaffold.  The electronic properties are similar enough that the change is unlikely to be detrimental, while the steric reduction is likely to be beneficial.",
+      "expected_fold_improvement": 1.15,
+      "confidence": "low",
+      "index": 1
+    },
+    {
+      "smiles": "Cc1c(N)cccc1-c1cn(-c2ccc(O)cc2)c2ccc(N)cc12",
+      "modification": "Replacement of the nitrile with an amine group.",
+      "rationale": "The nitrile group on the phenyl ring is a relatively bulky, electron-withdrawing group. Replacing it with an amine group (-NH2) introduces a hydrogen bond donor, which could form a favorable interaction with a hydrogen bond acceptor in the HDAC1 active site. This could increase binding affinity. The amine group is also less bulky than the nitrile, potentially reducing steric clashes. While the change in electronic properties is more significant than the previous modification, the potential for a new hydrogen bond interaction makes this a worthwhile exploration.  The amine could also be further derivatized later in the optimization process.",
+      "expected_fold_improvement": 1.25,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "Cc1c(N)cccc1-c1cn(-c2ccc(O)cc2)c2ccc(CC(C)(C)O)cc12",
+      "modification": "Replacement of the nitrile with a tertiary alcohol.",
+      "rationale": "The nitrile group on the phenyl ring is a relatively bulky, electron-withdrawing group. Replacing it with a tertiary alcohol introduces a hydrogen bond donor and acceptor, which could form favorable interactions with the HDAC1 active site. The tertiary alcohol is also less bulky than the nitrile, potentially reducing steric clashes. The hydroxyl group can also participate in water-mediated hydrogen bonds, which can be important for binding affinity. This modification introduces a more complex functionality, but the potential for multiple interactions makes it a worthwhile exploration.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "Cc1c(N)cccc1-c1cn(-c2ccc(O)cc2)c2ccc(C#CC)cc12",
+      "modification": "Replacement of the nitrile with an alkyne.",
+      "rationale": "The nitrile group on the phenyl ring is a relatively bulky, electron-withdrawing group. Replacing it with an alkyne introduces a rigid, linear functionality that could potentially engage in \u03c0-\u03c0 stacking interactions with aromatic residues in the HDAC1 active site. Alkynes are also relatively small, minimizing steric clashes. While the electronic properties are different, the potential for a new \u03c0-\u03c0 stacking interaction makes this a worthwhile exploration.  The alkyne can also be further derivatized later in the optimization process via click chemistry.",
+      "expected_fold_improvement": 1.15,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"Cc1c(N)cccc1-c1cn(-c2ccc(O)cc2)c2ccc(C#N)cc12\",\n\"modification\": \"Removal of the hexyl chain from the hydroxamic acid.\",\n\"rationale\": \"The hydroxamic acid moiety is crucial for HDAC inhibition, chelating the zinc ion in the active site. The hexyl chain is likely contributing to lipophilicity and potentially non-specific binding, which could hinder optimal positioning of the hydroxamic acid for zinc chelation. While some lipophilicity is beneficial for membrane permeability and target engagement, an excessively long alkyl chain can introduce steric clashes or hydrophobic interactions that disrupt binding. Removing the hexyl chain simplifies the molecule, potentially improving binding affinity by reducing these unfavorable interactions and allowing for a more favorable orientation of the hydroxamic acid within the HDAC1 active site. This is a common strategy in lead optimization \u2013 simplifying the structure to reveal the core pharmacophore.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1c(N)cccc1-c1cn(-c2ccc(O)cc2)c2ccc(C=N)cc12\",\n\"modification\": \"Replacement of the nitrile with a cyano group.\",\n\"rationale\": \"The nitrile group on the phenyl ring is a relatively bulky, electron-withdrawing group. While it might contribute to some binding interactions, it also introduces significant steric bulk. Replacing it with a cyano group (-CN) reduces the steric hindrance while maintaining a similar electronic profile. The cyano group is smaller and more planar, potentially allowing for a more favorable interaction with the surrounding amino acid residues in the HDAC1 binding pocket. This subtle change could improve binding affinity without drastically altering the overall scaffold.  The electronic properties are similar enough that the change is unlikely to be detrimental, while the steric reduction is likely to be beneficial.\",\n\"expected_fold_improvement\": 1.15,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Cc1c(N)cccc1-c1cn(-c2ccc(O)cc2)c2ccc(N)cc12\",\n\"modification\": \"Replacement of the nitrile with an amine group.\",\n\"rationale\": \"The nitrile group on the phenyl ring is a relatively bulky, electron-withdrawing group. Replacing it with an amine group (-NH2) introduces a hydrogen bond donor, which could form a favorable interaction with a hydrogen bond acceptor in the HDAC1 active site. This could increase binding affinity. The amine group is also less bulky than the nitrile, potentially reducing steric clashes. While the change in electronic properties is more significant than the previous modification, the potential for a new hydrogen bond interaction makes this a worthwhile exploration.  The amine could also be further derivatized later in the optimization process.\",\n\"expected_fold_improvement\": 1.25,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1c(N)cccc1-c1cn(-c2ccc(O)cc2)c2ccc(CC(C)(C)O)cc12\",\n\"modification\": \"Replacement of the nitrile with a tertiary alcohol.\",\n\"rationale\": \"The nitrile group on the phenyl ring is a relatively bulky, electron-withdrawing group. Replacing it with a tertiary alcohol introduces a hydrogen bond donor and acceptor, which could form favorable interactions with the HDAC1 active site. The tertiary alcohol is also less bulky than the nitrile, potentially reducing steric clashes. The hydroxyl group can also participate in water-mediated hydrogen bonds, which can be important for binding affinity. This modification introduces a more complex functionality, but the potential for multiple interactions makes it a worthwhile exploration.\",\n\"expected_fold_improvement\": 1.1,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Cc1c(N)cccc1-c1cn(-c2ccc(O)cc2)c2ccc(C#CC)cc12\",\n\"modification\": \"Replacement of the nitrile with an alkyne.\",\n\"rationale\": \"The nitrile group on the phenyl ring is a relatively bulky, electron-withdrawing group. Replacing it with an alkyne introduces a rigid, linear functionality that could potentially engage in \u03c0-\u03c0 stacking interactions with aromatic residues in the HDAC1 active site. Alkynes are also relatively small, minimizing steric clashes. While the electronic properties are different, the potential for a new \u03c0-\u03c0 stacking interaction makes this a worthwhile exploration.  The alkyne can also be further derivatized later in the optimization process via click chemistry.\",\n\"expected_fold_improvement\": 1.15,\n\"confidence\": \"low\"\n}\n]\n}",
+  "usage": {
+    "input_tokens": 228,
+    "output_tokens": 1042,
+    "total_duration_s": 126.3
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 126.35,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:34:29",
+  "n_suggestions": 5
+}

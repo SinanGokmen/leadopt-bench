@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL2446006_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\nMeasured potency of the starting compound: pIC50 = 6.23\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "modification": "Starting Compound",
+      "rationale": "This is the baseline for comparison. We need to see how our modifications impact potency.",
+      "expected_fold_improvement": 0,
+      "confidence": "low",
+      "index": 0
+    },
+    {
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "modification": "Replace the terminal methyl on the urea with a cyclopropyl group",
+      "rationale": "The terminal methyl group on the urea is likely not contributing significantly to binding and may even be introducing some steric clashes. Replacing it with a cyclopropyl group maintains a similar size but introduces rigidity and a potential for favorable hydrophobic interactions. Cyclopropyl rings are often well-tolerated in drug molecules and can improve metabolic stability. This is a relatively low-risk modification.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "modification": "Replace the phenyl ring on the urea with a 4-fluorophenyl ring",
+      "rationale": "The phenyl ring on the urea is a significant hydrophobic region. Introducing a fluorine atom at the para position can modulate the electronic properties of the ring, potentially increasing hydrogen bond acceptor ability and improving binding affinity. Fluorine also often improves metabolic stability by blocking sites of oxidation. This is a common and generally well-tolerated modification.",
+      "expected_fold_improvement": 1.5,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "modification": "Replace the benzylic ester with a hydroxymethyl group",
+      "rationale": "The benzylic ester is a potential site of metabolic instability (esterase cleavage). Replacing it with a hydroxymethyl group introduces a hydrogen bond donor, which could form a favorable interaction with the HDAC1 active site. While it removes the ester, the hydroxymethyl group is less susceptible to enzymatic hydrolysis and can be further modified if needed. This is a more significant change, but the potential benefits outweigh the risks.",
+      "expected_fold_improvement": 1.8,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "modification": "Replace the methoxy group on the phenyl ring with a hydrogen atom",
+      "rationale": "The methoxy group is a relatively small, lipophilic substituent. While it may contribute to some binding, it's also a potential site for O-demethylation, leading to a less potent metabolite. Removing it simplifies the molecule and eliminates this metabolic liability. The resulting hydrogen atom can also participate in a weak hydrogen bond or dipole-dipole interaction.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\",\n\"modification\": \"Starting Compound\",\n\"rationale\": \"This is the baseline for comparison. We need to see how our modifications impact potency.\"\n    ,\n\"expected_fold_improvement\": 0\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\",\n\"modification\": \"Replace the terminal methyl on the urea with a cyclopropyl group\",\n\"rationale\": \"The terminal methyl group on the urea is likely not contributing significantly to binding and may even be introducing some steric clashes. Replacing it with a cyclopropyl group maintains a similar size but introduces rigidity and a potential for favorable hydrophobic interactions. Cyclopropyl rings are often well-tolerated in drug molecules and can improve metabolic stability. This is a relatively low-risk modification.\",\n\"expected_fold_improvement\": 1.2,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\",\n\"modification\": \"Replace the phenyl ring on the urea with a 4-fluorophenyl ring\",\n\"rationale\": \"The phenyl ring on the urea is a significant hydrophobic region. Introducing a fluorine atom at the para position can modulate the electronic properties of the ring, potentially increasing hydrogen bond acceptor ability and improving binding affinity. Fluorine also often improves metabolic stability by blocking sites of oxidation. This is a common and generally well-tolerated modification.\",\n\"expected_fold_improvement\": 1.5,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\",\n\"modification\": \"Replace the benzylic ester with a hydroxymethyl group\",\n\"rationale\": \"The benzylic ester is a potential site of metabolic instability (esterase cleavage). Replacing it with a hydroxymethyl group introduces a hydrogen bond donor, which could form a favorable interaction with the HDAC1 active site. While it removes the ester, the hydroxymethyl group is less susceptible to enzymatic hydrolysis and can be further modified if needed. This is a more significant change, but the potential benefits outweigh the risks.\",\n\"expected_fold_improvement\": 1.8,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O\",\n\"modification\": \"Replace the methoxy group on the phenyl ring with a hydrogen atom\",\n\"rationale\": \"The methoxy group is a relatively small, lipophilic substituent. While it may contribute to some binding, it's also a potential site for O-demethylation, leading to a less potent metabolite. Removing it simplifies the molecule and eliminates this metabolic liability. The resulting hydrogen atom can also participate in a weak hydrogen bond or dipole-dipole interaction.\",\n\"expected_fold_improvement\": 1.1,\n\"confidence\": \"low\"\n}\n]\n}\n",
+  "usage": {
+    "input_tokens": 255,
+    "output_tokens": 919,
+    "total_duration_s": 98.0
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 98.06,
+  "run_index": 0,
+  "timestamp": "2026-10-17T01:59:24",
+  "n_suggestions": 5
+}

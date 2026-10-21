@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL2439334_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Epidermal growth factor receptor",
+  "provider": "baseline_random",
+  "model": "baseline-random",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Epidermal growth factor receptor (ChEMBL CHEMBL203)\nAssay endpoint: IC50\n\nStarting compound (SMILES): C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC)cc4)nc32)cc1\nMeasured potency of the starting compound: pIC50 = 5.32\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(-n5ccnc5)cc4)nc32)cc1",
+      "modification": "replace substituent with imidazol_1_yl",
+      "rationale": "Substituting imidazol_1_yl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC(=O)O)cc4)nc32)cc1",
+      "modification": "replace substituent with carboxylic_acid",
+      "rationale": "Substituting carboxylic_acid at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(C(C)C)nc32)cc1",
+      "modification": "replace substituent with isopropyl",
+      "rationale": "Substituting isopropyl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "COc1ccc(Nc2ncc3ncc(=O)n(-c4ccc(N(C)C)cc4)c3n2)cc1",
+      "modification": "replace substituent with dimethylamino",
+      "rationale": "Substituting dimethylamino at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccccc4)nc32)cc1",
+      "modification": "replace substituent with phenyl",
+      "rationale": "Substituting phenyl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(-n5ccnc5)cc4)nc32)cc1\", \"modification\": \"replace substituent with imidazol_1_yl\", \"rationale\": \"Substituting imidazol_1_yl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC(=O)O)cc4)nc32)cc1\", \"modification\": \"replace substituent with carboxylic_acid\", \"rationale\": \"Substituting carboxylic_acid at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(C(C)C)nc32)cc1\", \"modification\": \"replace substituent with isopropyl\", \"rationale\": \"Substituting isopropyl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"COc1ccc(Nc2ncc3ncc(=O)n(-c4ccc(N(C)C)cc4)c3n2)cc1\", \"modification\": \"replace substituent with dimethylamino\", \"rationale\": \"Substituting dimethylamino at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccccc4)nc32)cc1\", \"modification\": \"replace substituent with phenyl\", \"rationale\": \"Substituting phenyl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.0,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:16",
+  "n_suggestions": 5
+}

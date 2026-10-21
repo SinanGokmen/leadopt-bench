@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL5539704_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Bromodomain-containing protein 4 (ChEMBL CHEMBL1163125)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)cc1NC(=O)N1CCOCC1\nMeasured potency of the starting compound: pIC50 = 6.47\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)cc1NC(=O)N1CCOCC1C",
+      "modification": "Addition of Methyl Group to Piperazine Nitrogen",
+      "rationale": "The piperazine nitrogen in the starting compound is likely a site of metabolic vulnerability (N-oxidation) and may also be contributing to suboptimal binding. Introducing a methyl group will sterically hinder N-oxidation, increasing metabolic stability. Furthermore, a small alkyl substituent on a piperazine nitrogen can sometimes improve binding affinity by favoring a conformation that better fits the bromodomain binding pocket. This is a relatively simple modification with a high probability of success and minimal impact on overall molecular properties. The added methyl group is small enough to be tolerated without significantly altering the compound's physicochemical profile.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)cc1NC(=O)N1CC(C)C1",
+      "modification": "Replacement of Ethylene Glycol with Isopropyl Group on Piperazine",
+      "rationale": "The ethylene glycol moiety (N1CCOCC1) is a polar, flexible group. While it may contribute to solubility, it could also be introducing conformational flexibility that reduces binding affinity. Replacing it with an isopropyl group introduces a more defined, hydrophobic interaction point. This could improve binding by pre-organizing the molecule into a more favorable conformation for bromodomain interaction. The isopropyl group is also less prone to hydrogen bonding, which could reduce unproductive interactions. This change is synthetically accessible via reductive amination.",
+      "expected_fold_improvement": 1.5,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)cc1NC(=O)N1NCC(N)C1",
+      "modification": "Replacement of Ethylene Glycol with N-Methyl-2-Aminoethyl Group on Piperazine",
+      "rationale": "The current ethylene glycol moiety is relatively unconstrained. Replacing it with an N-methyl-2-aminoethyl group introduces a basic nitrogen that could form a salt bridge with an acidic residue in the bromodomain binding pocket. The methyl group on the amine provides some steric bulk to restrict conformational freedom while still allowing for favorable interactions. This modification introduces a potentially strong, directional interaction, which could significantly improve potency. The basic nitrogen also has the potential to improve aqueous solubility.",
+      "expected_fold_improvement": 2.0,
+      "confidence": "low",
+      "index": 2
+    },
+    {
+      "smiles": "Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)cc1NC(=O)N1CC(O)C1",
+      "modification": "Replacement of Ethylene Glycol with N-Hydroxyethyl Group on Piperazine",
+      "rationale": "The ethylene glycol moiety is a hydrogen bond donor/acceptor. Replacing it with an N-hydroxyethyl group maintains the hydrogen bonding potential but introduces a more rigid, constrained linker. This could improve binding by reducing conformational entropy and favoring a specific binding pose. The hydroxyl group could also participate in a hydrogen bond with the target protein, further strengthening the interaction. This modification is synthetically straightforward.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)cc1NC(=O)N1CC(C)(C)C1",
+      "modification": "Replacement of Ethylene Glycol with tert-Butyl Group on Piperazine",
+      "rationale": "The ethylene glycol moiety is relatively flexible and may be contributing to unfavorable entropy. Replacing it with a tert-butyl group introduces a bulky, hydrophobic group that restricts conformational freedom and promotes a more pre-organized binding conformation. The tert-butyl group is also metabolically stable. While the increased lipophilicity might impact solubility, the potential for improved binding affinity warrants investigation. This modification is synthetically challenging but feasible.",
+      "expected_fold_improvement": 1.8,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)cc1NC(=O)N1CCOCC1C\",\n\"modification\": \"Addition of Methyl Group to Piperazine Nitrogen\",\n\"rationale\": \"The piperazine nitrogen in the starting compound is likely a site of metabolic vulnerability (N-oxidation) and may also be contributing to suboptimal binding. Introducing a methyl group will sterically hinder N-oxidation, increasing metabolic stability. Furthermore, a small alkyl substituent on a piperazine nitrogen can sometimes improve binding affinity by favoring a conformation that better fits the bromodomain binding pocket. This is a relatively simple modification with a high probability of success and minimal impact on overall molecular properties. The added methyl group is small enough to be tolerated without significantly altering the compound's physicochemical profile.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)cc1NC(=O)N1CC(C)C1\",\n\"modification\": \"Replacement of Ethylene Glycol with Isopropyl Group on Piperazine\",\n\"rationale\": \"The ethylene glycol moiety (N1CCOCC1) is a polar, flexible group. While it may contribute to solubility, it could also be introducing conformational flexibility that reduces binding affinity. Replacing it with an isopropyl group introduces a more defined, hydrophobic interaction point. This could improve binding by pre-organizing the molecule into a more favorable conformation for bromodomain interaction. The isopropyl group is also less prone to hydrogen bonding, which could reduce unproductive interactions. This change is synthetically accessible via reductive amination.\"\n    ,\n\"expected_fold_improvement\": 1.5\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)cc1NC(=O)N1NCC(N)C1\",\n\"modification\": \"Replacement of Ethylene Glycol with N-Methyl-2-Aminoethyl Group on Piperazine\",\n\"rationale\": \"The current ethylene glycol moiety is relatively unconstrained. Replacing it with an N-methyl-2-aminoethyl group introduces a basic nitrogen that could form a salt bridge with an acidic residue in the bromodomain binding pocket. The methyl group on the amine provides some steric bulk to restrict conformational freedom while still allowing for favorable interactions. This modification introduces a potentially strong, directional interaction, which could significantly improve potency. The basic nitrogen also has the potential to improve aqueous solubility.\"\n    ,\n\"expected_fold_improvement\": 2.0\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)cc1NC(=O)N1CC(O)C1\",\n\"modification\": \"Replacement of Ethylene Glycol with N-Hydroxyethyl Group on Piperazine\",\n\"rationale\": \"The ethylene glycol moiety is a hydrogen bond donor/acceptor. Replacing it with an N-hydroxyethyl group maintains the hydrogen bonding potential but introduces a more rigid, constrained linker. This could improve binding by reducing conformational entropy and favoring a specific binding pose. The hydroxyl group could also participate in a hydrogen bond with the target protein, further strengthening the interaction. This modification is synthetically straightforward.\"\n    ,\n\"expected_fold_improvement\": 1.3\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1cc(F)cc(C)c1Oc1ccc(C(C)(C)O)cc1-c1cn(C)c(=O)cc1NC(=O)N1CC(C)(C)C1\",\n\"modification\": \"Replacement of Ethylene Glycol with tert-Butyl Group on Piperazine\",\n\"rationale\": \"The ethylene glycol moiety is relatively flexible and may be contributing to unfavorable entropy. Replacing it with a tert-butyl group introduces a bulky, hydrophobic group that restricts conformational freedom and promotes a more pre-organized binding conformation. The tert-butyl group is also metabolically stable. While the increased lipophilicity might impact solubility, the potential for improved binding affinity warrants investigation. This modification is synthetically challenging but feasible.\"\n    ,\n\"expected_fold_improvement\": 1.8\n    ,\n\"confidence\": \"low\"\n}\n]\n}",
+  "usage": {
+    "input_tokens": 243,
+    "output_tokens": 1045,
+    "total_duration_s": 128.6
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 128.64,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:25:55",
+  "n_suggestions": 5
+}

@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL2433591_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Bromodomain-containing protein 4 (ChEMBL CHEMBL1163125)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Cc1nnc2n1-c1ccccc1C(c1ccccc1)=NC2NC(=O)CCc1ccccc1\nMeasured potency of the starting compound: pIC50 = 5.4\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "Cc1nnc2n1-c1ccccc1C(c1ccccc1)=NC2NC(=O)Cc(C)C",
+      "modification": "Methylation of the phenyl ring adjacent to the carbonyl",
+      "rationale": "The phenyl ring adjacent to the carbonyl is likely involved in hydrophobic interactions with the bromodomain. Introducing a methyl group at a position ortho to the carbonyl (assuming it's the more accessible position) could increase these interactions, potentially leading to a more favorable binding pose and improved potency. Methyl groups are generally well-tolerated and easily introduced synthetically, often via Friedel-Crafts alkylation or similar methods. The increased lipophilicity might also improve membrane permeability, although this is a secondary consideration at this stage.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "Cc1nnc2n1-c1ccccc1C(c1ccccc1)=NC2NC(=O)Cc1ccccc1c1ccccc1",
+      "modification": "Extension of the propyl linker to a butyl linker",
+      "rationale": "The propyl linker connecting the carbonyl to the phenyl ring provides conformational flexibility. Extending this linker to a butyl group could allow the phenyl ring to explore a more optimal binding pose within the bromodomain pocket. While increasing linker length can sometimes introduce entropic penalties, the potential for a more favorable interaction outweighs this risk, especially if the bromodomain pocket is relatively large and accommodating.  The synthesis is straightforward, involving a chain extension reaction.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "Cc1nnc2n1-c1ccccc1C(c1ccccc1)=NC2NC(=O)Cc1ccc(Cl)cc1",
+      "modification": "Introduction of a chlorine atom on the phenyl ring",
+      "rationale": "Halogens, particularly chlorine, can participate in halogen bonding with the target protein.  The introduction of a chlorine atom on the phenyl ring, ideally at a position that allows for favorable halogen bonding, could significantly enhance binding affinity.  The position of the chlorine would need to be optimized, but this modification is a reasonable starting point. Chlorination is a well-established synthetic transformation.",
+      "expected_fold_improvement": 1.4,
+      "confidence": "low",
+      "index": 2
+    },
+    {
+      "smiles": "Cc1nnc2n1-c1ccccc1C(c1ccccc1)=NC2NC(=O)Cc1ccc(N)cc1",
+      "modification": "Introduction of an amine group on the phenyl ring",
+      "rationale": "Introducing an amine group on the phenyl ring could allow for hydrogen bonding interactions with the bromodomain. This could be particularly beneficial if there are acidic residues in the binding pocket that can act as hydrogen bond acceptors. The amine could also be protonated at physiological pH, creating a charged interaction.  The amine could be introduced via nitration followed by reduction, or through a Buchwald-Hartwig amination.  The basicity of the amine will need to be considered for optimal binding.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "Cc1nnc2n1-c1ccccc1C(c1ccccc1)=NC2NC(=O)Cc1ccccc1N(C)C",
+      "modification": "Dimethylation of the amine on the urea",
+      "rationale": "The urea nitrogen is likely involved in hydrogen bonding. Dimethylation of this nitrogen would eliminate the hydrogen bond donor, potentially increasing lipophilicity and improving membrane permeability. More importantly, it could restrict the conformational freedom of the urea, forcing it into a more favorable binding conformation. This is a relatively simple modification, often achieved via reductive amination.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"Cc1nnc2n1-c1ccccc1C(c1ccccc1)=NC2NC(=O)Cc(C)C\",\n\"modification\": \"Methylation of the phenyl ring adjacent to the carbonyl\",\n\"rationale\": \"The phenyl ring adjacent to the carbonyl is likely involved in hydrophobic interactions with the bromodomain. Introducing a methyl group at a position ortho to the carbonyl (assuming it's the more accessible position) could increase these interactions, potentially leading to a more favorable binding pose and improved potency. Methyl groups are generally well-tolerated and easily introduced synthetically, often via Friedel-Crafts alkylation or similar methods. The increased lipophilicity might also improve membrane permeability, although this is a secondary consideration at this stage.\"\n  ,\n\"expected_fold_improvement\": 1.2\n  ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1nnc2n1-c1ccccc1C(c1ccccc1)=NC2NC(=O)Cc1ccccc1c1ccccc1\",\n\"modification\": \"Extension of the propyl linker to a butyl linker\",\n\"rationale\": \"The propyl linker connecting the carbonyl to the phenyl ring provides conformational flexibility. Extending this linker to a butyl group could allow the phenyl ring to explore a more optimal binding pose within the bromodomain pocket. While increasing linker length can sometimes introduce entropic penalties, the potential for a more favorable interaction outweighs this risk, especially if the bromodomain pocket is relatively large and accommodating.  The synthesis is straightforward, involving a chain extension reaction.\"\n  ,\n\"expected_fold_improvement\": 1.3\n  ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"Cc1nnc2n1-c1ccccc1C(c1ccccc1)=NC2NC(=O)Cc1ccc(Cl)cc1\",\n\"modification\": \"Introduction of a chlorine atom on the phenyl ring\",\n\"rationale\": \"Halogens, particularly chlorine, can participate in halogen bonding with the target protein.  The introduction of a chlorine atom on the phenyl ring, ideally at a position that allows for favorable halogen bonding, could significantly enhance binding affinity.  The position of the chlorine would need to be optimized, but this modification is a reasonable starting point. Chlorination is a well-established synthetic transformation.\"\n  ,\n\"expected_fold_improvement\": 1.4\n  ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Cc1nnc2n1-c1ccccc1C(c1ccccc1)=NC2NC(=O)Cc1ccc(N)cc1\",\n\"modification\": \"Introduction of an amine group on the phenyl ring\",\n\"rationale\": \"Introducing an amine group on the phenyl ring could allow for hydrogen bonding interactions with the bromodomain. This could be particularly beneficial if there are acidic residues in the binding pocket that can act as hydrogen bond acceptors. The amine could also be protonated at physiological pH, creating a charged interaction.  The amine could be introduced via nitration followed by reduction, or through a Buchwald-Hartwig amination.  The basicity of the amine will need to be considered for optimal binding.\"\n  ,\n\"expected_fold_improvement\": 1.1\n  ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"Cc1nnc2n1-c1ccccc1C(c1ccccc1)=NC2NC(=O)Cc1ccccc1N(C)C\",\n\"modification\": \"Dimethylation of the amine on the urea\",\n\"rationale\": \"The urea nitrogen is likely involved in hydrogen bonding. Dimethylation of this nitrogen would eliminate the hydrogen bond donor, potentially increasing lipophilicity and improving membrane permeability. More importantly, it could restrict the conformational freedom of the urea, forcing it into a more favorable binding conformation. This is a relatively simple modification, often achieved via reductive amination.\"\n  ,\n\"expected_fold_improvement\": 1.2\n  ,\n\"confidence\": \"medium\"\n}\n]\n}",
+  "usage": {
+    "input_tokens": 223,
+    "output_tokens": 891,
+    "total_duration_s": 86.5
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 86.52,
+  "run_index": 0,
+  "timestamp": "2026-10-17T00:52:10",
+  "n_suggestions": 5
+}

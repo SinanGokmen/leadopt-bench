@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL3379478_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "baseline_random",
+  "model": "baseline-random",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): O=C1CC[C@H](C(=O)N[C@H](CCCCCS)C(=O)Nc2ccccc2)N1\nMeasured potency of the starting compound: pIC50 = 7.0\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "O=C1CC[C@H](C(=O)N[C@H](CCCCCS)C(=O)NBr)N1",
+      "modification": "replace substituent with bromo",
+      "rationale": "Substituting bromo at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "O=C1CC[C@H](C(=O)N[C@H](F)C(=O)Nc2ccccc2)N1",
+      "modification": "replace substituent with fluoro",
+      "rationale": "Substituting fluoro at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "O=C1CC[C@H](C(=O)N[C@H](CCBr)C(=O)Nc2ccccc2)N1",
+      "modification": "replace substituent with bromo",
+      "rationale": "Substituting bromo at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "O=C1CC[C@H](C(=O)N[C@H](CCCn2ccnc2)C(=O)Nc2ccccc2)N1",
+      "modification": "replace substituent with imidazol_1_yl",
+      "rationale": "Substituting imidazol_1_yl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "CC(C)NC(=O)[C@@H](CCCCCS)NC(=O)[C@H]1CCC(=O)N1",
+      "modification": "replace substituent with isopropyl",
+      "rationale": "Substituting isopropyl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"O=C1CC[C@H](C(=O)N[C@H](CCCCCS)C(=O)NBr)N1\", \"modification\": \"replace substituent with bromo\", \"rationale\": \"Substituting bromo at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"O=C1CC[C@H](C(=O)N[C@H](F)C(=O)Nc2ccccc2)N1\", \"modification\": \"replace substituent with fluoro\", \"rationale\": \"Substituting fluoro at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"O=C1CC[C@H](C(=O)N[C@H](CCBr)C(=O)Nc2ccccc2)N1\", \"modification\": \"replace substituent with bromo\", \"rationale\": \"Substituting bromo at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"O=C1CC[C@H](C(=O)N[C@H](CCCn2ccnc2)C(=O)Nc2ccccc2)N1\", \"modification\": \"replace substituent with imidazol_1_yl\", \"rationale\": \"Substituting imidazol_1_yl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"CC(C)NC(=O)[C@@H](CCCCCS)NC(=O)[C@H]1CCC(=O)N1\", \"modification\": \"replace substituent with isopropyl\", \"rationale\": \"Substituting isopropyl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.0,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:16",
+  "n_suggestions": 5
+}

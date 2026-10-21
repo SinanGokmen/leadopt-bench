@@ -1,0 +1,79 @@
+{
+  "series_id": "CHEMBL2446006_IC50",
+  "strategy": "activity",
+  "year_stratum": "old",
+  "target_chembl_id": "CHEMBL325",
+  "target_pref_name": "Histone deacetylase 1",
+  "standard_type": "IC50",
+  "lead_molecule": "CHEMBL2442697",
+  "lead_pchembl": 6.23,
+  "lead_year": 2013,
+  "lead_policy": "representative",
+  "early_pool_size": 6,
+  "n_targets": 4,
+  "max_gain": 1.73,
+  "median_gain": 1.24,
+  "median_lead_target_tanimoto": 0.775,
+  "target_years": [
+    2013
+  ],
+  "usable": true,
+  "lead": {
+    "molecule_chembl_id": "CHEMBL2442697",
+    "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(NC(=O)CCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+    "pchembl": 6.23,
+    "standard_type": "IC50",
+    "assay_chembl_id": "CHEMBL2446006",
+    "document_chembl_id": "CHEMBL2439983",
+    "document_year": 2013,
+    "n_measurements": 1
+  },
+  "targets": [
+    {
+      "molecule_chembl_id": "CHEMBL2442801",
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3cccc(OCCCCCCC(=O)NO)c3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "pchembl": 7.96,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2446006",
+      "document_chembl_id": "CHEMBL2439983",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2442800",
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3ccc(OCCCCCCC(=O)NO)cc3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "pchembl": 7.54,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2446006",
+      "document_chembl_id": "CHEMBL2439983",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2442692",
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3cccc(OCCCCCCCC(=O)NO)c3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "pchembl": 7.41,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2446006",
+      "document_chembl_id": "CHEMBL2439983",
+      "document_year": 2013,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL2442798",
+      "smiles": "COc1cc([C@@H]2c3cc4c(cc3[C@@H](Nc3cccc(OCCCCCC(=O)NO)c3)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O",
+      "pchembl": 7.35,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL2446006",
+      "document_chembl_id": "CHEMBL2439983",
+      "document_year": 2013,
+      "n_measurements": 1
+    }
+  ],
+  "lead_target_tanimoto": [
+    0.775,
+    0.775,
+    0.853,
+    0.775
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL3705904_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "baseline_random",
+  "model": "baseline-random",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)Oc2ccccc2)cc1\nMeasured potency of the starting compound: pIC50 = 6.5\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "O=C(NCc1ccc(Cl)cc1)Oc1ccccc1",
+      "modification": "replace substituent with chloro",
+      "rationale": "Substituting chloro at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "COc1ccc(CNC(=O)Oc2ccccc2)cc1",
+      "modification": "replace substituent with methoxy",
+      "rationale": "Substituting methoxy at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "CCc1ccc(C(=O)Nc2cc(-c3ccccc3)ccc2N)cc1",
+      "modification": "replace substituent with ethyl",
+      "rationale": "Substituting ethyl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)OC(F)(F)F)cc1",
+      "modification": "replace substituent with trifluoromethyl",
+      "rationale": "Substituting trifluoromethyl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 3
+    },
+    {
+      "smiles": "Cc1ccc(N)c(NC(=O)c2ccc(CNC(=O)Oc3ccccc3)cc2)c1",
+      "modification": "replace substituent with methyl",
+      "rationale": "Substituting methyl at this position explores the structure-activity relationship around the core.",
+      "expected_fold_improvement": 3.0,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"O=C(NCc1ccc(Cl)cc1)Oc1ccccc1\", \"modification\": \"replace substituent with chloro\", \"rationale\": \"Substituting chloro at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"COc1ccc(CNC(=O)Oc2ccccc2)cc1\", \"modification\": \"replace substituent with methoxy\", \"rationale\": \"Substituting methoxy at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"CCc1ccc(C(=O)Nc2cc(-c3ccccc3)ccc2N)cc1\", \"modification\": \"replace substituent with ethyl\", \"rationale\": \"Substituting ethyl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"Nc1ccc(-c2ccccc2)cc1NC(=O)c1ccc(CNC(=O)OC(F)(F)F)cc1\", \"modification\": \"replace substituent with trifluoromethyl\", \"rationale\": \"Substituting trifluoromethyl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}, {\"smiles\": \"Cc1ccc(N)c(NC(=O)c2ccc(CNC(=O)Oc3ccccc3)cc2)c1\", \"modification\": \"replace substituent with methyl\", \"rationale\": \"Substituting methyl at this position explores the structure-activity relationship around the core.\", \"expected_fold_improvement\": 3.0, \"confidence\": \"medium\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.0,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:16",
+  "n_suggestions": 5
+}

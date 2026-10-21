@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL5538331_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1F\nMeasured potency of the starting compound: pIC50 = 5.51\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1FCOc1=CC=CC=C1",
+      "modification": "Introduction of a p-methoxybenzyl group at the distal phenyl ring.",
+      "rationale": "The distal phenyl ring in the starting compound is relatively unoptimized. Introducing a p-methoxybenzyl group (p-MeOPh-CH2-O-) is a common strategy for improving HDAC inhibitor potency. The methoxy group can participate in hydrogen bonding with residues in the HDAC binding pocket, potentially increasing affinity. The benzyl linker provides conformational flexibility to allow for optimal positioning of the methoxy group. This modification is synthetically accessible via a Williamson ether synthesis using p-methoxybenzyl alcohol and the phenolic hydroxyl group on the phenyl ring.",
+      "expected_fold_improvement": 1.5,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1FC(c1ccccc1)c1cc(O)cc1",
+      "modification": "Replacement of the fluorine with a 4-hydroxyphenyl group.",
+      "rationale": "The fluorine atom is a small, electronegative substituent. While it can sometimes improve binding through halogen bonding, it's often a less impactful interaction than a hydrogen bond donor. Replacing it with a 4-hydroxyphenyl group introduces a hydrogen bond donor, which could form a stronger interaction with the HDAC enzyme. The phenyl ring provides additional hydrophobic interactions. This modification is synthetically feasible via a Suzuki coupling reaction between a fluorobenzene derivative and a 4-hydroxyphenyl boronic acid.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1Fcc1ccc(C(=O)O)cc1",
+      "modification": "Introduction of a carboxylic acid group at the para position of the distal phenyl ring.",
+      "rationale": "Introducing a carboxylic acid group can significantly enhance HDAC inhibitor potency. Carboxylic acids are known to form salt bridges with positively charged residues in the HDAC active site, leading to increased binding affinity. The para position is chosen to minimize steric clashes. This modification is synthetically achievable through a Friedel-Crafts acylation followed by oxidation of the resulting ketone.",
+      "expected_fold_improvement": 2.0,
+      "confidence": "high",
+      "index": 2
+    },
+    {
+      "smiles": "COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1Fcc1ccc(N)cc1",
+      "modification": "Introduction of an amine group at the para position of the distal phenyl ring.",
+      "rationale": "An amine group can act as a hydrogen bond donor and acceptor, potentially forming multiple interactions within the HDAC binding pocket. It can also be protonated at physiological pH, creating a positive charge that can interact with negatively charged residues. This modification is synthetically accessible via nitration of the phenyl ring followed by reduction of the nitro group.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1Fcc1ccc(Cl)cc1",
+      "modification": "Introduction of a chlorine atom at the para position of the distal phenyl ring.",
+      "rationale": "While fluorine is present, a chlorine atom is larger and more polarizable. This increased polarizability could lead to stronger halogen bonding interactions with the target protein. The larger size might also provide a more favorable steric fit within the binding pocket. This modification is synthetically accessible via electrophilic aromatic substitution using chlorine gas or a chlorinating agent.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1FCOc1=CC=CC=C1\",\n\"modification\": \"Introduction of a p-methoxybenzyl group at the distal phenyl ring.\",\n\"rationale\": \"The distal phenyl ring in the starting compound is relatively unoptimized. Introducing a p-methoxybenzyl group (p-MeOPh-CH2-O-) is a common strategy for improving HDAC inhibitor potency. The methoxy group can participate in hydrogen bonding with residues in the HDAC binding pocket, potentially increasing affinity. The benzyl linker provides conformational flexibility to allow for optimal positioning of the methoxy group. This modification is synthetically accessible via a Williamson ether synthesis using p-methoxybenzyl alcohol and the phenolic hydroxyl group on the phenyl ring.\"\n  ,\n\"expected_fold_improvement\": 1.5\n  ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1FC(c1ccccc1)c1cc(O)cc1\",\n\"modification\": \"Replacement of the fluorine with a 4-hydroxyphenyl group.\",\n\"rationale\": \"The fluorine atom is a small, electronegative substituent. While it can sometimes improve binding through halogen bonding, it's often a less impactful interaction than a hydrogen bond donor. Replacing it with a 4-hydroxyphenyl group introduces a hydrogen bond donor, which could form a stronger interaction with the HDAC enzyme. The phenyl ring provides additional hydrophobic interactions. This modification is synthetically feasible via a Suzuki coupling reaction between a fluorobenzene derivative and a 4-hydroxyphenyl boronic acid.\"\n  ,\n\"expected_fold_improvement\": 1.3\n  ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1Fcc1ccc(C(=O)O)cc1\",\n\"modification\": \"Introduction of a carboxylic acid group at the para position of the distal phenyl ring.\",\n\"rationale\": \"Introducing a carboxylic acid group can significantly enhance HDAC inhibitor potency. Carboxylic acids are known to form salt bridges with positively charged residues in the HDAC active site, leading to increased binding affinity. The para position is chosen to minimize steric clashes. This modification is synthetically achievable through a Friedel-Crafts acylation followed by oxidation of the resulting ketone.\"\n  ,\n\"expected_fold_improvement\": 2.0\n  ,\n\"confidence\": \"high\"\n},\n{\n\"smiles\": \"COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1Fcc1ccc(N)cc1\",\n\"modification\": \"Introduction of an amine group at the para position of the distal phenyl ring.\",\n\"rationale\": \"An amine group can act as a hydrogen bond donor and acceptor, potentially forming multiple interactions within the HDAC binding pocket. It can also be protonated at physiological pH, creating a positive charge that can interact with negatively charged residues. This modification is synthetically accessible via nitration of the phenyl ring followed by reduction of the nitro group.\"\n  ,\n\"expected_fold_improvement\": 1.2\n  ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"COc1ncc(-c2cc(OCCCCCCCCCC(=O)Nc3ccccc3N)c3ncnc(C)c3c2)cc1Fcc1ccc(Cl)cc1\",\n\"modification\": \"Introduction of a chlorine atom at the para position of the distal phenyl ring.\",\n\"rationale\": \"While fluorine is present, a chlorine atom is larger and more polarizable. This increased polarizability could lead to stronger halogen bonding interactions with the target protein. The larger size might also provide a more favorable steric fit within the binding pocket. This modification is synthetically accessible via electrophilic aromatic substitution using chlorine gas or a chlorinating agent.\"\n  ,\n\"expected_fold_improvement\": 1.1\n  ,\n\"confidence\": \"low\"\n}\n]\n}",
+  "usage": {
+    "input_tokens": 224,
+    "output_tokens": 948,
+    "total_duration_s": 126.5
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 126.52,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:21:30",
+  "n_suggestions": 5
+}

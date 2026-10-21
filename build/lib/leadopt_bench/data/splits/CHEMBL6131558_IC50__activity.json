@@ -1,0 +1,112 @@
+{
+  "series_id": "CHEMBL6131558_IC50",
+  "strategy": "activity",
+  "year_stratum": "new",
+  "target_chembl_id": "CHEMBL325",
+  "target_pref_name": "Histone deacetylase 1",
+  "standard_type": "IC50",
+  "lead_molecule": "CHEMBL6174437",
+  "lead_pchembl": 6.53,
+  "lead_year": 2024,
+  "lead_policy": "representative",
+  "early_pool_size": 7,
+  "n_targets": 7,
+  "max_gain": 3.09,
+  "median_gain": 2.32,
+  "median_lead_target_tanimoto": 0.584,
+  "target_years": [
+    2024
+  ],
+  "usable": true,
+  "lead": {
+    "molecule_chembl_id": "CHEMBL6174437",
+    "smiles": "Cc1c(N)cccc1-c1cn(-c2ccc(OCCCCCC(=O)NO)cc2)c2ccc(C#N)cc12",
+    "pchembl": 6.53,
+    "standard_type": "IC50",
+    "assay_chembl_id": "CHEMBL6131558",
+    "document_chembl_id": "CHEMBL6127133",
+    "document_year": 2024,
+    "n_measurements": 1
+  },
+  "targets": [
+    {
+      "molecule_chembl_id": "CHEMBL6148071",
+      "smiles": "N#Cc1ccc2c(c1)c(-c1cccc(N)c1)cn2CCCCCCC(=O)NO",
+      "pchembl": 9.62,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL6131558",
+      "document_chembl_id": "CHEMBL6127133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL6147016",
+      "smiles": "COc1ccc(-c2cn(CCCCCCC(=O)NO)c3ccc(C#N)cc23)cc1OC",
+      "pchembl": 9.26,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL6131558",
+      "document_chembl_id": "CHEMBL6127133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL6161573",
+      "smiles": "Cc1c(N)cccc1-c1cn(CCCCCCC(=O)NO)c2ccc(C#N)cc12",
+      "pchembl": 8.85,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL6131558",
+      "document_chembl_id": "CHEMBL6127133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL6166837",
+      "smiles": "Cc1c(N)cccc1-c1cn(CCCCCCC(=O)NO)c2ncc(C#N)cc12",
+      "pchembl": 8.85,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL6131558",
+      "document_chembl_id": "CHEMBL6127133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL6147849",
+      "smiles": "Cc1c(N)cccc1-c1cn(CCCCCC(=O)NO)c2ncc(C#N)cc12",
+      "pchembl": 8.7,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL6131558",
+      "document_chembl_id": "CHEMBL6127133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL6163227",
+      "smiles": "Cc1cc2c(cc1C#N)c(-c1cccc(N)c1C)cn2CCCCCCC(=O)NO",
+      "pchembl": 8.59,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL6131558",
+      "document_chembl_id": "CHEMBL6127133",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL6160890",
+      "smiles": "Cc1c(N)cccc1-c1cn(CCCCCC(=O)NO)c2ccc(C#N)cc12",
+      "pchembl": 8.41,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL6131558",
+      "document_chembl_id": "CHEMBL6127133",
+      "document_year": 2024,
+      "n_measurements": 1
+    }
+  ],
+  "lead_target_tanimoto": [
+    0.7,
+    0.558,
+    0.584,
+    0.7,
+    0.584,
+    0.451,
+    0.5
+  ]
+}

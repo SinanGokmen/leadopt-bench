@@ -1,0 +1,33 @@
+series_id,strategy,year_stratum,target_pref_name,model,prompt_variant,effort,run_index,n_requested,n_returned,error,similarity_floor,validity_rate,scaffold_compliance_rate,recovery_exact,recovery_close,any_recovery,generic_rate,ungrounded_rate,fraction_additive,mean_mw_delta,any_suggestion_trims,mean_direction_precision,invalid,unchanged,duplicate,scaffold_violation,recovered_target,recovered_nonimprover,novel_plausible
+CHEMBL1067528_Ki,window,old,Prothrombin,baseline-random,implicit,medium,0,5,5,,0.471,1.0,1.0,0.0,0.0,False,0.0,0.0,0.2,7.1,True,0.547,0,0,0,0,0,0,5
+CHEMBL2050420_IC50,window,old,Histone deacetylase 1,baseline-random,implicit,medium,0,5,5,,0.355,1.0,1.0,0.0,0.0,False,0.0,0.0,0.2,-54.1,True,0.833,0,0,0,0,0,0,5
+CHEMBL2433086_IC50,window,old,Bromodomain-containing protein 4,baseline-random,implicit,medium,0,5,5,,0.25,1.0,1.0,0.0,0.2,True,0.0,0.0,0.0,-37.5,True,0.8,0,0,0,0,1,0,4
+CHEMBL2433591_IC50,window,old,Bromodomain-containing protein 4,baseline-random,implicit,medium,0,5,5,,0.333,1.0,1.0,0.0,0.0,False,0.0,0.0,0.2,-30.0,True,0.6,0,0,0,0,0,0,5
+CHEMBL2439334_IC50,window,old,Epidermal growth factor receptor,baseline-random,implicit,medium,0,5,5,,0.382,1.0,1.0,0.0,0.0,False,0.0,0.0,0.4,-13.8,True,0.8,0,0,0,0,0,0,5
+CHEMBL2439335_IC50,window,old,Epidermal growth factor receptor,baseline-random,implicit,medium,0,5,5,,0.481,1.0,1.0,0.0,0.0,False,0.0,0.0,0.4,-52.9,True,0.64,0,0,0,0,0,0,5
+CHEMBL2439336_IC50,window,old,Epidermal growth factor receptor,baseline-random,implicit,medium,0,5,5,,0.382,1.0,1.0,0.0,0.0,False,0.0,0.0,0.4,-13.8,True,0.8,0,0,0,0,0,0,5
+CHEMBL2446006_IC50,window,old,Histone deacetylase 1,baseline-random,implicit,medium,0,5,5,,0.775,1.0,0.0,0.0,0.0,False,0.0,0.0,0.0,-109.7,True,0.19,0,0,0,5,0,0,0
+CHEMBL3095060_IC50,window,old,Epidermal growth factor receptor,baseline-random,implicit,medium,0,5,5,,0.264,1.0,1.0,0.0,0.0,False,0.2,0.0,0.4,-29.4,True,0.83,0,0,0,0,0,0,5
+CHEMBL3226597_IC50,window,old,Bromodomain-containing protein 4,baseline-random,implicit,medium,0,5,5,,0.485,1.0,1.0,0.0,0.0,False,0.2,0.0,0.4,-13.3,True,0.267,0,0,0,0,0,0,5
+CHEMBL3238948_IC50,window,old,Epidermal growth factor receptor,baseline-random,implicit,medium,0,5,5,,0.625,1.0,0.6,0.0,0.0,False,0.0,0.0,0.4,-15.2,True,0.4,0,0,0,2,0,0,3
+CHEMBL3379478_IC50,window,old,Histone deacetylase 1,baseline-random,implicit,medium,0,5,5,,0.522,1.0,1.0,0.0,0.0,False,0.0,0.0,0.2,-20.9,True,0.375,0,0,0,0,0,0,5
+CHEMBL3414207_IC50,window,old,Bromodomain-containing protein 4,baseline-random,implicit,medium,0,5,5,,0.25,1.0,1.0,0.0,0.0,False,0.0,0.0,0.0,-31.7,True,0.733,0,0,0,0,0,0,5
+CHEMBL3424914_Ki,window,old,Prothrombin,baseline-random,implicit,medium,0,5,5,,0.485,1.0,1.0,0.0,0.0,False,0.0,0.0,0.2,7.1,True,0.547,0,0,0,0,0,0,5
+CHEMBL3587158_IC50,window,old,Bromodomain-containing protein 4,baseline-random,implicit,medium,0,5,5,,0.645,1.0,1.0,0.0,0.0,False,0.0,0.0,0.6,-10.6,True,0.467,0,0,0,0,0,0,5
+CHEMBL3705904_IC50,window,old,Histone deacetylase 1,baseline-random,implicit,medium,0,5,5,,0.358,1.0,1.0,0.0,0.0,False,0.0,0.0,0.0,-109.5,True,0.753,0,0,0,0,0,0,5
+CHEMBL5517452_IC50,window,new,Bromodomain-containing protein 4,baseline-random,implicit,medium,0,5,5,,0.353,1.0,1.0,0.0,0.0,False,0.0,0.0,0.4,-9.8,True,0.333,0,0,0,0,0,0,5
+CHEMBL5529441_IC50,window,new,Bromodomain-containing protein 4,baseline-random,implicit,medium,0,5,5,,0.716,1.0,1.0,0.0,0.0,False,0.2,0.2,0.2,1.6,True,0.7,0,0,0,0,0,0,5
+CHEMBL5538331_IC50,window,new,Histone deacetylase 1,baseline-random,implicit,medium,0,5,5,,0.538,1.0,1.0,0.0,0.0,False,0.0,0.0,0.2,-51.8,True,0.09,0,0,0,0,0,0,5
+CHEMBL5539282_IC50,window,new,Bromodomain-containing protein 4,baseline-random,implicit,medium,0,5,5,,0.25,1.0,1.0,0.0,0.0,False,0.0,0.0,0.4,-84.7,True,0.56,0,0,0,0,0,0,5
+CHEMBL5539704_IC50,window,new,Bromodomain-containing protein 4,baseline-random,implicit,medium,0,5,5,,0.437,1.0,0.8,0.0,0.0,False,0.2,0.0,0.4,-31.1,True,0.8,0,0,0,1,0,0,4
+CHEMBL6077283_Ki,window,new,Epidermal growth factor receptor,baseline-random,implicit,medium,0,5,5,,0.383,1.0,1.0,0.0,0.0,False,0.0,0.2,0.6,-36.5,True,0.767,0,0,0,0,0,0,5
+CHEMBL6086969_IC50,window,new,Bromodomain-containing protein 4,baseline-random,implicit,medium,0,5,5,,0.626,1.0,0.8,0.0,0.0,False,0.0,0.0,0.6,-27.2,True,0.556,0,0,0,1,0,0,4
+CHEMBL6096813_IC50,window,new,Histone deacetylase 1,baseline-random,implicit,medium,0,5,5,,0.494,1.0,1.0,0.0,0.0,False,0.0,0.0,0.0,-94.7,True,0.413,0,0,0,0,0,0,5
+CHEMBL6106211_IC50,window,new,Histone deacetylase 1,baseline-random,implicit,medium,0,5,5,,0.663,1.0,1.0,0.0,0.0,False,0.0,0.0,0.2,-45.3,True,0.062,0,0,0,0,0,0,5
+CHEMBL6131558_IC50,window,new,Histone deacetylase 1,baseline-random,implicit,medium,0,5,5,,0.451,1.0,1.0,0.0,0.0,False,0.0,0.0,0.2,-43.8,True,0.213,0,0,0,0,0,0,5
+CHEMBL6187554_IC50,window,new,Prothrombin,baseline-random,implicit,medium,0,5,5,,0.419,1.0,1.0,0.0,0.0,False,0.0,0.0,0.0,-145.3,True,0.423,0,0,0,0,0,0,5
+CHEMBL6187556_IC50,window,new,Prothrombin,baseline-random,implicit,medium,0,5,5,,0.429,1.0,1.0,0.0,0.0,False,0.0,0.0,0.2,-66.7,True,0.617,0,0,0,0,0,0,5
+CHEMBL832832_IC50,window,old,Prothrombin,baseline-random,implicit,medium,0,5,5,,0.562,1.0,1.0,0.0,0.0,False,0.0,0.0,0.2,-23.9,True,0.633,0,0,0,0,0,0,5
+CHEMBL838818_Ki,window,old,Prothrombin,baseline-random,implicit,medium,0,5,5,,0.42,1.0,1.0,0.0,0.0,False,0.0,0.0,0.0,-84.5,True,0.62,0,0,0,0,0,1,4
+CHEMBL865059_IC50,window,old,Prothrombin,baseline-random,implicit,medium,0,5,5,,0.654,1.0,0.8,0.0,0.0,False,0.0,0.0,0.0,-54.7,True,0.067,0,0,0,1,0,0,4
+CHEMBL907072_IC50,window,old,Histone deacetylase 1,baseline-random,implicit,medium,0,5,5,,0.25,1.0,1.0,0.0,0.2,True,0.0,0.0,0.2,-100.2,True,0.633,0,0,0,0,1,0,4

@@ -1,0 +1,79 @@
+{
+  "series_id": "CHEMBL5517452_IC50",
+  "strategy": "window",
+  "year_stratum": "new",
+  "target_chembl_id": "CHEMBL1163125",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "standard_type": "IC50",
+  "lead_molecule": "CHEMBL5555743",
+  "lead_pchembl": 6.5,
+  "lead_year": 2024,
+  "lead_policy": "representative",
+  "early_pool_size": 26,
+  "n_targets": 4,
+  "max_gain": 1.2,
+  "median_gain": 1.05,
+  "median_lead_target_tanimoto": 0.514,
+  "target_years": [
+    2024
+  ],
+  "usable": true,
+  "lead": {
+    "molecule_chembl_id": "CHEMBL5555743",
+    "smiles": "Cc1cc(-c2nccn2Cc2ccccc2)cn(C)c1=O",
+    "pchembl": 6.5,
+    "standard_type": "IC50",
+    "assay_chembl_id": "CHEMBL5517452",
+    "document_chembl_id": "CHEMBL5512694",
+    "document_year": 2024,
+    "n_measurements": 1
+  },
+  "targets": [
+    {
+      "molecule_chembl_id": "CHEMBL5559453",
+      "smiles": "CC(=O)N1CCC[C@@H](Cn2cc(Cl)nc2-c2cc(C)c(=O)n(C)c2)C1",
+      "pchembl": 7.7,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5517452",
+      "document_chembl_id": "CHEMBL5512694",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL5557484",
+      "smiles": "Cc1cc(-c2nc(Cl)cn2C[C@@H]2CCCOC2)cn(C)c1=O",
+      "pchembl": 7.6,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5517452",
+      "document_chembl_id": "CHEMBL5512694",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL5560615",
+      "smiles": "Cc1cc(-c2nc(Cl)cn2Cc2ccccc2)cn(C)c1=O",
+      "pchembl": 7.5,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5517452",
+      "document_chembl_id": "CHEMBL5512694",
+      "document_year": 2024,
+      "n_measurements": 1
+    },
+    {
+      "molecule_chembl_id": "CHEMBL5567131",
+      "smiles": "Cc1cc(-c2nc(Br)cn2Cc2ccccc2)cn(C)c1=O",
+      "pchembl": 7.5,
+      "standard_type": "IC50",
+      "assay_chembl_id": "CHEMBL5517452",
+      "document_chembl_id": "CHEMBL5512694",
+      "document_year": 2024,
+      "n_measurements": 1
+    }
+  ],
+  "lead_target_tanimoto": [
+    0.681,
+    0.653,
+    0.375,
+    0.353
+  ]
+}

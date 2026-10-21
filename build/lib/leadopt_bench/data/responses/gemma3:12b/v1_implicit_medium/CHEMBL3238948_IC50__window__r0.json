@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL3238948_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Epidermal growth factor receptor",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Epidermal growth factor receptor (ChEMBL CHEMBL203)\nAssay endpoint: IC50\n\nStarting compound (SMILES): CN(C)C/C=C/C(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2s1\nMeasured potency of the starting compound: pIC50 = 6.49\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "CN(C)C/C=C/C(=O)Nc1cc2c(Nc3ccc(CF3)c(Cl)c3)ncnc2s1",
+      "modification": "Fluorination of the phenyl ring",
+      "rationale": "The starting compound contains a phenyl ring substituted with a fluorine atom. While fluorine is already present, the position of the fluorine is somewhat distant from the core scaffold. Introducing a trifluoromethyl (CF3) group at the same position offers several advantages. CF3 is a more lipophilic substituent than a single fluorine, which could improve membrane permeability and overall bioavailability. Furthermore, the strong electron-withdrawing nature of CF3 can subtly modulate the electronic properties of the phenyl ring, potentially enhancing interactions with key amino acid residues in the EGFR kinase domain. The increased bulk of the CF3 group might also introduce favorable steric interactions, locking the molecule into a more active conformation. This is a common strategy for improving potency and selectivity in kinase inhibitors.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "CN(C)C/C=C/C(=O)Nc1cc2c(Nc3ccc(F)c(Br)c3)ncnc2s1",
+      "modification": "Chlorine to Bromine substitution",
+      "rationale": "The chlorine atom on the phenyl ring is likely contributing to binding, but its relatively small size and moderate electronegativity might limit its potential. Replacing chlorine with bromine increases the atomic radius and polarizability. This can lead to stronger van der Waals interactions with hydrophobic pockets in the EGFR binding site.  Bromine is also a slightly better leaving group, which *could* (though less likely) facilitate a non-covalent 'halogen bond' interaction with a suitable acceptor in the protein. While the change is relatively subtle, it's a common tactic to explore in lead optimization to fine-tune binding affinity. The increased mass also provides a handle for potential future radiolabeling for imaging studies.",
+      "expected_fold_improvement": 1.15,
+      "confidence": "low",
+      "index": 1
+    },
+    {
+      "smiles": "CN(C)C/C=C/C(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3CC(C)(C)C)ncnc2s1",
+      "modification": "Addition of an isopropyl group to the phenyl ring",
+      "rationale": "The phenyl ring is currently relatively unsubstituted beyond the fluorine and chlorine. Introducing an isopropyl group (-(CH(CH3)2)) at the position ortho to the chlorine could provide beneficial steric bulk and lipophilicity. This could promote favorable hydrophobic interactions within the ATP binding pocket of EGFR. The isopropyl group's conformational flexibility allows it to adapt to the binding site, potentially optimizing the overall binding pose.  It's a relatively common modification to improve potency and selectivity in kinase inhibitors, often leading to improved binding affinity and reduced off-target effects.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "CN(C)C/C=C/C(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)cncnc2s1",
+      "modification": "Removal of the bridging nitrogen",
+      "rationale": "The bridging nitrogen between the phenyl ring and the amide is a potential source of metabolic instability (N-oxidation) and may not be contributing significantly to binding. Removing it simplifies the structure and eliminates a potential metabolic liability. This would change the linker from a saturated amine to a direct aryl-amide bond. While this change could potentially disrupt existing hydrogen bonds, it might also allow for a more favorable overall conformation and improved binding affinity by removing a conformational constraint. It's a high-risk, high-reward modification, as it fundamentally alters the scaffold.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "CN(C)C/C=C/C(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2c1",
+      "modification": "Cyclization of the phenyl ring",
+      "rationale": "The phenyl ring is relatively flexible. Constraining it into a bicyclic system by forming a bond between the phenyl ring and the piperazine ring could reduce conformational entropy and pre-organize the molecule into a more favorable binding pose. This cyclization would create a fused ring system. This modification is synthetically challenging but could significantly improve potency and selectivity by restricting the molecule's conformational space and promoting a more rigid, active conformation. It's a more drastic change, but has the potential for a significant impact.",
+      "expected_fold_improvement": 1.4,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"CN(C)C/C=C/C(=O)Nc1cc2c(Nc3ccc(CF3)c(Cl)c3)ncnc2s1\",\n\"modification\": \"Fluorination of the phenyl ring\",\n\"rationale\": \"The starting compound contains a phenyl ring substituted with a fluorine atom. While fluorine is already present, the position of the fluorine is somewhat distant from the core scaffold. Introducing a trifluoromethyl (CF3) group at the same position offers several advantages. CF3 is a more lipophilic substituent than a single fluorine, which could improve membrane permeability and overall bioavailability. Furthermore, the strong electron-withdrawing nature of CF3 can subtly modulate the electronic properties of the phenyl ring, potentially enhancing interactions with key amino acid residues in the EGFR kinase domain. The increased bulk of the CF3 group might also introduce favorable steric interactions, locking the molecule into a more active conformation. This is a common strategy for improving potency and selectivity in kinase inhibitors.\"\n  ,\n\"expected_fold_improvement\": 1.2\n  ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CN(C)C/C=C/C(=O)Nc1cc2c(Nc3ccc(F)c(Br)c3)ncnc2s1\",\n\"modification\": \"Chlorine to Bromine substitution\",\n\"rationale\": \"The chlorine atom on the phenyl ring is likely contributing to binding, but its relatively small size and moderate electronegativity might limit its potential. Replacing chlorine with bromine increases the atomic radius and polarizability. This can lead to stronger van der Waals interactions with hydrophobic pockets in the EGFR binding site.  Bromine is also a slightly better leaving group, which *could* (though less likely) facilitate a non-covalent 'halogen bond' interaction with a suitable acceptor in the protein. While the change is relatively subtle, it's a common tactic to explore in lead optimization to fine-tune binding affinity. The increased mass also provides a handle for potential future radiolabeling for imaging studies.\",\n\"expected_fold_improvement\": 1.15,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"CN(C)C/C=C/C(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3CC(C)(C)C)ncnc2s1\",\n\"modification\": \"Addition of an isopropyl group to the phenyl ring\",\n\"rationale\": \"The phenyl ring is currently relatively unsubstituted beyond the fluorine and chlorine. Introducing an isopropyl group (-(CH(CH3)2)) at the position ortho to the chlorine could provide beneficial steric bulk and lipophilicity. This could promote favorable hydrophobic interactions within the ATP binding pocket of EGFR. The isopropyl group's conformational flexibility allows it to adapt to the binding site, potentially optimizing the overall binding pose.  It's a relatively common modification to improve potency and selectivity in kinase inhibitors, often leading to improved binding affinity and reduced off-target effects.\",\n\"expected_fold_improvement\": 1.3,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CN(C)C/C=C/C(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)cncnc2s1\",\n\"modification\": \"Removal of the bridging nitrogen\",\n\"rationale\": \"The bridging nitrogen between the phenyl ring and the amide is a potential source of metabolic instability (N-oxidation) and may not be contributing significantly to binding. Removing it simplifies the structure and eliminates a potential metabolic liability. This would change the linker from a saturated amine to a direct aryl-amide bond. While this change could potentially disrupt existing hydrogen bonds, it might also allow for a more favorable overall conformation and improved binding affinity by removing a conformational constraint. It's a high-risk, high-reward modification, as it fundamentally alters the scaffold.\",\n\"expected_fold_improvement\": 1.1,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"CN(C)C/C=C/C(=O)Nc1cc2c(Nc3ccc(F)c(Cl)c3)ncnc2c1\",\n\"modification\": \"Cyclization of the phenyl ring\",\n\"rationale\": \"The phenyl ring is relatively flexible. Constraining it into a bicyclic system by forming a bond between the phenyl ring and the piperazine ring could reduce conformational entropy and pre-organize the molecule into a more favorable binding pose. This cyclization would create a fused ring system. This modification is synthetically challenging but could significantly improve potency and selectivity by restricting the molecule's conformational space and promoting a more rigid, active conformation. It's a more drastic change, but has the potential for a significant impact.\",\n\"expected_fold_improvement\": 1.4,\n\"confidence\": \"low\"\n}\n]\n}\n",
+  "usage": {
+    "input_tokens": 226,
+    "output_tokens": 1068,
+    "total_duration_s": 122.4
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 122.46,
+  "run_index": 0,
+  "timestamp": "2026-10-17T02:05:18",
+  "n_suggestions": 5
+}

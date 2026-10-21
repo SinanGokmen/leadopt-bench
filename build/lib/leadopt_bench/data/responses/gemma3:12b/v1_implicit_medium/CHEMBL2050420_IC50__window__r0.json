@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL2050420_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Histone deacetylase 1",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Histone deacetylase 1 (ChEMBL CHEMBL325)\nAssay endpoint: IC50\n\nStarting compound (SMILES): CSCCNC(=O)/C(Cc1ccc(O)c(Br)c1)=N/O\nMeasured potency of the starting compound: pIC50 = 5.11\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "CSCCNC(=O)/C(Cc1ccc(C(=O)O)c(Br)c1)=N/O",
+      "modification": "Carboxylic Acid Introduction at Phenyl Ring",
+      "rationale": "The current compound has a phenol group on the phenyl ring. While phenols can participate in hydrogen bonding, they are often metabolically labile and can lead to poor bioavailability. Converting the phenol to a carboxylic acid introduces a more polar, metabolically stable group. Carboxylic acids are known to engage in salt bridge interactions with positively charged residues in the HDAC1 active site, potentially increasing binding affinity. The acidity of the carboxylic acid can also be exploited for formulation purposes. The position *ortho* to the bromine is chosen to maintain a similar spatial orientation to the original phenol, minimizing disruption of existing interactions while introducing the new functionality. This is synthetically achievable via carboxylation of the phenyl ring, potentially through lithiation followed by reaction with CO2, or via a palladium-catalyzed carbonylation reaction.",
+      "expected_fold_improvement": 1.5,
+      "confidence": "medium",
+      "index": 0
+    },
+    {
+      "smiles": "CSCCNC(=O)/C(Cc1ccc(O)c(Cl)c1)=N/O",
+      "modification": "Bromine to Chlorine Substitution",
+      "rationale": "The bromine atom is a relatively large and polarizable substituent. While it can contribute to hydrophobic interactions, it also introduces significant steric bulk and can be a site for unwanted metabolic transformations (e.g., debromination). Replacing bromine with chlorine reduces the size and polarizability of the substituent, potentially improving metabolic stability and reducing steric clashes within the HDAC1 binding pocket. The electronic effects will be subtly altered, which could fine-tune binding affinity. This is a straightforward substitution reaction, likely achievable via a copper-mediated halogen exchange.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "low",
+      "index": 1
+    },
+    {
+      "smiles": "CSCCNC(=O)/C(Cc1ccc(O)c(N(c)c)c1)=N/O",
+      "modification": "Bromine to Methylamino Substitution",
+      "rationale": "Replacing the bromine with a methylamino group introduces a hydrogen bond donor and acceptor. HDAC1's active site likely contains hydrogen bond acceptors that could interact favorably with this group. The methyl group provides a small hydrophobic contribution. This substitution could also improve aqueous solubility. The reaction would likely involve nucleophilic aromatic substitution, potentially requiring forcing conditions or a palladium-catalyzed amination.",
+      "expected_fold_improvement": 1.8,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "CSCCNC(=O)/C(Cc1ccc(O)c(C)c1)=N/O",
+      "modification": "Bromine to Methyl Substitution",
+      "rationale": "The bromine atom contributes to the compound's overall polarity and can be a site for metabolic liability. Replacing it with a methyl group increases the lipophilicity of the molecule, which could improve membrane permeability and binding to hydrophobic pockets within the HDAC1 active site. This is a synthetically accessible transformation, potentially via a Grignard reaction followed by quenching with methyl iodide, or a palladium-catalyzed cross-coupling reaction.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "CSCCNC(=O)/C(Cc1ccc(O)c(Br)c1)N(C)C",
+      "modification": "N-Methylation of Amide",
+      "rationale": "The amide nitrogen in the starting compound is relatively unconstrained. N-methylation can restrict conformational flexibility, potentially locking the molecule into a more favorable binding pose within the HDAC1 active site. It also introduces a small hydrophobic group that could engage in van der Waals interactions. This is a standard N-methylation reaction, easily achieved using methyl iodide and a base.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"CSCCNC(=O)/C(Cc1ccc(C(=O)O)c(Br)c1)=N/O\",\n\"modification\": \"Carboxylic Acid Introduction at Phenyl Ring\",\n\"rationale\": \"The current compound has a phenol group on the phenyl ring. While phenols can participate in hydrogen bonding, they are often metabolically labile and can lead to poor bioavailability. Converting the phenol to a carboxylic acid introduces a more polar, metabolically stable group. Carboxylic acids are known to engage in salt bridge interactions with positively charged residues in the HDAC1 active site, potentially increasing binding affinity. The acidity of the carboxylic acid can also be exploited for formulation purposes. The position *ortho* to the bromine is chosen to maintain a similar spatial orientation to the original phenol, minimizing disruption of existing interactions while introducing the new functionality. This is synthetically achievable via carboxylation of the phenyl ring, potentially through lithiation followed by reaction with CO2, or via a palladium-catalyzed carbonylation reaction.\"\n    ,\n\"expected_fold_improvement\": 1.5\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CSCCNC(=O)/C(Cc1ccc(O)c(Cl)c1)=N/O\",\n\"modification\": \"Bromine to Chlorine Substitution\",\n\"rationale\": \"The bromine atom is a relatively large and polarizable substituent. While it can contribute to hydrophobic interactions, it also introduces significant steric bulk and can be a site for unwanted metabolic transformations (e.g., debromination). Replacing bromine with chlorine reduces the size and polarizability of the substituent, potentially improving metabolic stability and reducing steric clashes within the HDAC1 binding pocket. The electronic effects will be subtly altered, which could fine-tune binding affinity. This is a straightforward substitution reaction, likely achievable via a copper-mediated halogen exchange.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"CSCCNC(=O)/C(Cc1ccc(O)c(N(c)c)c1)=N/O\",\n\"modification\": \"Bromine to Methylamino Substitution\",\n\"rationale\": \"Replacing the bromine with a methylamino group introduces a hydrogen bond donor and acceptor. HDAC1's active site likely contains hydrogen bond acceptors that could interact favorably with this group. The methyl group provides a small hydrophobic contribution. This substitution could also improve aqueous solubility. The reaction would likely involve nucleophilic aromatic substitution, potentially requiring forcing conditions or a palladium-catalyzed amination.\"\n    ,\n\"expected_fold_improvement\": 1.8\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"CSCCNC(=O)/C(Cc1ccc(O)c(C)c1)=N/O\",\n\"modification\": \"Bromine to Methyl Substitution\",\n\"rationale\": \"The bromine atom contributes to the compound's overall polarity and can be a site for metabolic liability. Replacing it with a methyl group increases the lipophilicity of the molecule, which could improve membrane permeability and binding to hydrophobic pockets within the HDAC1 active site. This is a synthetically accessible transformation, potentially via a Grignard reaction followed by quenching with methyl iodide, or a palladium-catalyzed cross-coupling reaction.\"\n    ,\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"CSCCNC(=O)/C(Cc1ccc(O)c(Br)c1)N(C)C\",\n\"modification\": \"N-Methylation of Amide\",\n\"rationale\": \"The amide nitrogen in the starting compound is relatively unconstrained. N-methylation can restrict conformational flexibility, potentially locking the molecule into a more favorable binding pose within the HDAC1 active site. It also introduces a small hydrophobic group that could engage in van der Waals interactions. This is a standard N-methylation reaction, easily achieved using methyl iodide and a base.\"\n    ,\n\"expected_fold_improvement\": 1.3\n    ,\n\"confidence\": \"medium\"\n}\n]\n}",
+  "usage": {
+    "input_tokens": 213,
+    "output_tokens": 902,
+    "total_duration_s": 77.5
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 77.55,
+  "run_index": 0,
+  "timestamp": "2026-10-17T00:49:19",
+  "n_suggestions": 5
+}

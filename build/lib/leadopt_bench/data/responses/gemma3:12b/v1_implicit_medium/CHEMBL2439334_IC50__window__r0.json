@@ -1,0 +1,68 @@
+{
+  "series_id": "CHEMBL2439334_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Epidermal growth factor receptor",
+  "provider": "ollama",
+  "model": "gemma3:12b",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Epidermal growth factor receptor (ChEMBL CHEMBL203)\nAssay endpoint: IC50\n\nStarting compound (SMILES): C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC)cc4)nc32)cc1\nMeasured potency of the starting compound: pIC50 = 5.32\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC)cc4)nc32)cc1C",
+      "modification": "Addition of Methyl Group at Phenyl Ring",
+      "rationale": "The starting compound possesses a phenyl ring directly attached to the core scaffold. This ring is likely involved in hydrophobic interactions within the EGFR kinase domain. Introducing a methyl group at a position ortho or meta to the point of attachment (as shown) could subtly alter the conformation of the phenyl ring, optimizing its fit within the binding pocket. Methyl groups are generally well-tolerated and often improve binding affinity due to their lipophilic nature. The position chosen (C-position) is predicted to be accessible and not sterically clash with known binding elements. This is a relatively conservative modification with a high probability of success.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "high",
+      "index": 0
+    },
+    {
+      "smiles": "C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC)cc4)nc32)cc1OC",
+      "modification": "Replacement of Phenyl Ring with Phenoxy Group",
+      "rationale": "The phenyl ring in the starting compound could be contributing to metabolic instability or unfavorable interactions. Replacing it with a phenoxy group (an oxygen-linked phenyl) introduces a polar ether linkage. This can improve aqueous solubility and potentially alter the compound's metabolic profile, reducing clearance. The oxygen atom can also participate in hydrogen bonding with residues in the binding pocket, potentially increasing affinity. The change is synthetically accessible via a Williamson ether synthesis. While the loss of aromaticity could be detrimental, the potential benefits outweigh the risk, especially if the original phenyl ring is contributing to poor properties.",
+      "expected_fold_improvement": 1.3,
+      "confidence": "medium",
+      "index": 1
+    },
+    {
+      "smiles": "C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(C(C)(C)O)cc4)nc32)cc1",
+      "modification": "Replacement of Methoxy Group with tert-Butoxy Group",
+      "rationale": "The methoxy group is a common handle for improving lipophilicity and membrane permeability. However, a tert-butoxy group is significantly more lipophilic and bulkier. This could lead to stronger hydrophobic interactions within the binding pocket, potentially increasing affinity. The increased bulk might also induce a more favorable conformational change in the molecule, optimizing its fit. The tert-butyl group is also known to be metabolically stable, which could improve the compound's overall pharmacokinetic profile. The synthetic route would involve a Williamson ether synthesis using tert-butanol.",
+      "expected_fold_improvement": 1.4,
+      "confidence": "medium",
+      "index": 2
+    },
+    {
+      "smiles": "C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC)cc4)nc32)cc1N",
+      "modification": "Replacement of Methyl Group on Phenyl Ring with Amine",
+      "rationale": "Introducing a primary amine on the phenyl ring provides a handle for potential hydrogen bonding interactions with the target protein. Amines can act as both hydrogen bond donors and acceptors, increasing the likelihood of favorable interactions. This modification could also improve aqueous solubility. The amine could be further derivatized later in the optimization process to fine-tune its properties. The synthesis would likely involve nitration followed by reduction.",
+      "expected_fold_improvement": 1.1,
+      "confidence": "low",
+      "index": 3
+    },
+    {
+      "smiles": "C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC)cc4)nc32)cc1C(=O)c1ccccc1",
+      "modification": "Addition of Benzoyl Group to Phenyl Ring",
+      "rationale": "The addition of a benzoyl group to the phenyl ring introduces a larger, more rigid aromatic system. This could increase the overall hydrophobic surface area and potentially lead to stronger binding through pi-pi stacking interactions with aromatic residues in the EGFR kinase domain. The carbonyl group also provides a potential hydrogen bond acceptor. The synthesis would involve a Friedel-Crafts acylation reaction.",
+      "expected_fold_improvement": 1.2,
+      "confidence": "low",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\n\"suggestions\": [\n{\n\"smiles\": \"C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC)cc4)nc32)cc1C\",\n\"modification\": \"Addition of Methyl Group at Phenyl Ring\",\n\"rationale\": \"The starting compound possesses a phenyl ring directly attached to the core scaffold. This ring is likely involved in hydrophobic interactions within the EGFR kinase domain. Introducing a methyl group at a position ortho or meta to the point of attachment (as shown) could subtly alter the conformation of the phenyl ring, optimizing its fit within the binding pocket. Methyl groups are generally well-tolerated and often improve binding affinity due to their lipophilic nature. The position chosen (C-position) is predicted to be accessible and not sterically clash with known binding elements. This is a relatively conservative modification with a high probability of success.\"\n    ,\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"high\"\n},\n{\n\"smiles\": \"C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC)cc4)nc32)cc1OC\",\n\"modification\": \"Replacement of Phenyl Ring with Phenoxy Group\",\n\"rationale\": \"The phenyl ring in the starting compound could be contributing to metabolic instability or unfavorable interactions. Replacing it with a phenoxy group (an oxygen-linked phenyl) introduces a polar ether linkage. This can improve aqueous solubility and potentially alter the compound's metabolic profile, reducing clearance. The oxygen atom can also participate in hydrogen bonding with residues in the binding pocket, potentially increasing affinity. The change is synthetically accessible via a Williamson ether synthesis. While the loss of aromaticity could be detrimental, the potential benefits outweigh the risk, especially if the original phenyl ring is contributing to poor properties.\",\n\"expected_fold_improvement\": 1.3\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(C(C)(C)O)cc4)nc32)cc1\",\n\"modification\": \"Replacement of Methoxy Group with tert-Butoxy Group\",\n\"rationale\": \"The methoxy group is a common handle for improving lipophilicity and membrane permeability. However, a tert-butoxy group is significantly more lipophilic and bulkier. This could lead to stronger hydrophobic interactions within the binding pocket, potentially increasing affinity. The increased bulk might also induce a more favorable conformational change in the molecule, optimizing its fit. The tert-butyl group is also known to be metabolically stable, which could improve the compound's overall pharmacokinetic profile. The synthetic route would involve a Williamson ether synthesis using tert-butanol.\",\n\"expected_fold_improvement\": 1.4\n    ,\n\"confidence\": \"medium\"\n},\n{\n\"smiles\": \"C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC)cc4)nc32)cc1N\",\n\"modification\": \"Replacement of Methyl Group on Phenyl Ring with Amine\",\n\"rationale\": \"Introducing a primary amine on the phenyl ring provides a handle for potential hydrogen bonding interactions with the target protein. Amines can act as both hydrogen bond donors and acceptors, increasing the likelihood of favorable interactions. This modification could also improve aqueous solubility. The amine could be further derivatized later in the optimization process to fine-tune its properties. The synthesis would likely involve nitration followed by reduction.\",\n\"expected_fold_improvement\": 1.1\n    ,\n\"confidence\": \"low\"\n},\n{\n\"smiles\": \"C=CC(=O)Nc1ccc(-n2c(=O)cnc3cnc(Nc4ccc(OC)cc4)nc32)cc1C(=O)c1ccccc1\",\n\"modification\": \"Addition of Benzoyl Group to Phenyl Ring\",\n\"rationale\": \"The addition of a benzoyl group to the phenyl ring introduces a larger, more rigid aromatic system. This could increase the overall hydrophobic surface area and potentially lead to stronger binding through pi-pi stacking interactions with aromatic residues in the EGFR kinase domain. The carbonyl group also provides a potential hydrogen bond acceptor. The synthesis would involve a Friedel-Crafts acylation reaction.\",\n\"expected_fold_improvement\": 1.2\n    ,\n\"confidence\": \"low\"\n}\n]\n}\n",
+  "usage": {
+    "input_tokens": 224,
+    "output_tokens": 979,
+    "total_duration_s": 92.5
+  },
+  "stop_reason": "stop",
+  "error": "",
+  "elapsed_s": 92.59,
+  "run_index": 0,
+  "timestamp": "2026-10-17T01:54:31",
+  "n_suggestions": 5
+}

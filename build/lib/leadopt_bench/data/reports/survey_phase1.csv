@@ -1,0 +1,15 @@
+target,name,raw,clean9,mols,assay_pass,assay_temporal,assay_medn,assay_maxn,assay_tan,document_pass,document_temporal,document_medn,document_maxn,document_tan,cluster_pass,cluster_temporal,cluster_medn,cluster_maxn,cluster_tan
+CHEMBL301,Cyclin-dependent kinase 2,2897,1254,1130,9,0,27.0,134,0.572,9,0,27.0,134,0.572,11,8,38.0,173,0.524
+CHEMBL203,Epidermal growth factor receptor,18661,12432,8230,111,0,26.0,902,0.584,90,0,27.0,902,0.563,35,27,33.0,286,0.589
+CHEMBL2971,Tyrosine-protein kinase JAK2,16665,10692,9169,64,0,36.0,545,0.538,65,0,36.0,545,0.533,58,43,62.5,603,0.5
+CHEMBL279,Vascular endothelial growth factor rec,13278,8913,7447,70,0,35.0,554,0.555,65,0,33.0,617,0.553,61,51,37.0,655,0.512
+CHEMBL4822,Beta-secretase 1,15237,9134,7186,88,0,35.0,365,0.539,76,0,31.0,365,0.544,57,49,44.0,473,0.484
+CHEMBL244,Coagulation factor X,7392,3758,2950,54,0,28.5,73,0.582,55,0,29.0,73,0.581,34,29,40.5,185,0.504
+CHEMBL204,Prothrombin,6140,2179,1938,20,0,26.5,61,0.579,19,0,27.0,61,0.569,21,17,39.0,154,0.497
+CHEMBL251,Adenosine receptor A2a,7297,5948,5505,60,0,34.0,146,0.533,64,0,32.5,168,0.536,44,37,45.5,437,0.456
+CHEMBL233,Mu-type opioid receptor,7823,5132,4662,36,0,35.5,262,0.551,41,0,34.0,262,0.558,34,30,43.5,584,0.491
+CHEMBL217,D(2) dopamine receptor,12038,8056,6387,63,0,33.0,171,0.505,61,0,34.0,171,0.504,43,40,37.0,278,0.487
+CHEMBL1163125,Bromodomain-containing protein 4,15237,6790,4372,80,0,32.0,347,0.542,58,0,30.0,347,0.536,52,44,38.5,346,0.474
+CHEMBL325,Histone deacetylase 1,10232,7634,7002,57,0,30.0,163,0.525,59,0,30.0,163,0.521,60,57,30.0,204,0.476
+CHEMBL220,Acetylcholinesterase,7852,5583,4864,34,0,25.0,72,0.58,37,0,24.0,72,0.579,38,34,33.5,478,0.469
+CHEMBL206,Estrogen receptor,6388,3860,2890,30,0,27.0,157,0.563,25,0,31.0,159,0.566,27,23,47.0,329,0.476

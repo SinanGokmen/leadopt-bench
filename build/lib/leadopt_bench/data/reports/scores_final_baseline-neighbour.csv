@@ -1,0 +1,33 @@
+series_id,strategy,year_stratum,target_pref_name,model,prompt_variant,effort,run_index,n_requested,n_returned,error,similarity_floor,validity_rate,scaffold_compliance_rate,recovery_exact,recovery_close,any_recovery,generic_rate,ungrounded_rate,fraction_additive,mean_mw_delta,any_suggestion_trims,mean_direction_precision,invalid,unchanged,duplicate,scaffold_violation,recovered_target,recovered_nonimprover,novel_plausible
+CHEMBL1067528_Ki,window,old,Prothrombin,baseline-neighbour,implicit,medium,0,5,5,,0.471,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,267.5,False,0.308,0,0,0,5,0,0,0
+CHEMBL2050420_IC50,window,old,Histone deacetylase 1,baseline-neighbour,implicit,medium,0,5,5,,0.355,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,93.5,False,0.864,0,0,0,5,0,0,0
+CHEMBL2433086_IC50,window,old,Bromodomain-containing protein 4,baseline-neighbour,implicit,medium,0,5,5,,0.25,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,76.0,False,0.723,0,0,0,5,0,0,0
+CHEMBL2433591_IC50,window,old,Bromodomain-containing protein 4,baseline-neighbour,implicit,medium,0,5,5,,0.333,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,82.5,False,0.532,0,0,0,5,0,0,0
+CHEMBL2439334_IC50,window,old,Epidermal growth factor receptor,baseline-neighbour,implicit,medium,0,5,5,,0.382,1.0,0.0,0.0,0.0,False,0.0,0.0,0.6,78.5,True,0.71,0,0,0,5,0,0,0
+CHEMBL2439335_IC50,window,old,Epidermal growth factor receptor,baseline-neighbour,implicit,medium,0,5,5,,0.481,1.0,0.0,0.0,0.0,False,0.0,0.0,0.0,-15.8,True,0.773,0,0,0,5,0,0,0
+CHEMBL2439336_IC50,window,old,Epidermal growth factor receptor,baseline-neighbour,implicit,medium,0,5,5,,0.382,1.0,0.0,0.0,0.0,False,0.0,0.0,0.6,78.5,True,0.71,0,0,0,5,0,0,0
+CHEMBL2446006_IC50,window,old,Histone deacetylase 1,baseline-neighbour,implicit,medium,0,5,5,,0.775,1.0,0.0,0.0,0.0,False,0.0,0.0,0.0,-270.1,True,0.121,0,0,0,5,0,0,0
+CHEMBL3095060_IC50,window,old,Epidermal growth factor receptor,baseline-neighbour,implicit,medium,0,5,5,,0.264,1.0,0.4,0.0,0.0,False,0.0,0.0,0.4,-37.9,True,0.777,0,0,0,3,0,0,2
+CHEMBL3226597_IC50,window,old,Bromodomain-containing protein 4,baseline-neighbour,implicit,medium,0,5,5,,0.485,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,131.7,False,0.585,0,0,0,5,0,0,0
+CHEMBL3238948_IC50,window,old,Epidermal growth factor receptor,baseline-neighbour,implicit,medium,0,5,5,,0.625,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,60.9,False,0.3,0,0,0,5,0,0,0
+CHEMBL3379478_IC50,window,old,Histone deacetylase 1,baseline-neighbour,implicit,medium,0,5,5,,0.522,1.0,0.0,0.0,0.0,False,0.0,0.0,0.4,14.1,True,0.207,0,0,0,5,0,0,0
+CHEMBL3414207_IC50,window,old,Bromodomain-containing protein 4,baseline-neighbour,implicit,medium,0,5,5,,0.25,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,179.6,False,0.571,0,0,0,5,0,0,0
+CHEMBL3424914_Ki,window,old,Prothrombin,baseline-neighbour,implicit,medium,0,5,5,,0.485,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,267.5,False,0.308,0,0,0,5,0,0,0
+CHEMBL3587158_IC50,window,old,Bromodomain-containing protein 4,baseline-neighbour,implicit,medium,0,5,5,,0.645,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,140.5,False,0.358,0,0,0,5,0,0,0
+CHEMBL3705904_IC50,window,old,Histone deacetylase 1,baseline-neighbour,implicit,medium,0,5,5,,0.358,1.0,0.0,0.0,0.0,False,0.0,0.0,0.0,-59.9,True,0.746,0,0,0,5,0,0,0
+CHEMBL5517452_IC50,window,new,Bromodomain-containing protein 4,baseline-neighbour,implicit,medium,0,5,5,,0.353,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,224.7,False,0.486,0,0,0,5,0,0,0
+CHEMBL5529441_IC50,window,new,Bromodomain-containing protein 4,baseline-neighbour,implicit,medium,0,5,5,,0.716,1.0,0.0,0.0,0.0,False,0.0,0.0,0.0,-121.8,True,0.491,0,0,0,5,0,0,0
+CHEMBL5538331_IC50,window,new,Histone deacetylase 1,baseline-neighbour,implicit,medium,0,5,5,,0.538,1.0,0.0,0.0,0.0,False,0.0,0.0,0.0,-168.1,True,0.135,0,0,0,5,0,0,0
+CHEMBL5539282_IC50,window,new,Bromodomain-containing protein 4,baseline-neighbour,implicit,medium,0,5,5,,0.25,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,74.7,False,0.517,0,0,0,5,0,0,0
+CHEMBL5539704_IC50,window,new,Bromodomain-containing protein 4,baseline-neighbour,implicit,medium,0,5,5,,0.437,1.0,0.0,0.0,0.0,False,0.0,0.0,0.4,-48.3,True,0.62,0,0,0,5,0,0,0
+CHEMBL6077283_Ki,window,new,Epidermal growth factor receptor,baseline-neighbour,implicit,medium,0,5,5,,0.383,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,99.3,False,0.902,0,0,0,5,0,0,0
+CHEMBL6086969_IC50,window,new,Bromodomain-containing protein 4,baseline-neighbour,implicit,medium,0,5,5,,0.626,1.0,0.0,0.0,0.0,False,0.0,0.0,0.0,-65.7,True,0.2,0,0,0,5,0,0,0
+CHEMBL6096813_IC50,window,new,Histone deacetylase 1,baseline-neighbour,implicit,medium,0,5,5,,0.494,1.0,0.0,0.0,0.0,False,0.0,0.0,0.0,-99.0,True,0.413,0,0,0,5,0,0,0
+CHEMBL6106211_IC50,window,new,Histone deacetylase 1,baseline-neighbour,implicit,medium,0,5,5,,0.663,1.0,0.0,0.0,0.0,False,0.0,0.0,0.0,-240.2,True,0.254,0,0,0,5,0,0,0
+CHEMBL6131558_IC50,window,new,Histone deacetylase 1,baseline-neighbour,implicit,medium,0,5,5,,0.451,1.0,0.0,0.0,0.0,False,0.0,0.0,0.2,-59.2,True,0.536,0,0,0,5,0,0,0
+CHEMBL6187554_IC50,window,new,Prothrombin,baseline-neighbour,implicit,medium,0,5,5,,0.419,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,-19.0,False,0.412,0,0,0,5,0,0,0
+CHEMBL6187556_IC50,window,new,Prothrombin,baseline-neighbour,implicit,medium,0,5,5,,0.429,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,64.1,False,0.292,0,0,0,5,0,0,0
+CHEMBL832832_IC50,window,old,Prothrombin,baseline-neighbour,implicit,medium,0,5,5,,0.562,1.0,0.2,0.0,0.0,False,0.0,0.0,0.0,9.4,True,0.653,0,0,0,4,0,1,0
+CHEMBL838818_Ki,window,old,Prothrombin,baseline-neighbour,implicit,medium,0,5,5,,0.42,1.0,0.0,0.0,0.0,False,0.0,0.0,0.4,78.1,True,0.633,0,0,0,5,0,0,0
+CHEMBL865059_IC50,window,old,Prothrombin,baseline-neighbour,implicit,medium,0,5,5,,0.654,1.0,0.0,0.0,0.0,False,0.0,0.0,1.0,121.3,False,0.284,0,0,0,5,0,0,0
+CHEMBL907072_IC50,window,old,Histone deacetylase 1,baseline-neighbour,implicit,medium,0,5,5,,0.25,1.0,0.0,0.0,0.0,False,0.0,0.0,0.0,-229.2,True,0.788,0,0,0,5,0,0,0

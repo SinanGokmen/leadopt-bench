@@ -1,0 +1,67 @@
+{
+  "series_id": "CHEMBL3587158_IC50",
+  "strategy": "window",
+  "year_stratum": "old",
+  "target_pref_name": "Bromodomain-containing protein 4",
+  "provider": "oracle",
+  "model": "oracle-truth",
+  "prompt_version": "v1",
+  "prompt_variant": "implicit",
+  "effort": "medium",
+  "n_requested": 5,
+  "system_prompt": "You are a medicinal chemist working on a lead optimization campaign. You propose specific structural modifications to a compound and explain the structure-activity reasoning behind each one. You are precise about chemistry: every structure you propose must be a valid, synthetically reasonable molecule, and every rationale must be one you would defend in a project meeting.",
+  "user_prompt": "Target protein: Bromodomain-containing protein 4 (ChEMBL CHEMBL1163125)\nAssay endpoint: IC50\n\nStarting compound (SMILES): Cc1cncc(-c2cnc(NC3CCNCC3)c3[nH]c(=O)c(C)cc23)c1C\nMeasured potency of the starting compound: pIC50 = 5.1\n\nPropose 5 distinct structural modifications to this compound that you expect to increase its potency against the stated target.\n\nFor each proposal give the complete SMILES of the modified molecule, name the change you made, and explain the structure-activity reasoning for why you expect it to help.",
+  "suggestions": [
+    {
+      "smiles": "Cc1cc2c(-c3cccc4[nH]ncc34)cnc(NC3CCNCC3)c2[nH]c1=O",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 63.09573444801943,
+      "confidence": "high",
+      "index": 0
+    },
+    {
+      "smiles": "Cc1cc2c(-c3cccc(O)c3)cnc(NC3CCNCC3)c2[nH]c1=O",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 12.589254117941687,
+      "confidence": "high",
+      "index": 1
+    },
+    {
+      "smiles": "Cc1cc2c(-c3ccccc3)cnc(NC3CCNCC3)c2[nH]c1=O",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 10.0,
+      "confidence": "high",
+      "index": 2
+    },
+    {
+      "smiles": "Cc1cc2c(-c3cn[nH]c3)cnc(NC3CCNCC3)c2[nH]c1=O",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 10.0,
+      "confidence": "high",
+      "index": 3
+    },
+    {
+      "smiles": "Cc1cc2c(-c3cncc(NS(C)(=O)=O)c3)cnc(NC3CCNCC3)c2[nH]c1=O",
+      "modification": "the compound the chemists actually made",
+      "rationale": "Known improved analog from the published series.",
+      "expected_fold_improvement": 10.0,
+      "confidence": "high",
+      "index": 4
+    }
+  ],
+  "raw_text": "{\"suggestions\": [{\"smiles\": \"Cc1cc2c(-c3cccc4[nH]ncc34)cnc(NC3CCNCC3)c2[nH]c1=O\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 63.09573444801943, \"confidence\": \"high\"}, {\"smiles\": \"Cc1cc2c(-c3cccc(O)c3)cnc(NC3CCNCC3)c2[nH]c1=O\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 12.589254117941687, \"confidence\": \"high\"}, {\"smiles\": \"Cc1cc2c(-c3ccccc3)cnc(NC3CCNCC3)c2[nH]c1=O\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 10.0, \"confidence\": \"high\"}, {\"smiles\": \"Cc1cc2c(-c3cn[nH]c3)cnc(NC3CCNCC3)c2[nH]c1=O\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 10.0, \"confidence\": \"high\"}, {\"smiles\": \"Cc1cc2c(-c3cncc(NS(C)(=O)=O)c3)cnc(NC3CCNCC3)c2[nH]c1=O\", \"modification\": \"the compound the chemists actually made\", \"rationale\": \"Known improved analog from the published series.\", \"expected_fold_improvement\": 10.0, \"confidence\": \"high\"}]}",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "stop_reason": "end_turn",
+  "error": "",
+  "elapsed_s": 0.0,
+  "run_index": 0,
+  "timestamp": "2026-10-16T17:04:31",
+  "n_suggestions": 5
+}
