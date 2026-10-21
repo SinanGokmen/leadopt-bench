@@ -20,8 +20,11 @@ problem this project is a reaction to.
 ```bash
 git clone https://github.com/SinanGokmen/leadopt-bench.git
 cd leadopt-bench
-pip install -e .
+python3 -m pip install -e .
 ```
+
+> Use `python3 -m pip`, not bare `pip`. On many machines they are different
+> interpreters, and a bare `pip` can install into a Python you are not running.
 
 The 32 series, their splits and the scored model responses are committed, so this
 works offline — nothing is downloaded and no API key is needed.
@@ -170,7 +173,7 @@ suggestion and immediately see it is nonsense.
 ## Install and run
 
 ```bash
-pip install -e ".[test]"          # editable, so the committed data stays findable
+python3 -m pip install -e ".[test]"   # editable, so the committed data stays findable
 
 # tests (no network access required)
 python3 -m pytest -q
