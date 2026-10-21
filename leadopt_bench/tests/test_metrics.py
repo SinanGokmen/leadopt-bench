@@ -470,6 +470,67 @@ def test_evaluate_smiles_errors_clearly_on_an_unknown_series(split_on_disk):
         M.evaluate_smiles("CCO", "CHEMBL_NOT_A_SERIES")
 
 
+def test_resolve_molecule_passes_a_smiles_through(split_on_disk):
+    smiles, source = M.resolve_molecule("CC(=O)Oc1ccccc1C(=O)O")
+    assert smiles == "CC(=O)Oc1ccccc1C(=O)O"
+    assert source == "smiles"
+
+
+def test_resolve_molecule_finds_a_chembl_id_locally_without_network(split_on_disk):
+    """An id already in the committed series must resolve offline."""
+    sp = split_on_disk
+    target = sp.targets[0]
+
+    import leadopt_bench.chembl as chembl_mod
+
+    def boom(*a, **k):
+        raise AssertionError("the network must not be touched for a local id")
+
+    original = chembl_mod.molecule_smiles
+    chembl_mod.molecule_smiles = boom
+    try:
+        smiles, source = M.resolve_molecule(target.molecule_chembl_id)
+    finally:
+        chembl_mod.molecule_smiles = original
+
+    assert smiles == target.smiles
+    assert source.startswith("local")
+
+
+def test_resolve_molecule_is_case_insensitive_for_ids(split_on_disk):
+    target = split_on_disk.targets[0]
+    smiles, _ = M.resolve_molecule(target.molecule_chembl_id.lower())
+    assert smiles == target.smiles
+
+
+def test_resolve_molecule_rejects_empty_input(split_on_disk):
+    with pytest.raises(ValueError):
+        M.resolve_molecule("   ")
+
+
+def test_resolve_molecule_raises_when_an_id_has_no_structure(split_on_disk, monkeypatch):
+    import leadopt_bench.chembl as chembl_mod
+    monkeypatch.setattr(chembl_mod, "molecule_smiles", lambda _id: None)
+    with pytest.raises(LookupError, match="no structure"):
+        M.resolve_molecule("CHEMBL_DOES_NOT_EXIST")
+
+
+def test_evaluate_identifier_accepts_an_id_and_reports_the_structure(split_on_disk):
+    sp = split_on_disk
+    best = max(sp.targets, key=lambda t: t.pchembl)
+    score, smiles, source = M.evaluate_identifier(best.molecule_chembl_id, sp.series_id)
+    assert score.category == "recovered_target"
+    assert smiles == best.smiles
+    assert source.startswith("local")
+
+
+def test_evaluate_identifier_accepts_a_plain_smiles(split_on_disk):
+    sp = split_on_disk
+    score, smiles, source = M.evaluate_identifier(sp.targets[0].smiles, sp.series_id)
+    assert source == "smiles"
+    assert score.valid
+
+
 def test_available_series_lists_what_can_be_tested_against(split_on_disk):
     rows = M.available_series()
     assert rows

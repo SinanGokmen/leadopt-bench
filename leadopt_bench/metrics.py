@@ -713,6 +713,49 @@ def evaluate_smiles(smiles: str, series_id: str, strategy: str = "window",
     return score_run(run, split).suggestions[0]
 
 
+def resolve_molecule(identifier: str) -> tuple[str, str]:
+    """Turn a ChEMBL molecule id *or* a SMILES string into (smiles, source).
+
+    Local data is checked first, so an id that already appears in one of the
+    committed series resolves offline and instantly; anything else falls back to
+    the ChEMBL API. Passing a SMILES through is a no-op, which lets one code path
+    accept either kind of input.
+    """
+    ident = (identifier or "").strip()
+    if not ident:
+        raise ValueError("empty identifier")
+
+    if not ident.upper().startswith("CHEMBL"):
+        return ident, "smiles"
+
+    chembl_id = ident.upper()
+    for path in sorted(C.SERIES_DIR.glob("*.json")):
+        series = json.loads(path.read_text())
+        for comp in series.get("compounds", []):
+            if comp["molecule_chembl_id"] == chembl_id:
+                return comp["smiles"], f"local ({series.get('series_id', path.stem)})"
+
+    from .chembl import molecule_smiles
+    smiles = molecule_smiles(chembl_id)
+    if not smiles:
+        raise LookupError(f"{chembl_id} has no structure in ChEMBL")
+    return smiles, "ChEMBL API"
+
+
+def evaluate_identifier(identifier: str, series_id: str, strategy: str = "window",
+                        modification: str = "", rationale: str = ""
+                        ) -> tuple[SuggestionScore, str, str]:
+    """`evaluate_smiles`, but the molecule may be given as a ChEMBL id.
+
+    Returns (score, smiles, source) so a caller can show which structure was
+    actually scored and where it came from.
+    """
+    smiles, source = resolve_molecule(identifier)
+    score = evaluate_smiles(smiles, series_id, strategy=strategy,
+                            modification=modification, rationale=rationale)
+    return score, smiles, source
+
+
 def available_series(strategy: str = "window") -> list[dict]:
     """Every series you can test a molecule against, with its lead."""
     out = []

@@ -103,6 +103,23 @@ def target_info(target_chembl_id: str) -> dict:
     return targets[0] if targets else {}
 
 
+def molecule_smiles(molecule_chembl_id: str) -> str | None:
+    """Canonical SMILES for one ChEMBL molecule id, or None if it has no structure.
+
+    Cached like every other call, so looking the same id up twice is free.
+    """
+    payload = _fetch_page("molecule", {
+        "molecule_chembl_id": molecule_chembl_id,
+        "only": "molecule_chembl_id,pref_name,molecule_structures",
+        "limit": 1, "offset": 0,
+    })
+    molecules = payload.get("molecules") or []
+    if not molecules:
+        return None
+    structures = molecules[0].get("molecule_structures") or {}
+    return structures.get("canonical_smiles")
+
+
 def confident_assays(target_chembl_id: str) -> list[dict]:
     """Confidence-9 binding assays for one target."""
     params = {

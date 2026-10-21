@@ -19,10 +19,14 @@ problem this project is a reaction to.
 
 **Nothing to install:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SinanGokmen/leadopt-bench/blob/main/try_a_molecule.ipynb)
 
-The notebook runs in the browser. Run the setup cell once, then edit one cell — the
-SMILES, the series, optionally your reasoning — and run it as often as you like. You
-get a colour-coded verdict, the two molecules drawn side by side, and the option to
-browse what an LLM proposed on the same series.
+The notebook runs in the browser. Run the setup cell once; after that every cell is
+self-contained and can be run on its own, in any order. Two of them take your input:
+
+* **Option A** — paste any SMILES
+* **Option B** — paste a ChEMBL compound id instead
+
+Either way you get a colour-coded verdict, the two molecules drawn side by side, and
+the option to browse what an LLM proposed on the same series.
 
 Or locally:
 
@@ -397,7 +401,7 @@ model's own reasoning in a column, which is what an expert review would work fro
 
 ## Tests
 
-195 tests, no network access (fake session and providers). The most important ones:
+202 tests, no network access (fake session and providers). The most important ones:
 
 - **no target compound leaks into the prompt** — all 32 real prompts are audited on
   every run
