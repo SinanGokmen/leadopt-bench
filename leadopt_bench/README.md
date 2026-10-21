@@ -361,7 +361,7 @@ python3 -m pytest leadopt_bench/tests/ -q
 
 ## Tests
 
-180 tests, no network access (fake session and providers). Coverage includes:
+195 tests, no network access (fake session and providers). Coverage includes:
 salt/charge standardization; discarding censored and flagged measurements;
 separating congeneric from diverse sets; collapsing repeat measurements to a median;
 a series whose peripheral ring varies not being shattered by clustering (a
